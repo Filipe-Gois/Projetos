@@ -1,0 +1,15 @@
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\bin\Debug\net7.0\Agenda_Telefonica.exe
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\bin\Debug\net7.0\Agenda_Telefonica.deps.json
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\bin\Debug\net7.0\Agenda_Telefonica.runtimeconfig.json
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\bin\Debug\net7.0\Agenda_Telefonica.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\bin\Debug\net7.0\Agenda_Telefonica.pdb
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\obj\Debug\net7.0\Agenda_Telefonica.csproj.AssemblyReference.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\obj\Debug\net7.0\Agenda_Telefonica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\obj\Debug\net7.0\Agenda_Telefonica.AssemblyInfoInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\obj\Debug\net7.0\Agenda_Telefonica.AssemblyInfo.cs
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\obj\Debug\net7.0\Agenda_Telefonica.csproj.CoreCompileInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\obj\Debug\net7.0\Agenda_Telefonica.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\obj\Debug\net7.0\refint\Agenda_Telefonica.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\obj\Debug\net7.0\Agenda_Telefonica.pdb
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\obj\Debug\net7.0\Agenda_Telefonica.genruntimeconfig.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Agenda_Telefonica\obj\Debug\net7.0\ref\Agenda_Telefonica.dll

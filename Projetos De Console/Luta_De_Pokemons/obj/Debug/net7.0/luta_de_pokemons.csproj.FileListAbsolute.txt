@@ -1,0 +1,14 @@
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\bin\Debug\net7.0\luta_de_pokemons.exe
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\bin\Debug\net7.0\luta_de_pokemons.deps.json
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\bin\Debug\net7.0\luta_de_pokemons.runtimeconfig.json
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\bin\Debug\net7.0\luta_de_pokemons.dll
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\bin\Debug\net7.0\luta_de_pokemons.pdb
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\obj\Debug\net7.0\luta_de_pokemons.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\obj\Debug\net7.0\luta_de_pokemons.AssemblyInfoInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\obj\Debug\net7.0\luta_de_pokemons.AssemblyInfo.cs
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\obj\Debug\net7.0\luta_de_pokemons.csproj.CoreCompileInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\obj\Debug\net7.0\luta_de_pokemons.dll
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\obj\Debug\net7.0\refint\luta_de_pokemons.dll
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\obj\Debug\net7.0\luta_de_pokemons.pdb
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\obj\Debug\net7.0\luta_de_pokemons.genruntimeconfig.cache
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Luta_De_Pokemons\obj\Debug\net7.0\ref\luta_de_pokemons.dll

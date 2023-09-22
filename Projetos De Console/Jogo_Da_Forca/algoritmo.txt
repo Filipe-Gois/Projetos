@@ -1,0 +1,23 @@
+Para criar um jogo da forca em C#, você pode seguir os seguintes passos:
+
+Defina uma lista de palavras-chave que serão utilizadas no jogo.
+
+Escolha aleatoriamente uma palavra da lista para ser a palavra a ser adivinhada.
+
+Crie uma variável para armazenar a palavra a ser adivinhada e outra variável para armazenar a palavra com as letras acertadas.
+
+Crie uma variável para armazenar o número de tentativas restantes.
+
+Crie um loop principal do jogo que continuará até que o jogador acerte a palavra ou o número de tentativas acabe.
+
+Dentro do loop do jogo, exiba a palavra com as letras acertadas até o momento, o número de tentativas restantes e solicite ao jogador que digite uma letra.
+
+Verifique se a letra digitada está presente na palavra a ser adivinhada. Se estiver, atualize a palavra com as letras acertadas incluindo a nova letra.
+
+Se a letra digitada não estiver presente na palavra a ser adivinhada, diminua o número de tentativas restantes.
+
+Verifique se o jogador acertou todas as letras da palavra. Se sim, exiba uma mensagem de vitória. Se não, verifique se o número de tentativas restantes chegou a zero. Se chegou, exiba uma mensagem de derrota.
+
+Forneça opções para que o jogador possa jogar novamente ou sair do jogo.
+
+Aqui está um exemplo de implementação:

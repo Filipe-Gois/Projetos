@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Agenda_Telefonica/1.0.0": {
+        "runtime": {
+          "Agenda_Telefonica.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Agenda_Telefonica/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

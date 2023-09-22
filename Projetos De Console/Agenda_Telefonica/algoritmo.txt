@@ -1,0 +1,21 @@
+crie um desafio de agenda telefonica em programaçao, com enunciado:
+
+Claro, aqui está um desafio de agenda telefônica em programação que você pode resolver:
+
+Enunciado: Você foi contratado para desenvolver um programa de agenda telefônica simples. A agenda deve ser capaz de armazenar os nomes e os números de telefone de várias pessoas.
+
+Seu programa deve permitir ao usuário realizar as seguintes operações:
+
+Adicionar um contato: O usuário deve ser capaz de adicionar um novo contato à agenda, inserindo o nome e o número de telefone correspondente.
+
+Remover um contato: O usuário deve ser capaz de remover um contato existente da agenda, informando o nome do contato a ser removido.
+
+Procurar um contato: O usuário deve ser capaz de procurar um contato na agenda, informando o nome do contato desejado. Se o contato for encontrado, o programa deve exibir o nome e o número de telefone correspondente. Caso contrário, deve exibir uma mensagem informando que o contato não foi encontrado.
+
+Listar todos os contatos: O usuário deve ser capaz de listar todos os contatos armazenados na agenda, exibindo o nome e o número de telefone de cada um deles.
+
+Sair do programa: O usuário deve ser capaz de sair do programa quando desejar.
+
+Você pode implementar esse desafio em qualquer linguagem de programação de sua escolha. Lembre-se de utilizar estruturas de dados adequadas para armazenar os contatos da agenda e implementar as operações solicitadas de forma eficiente.
+
+Se você precisar de ajuda específica para implementar o desafio em uma determinada linguagem de programação, por favor, informe qual é a linguagem que você está utilizando.

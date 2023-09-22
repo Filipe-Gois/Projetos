@@ -1,0 +1,18 @@
+crie um desafio de lista de compras em programaçao, com enunciado:
+
+
+Claro! Aqui está um desafio de lista de compras em programação:
+
+Enunciado: Você foi contratado para criar um programa de lista de compras para ajudar os usuários a gerenciar suas compras no supermercado. O programa deve permitir que os usuários adicionem, removam e visualizem os itens da lista de compras.
+
+Requisitos:
+
+O programa deve permitir que os usuários adicionem um item à lista de compras.
+O programa deve permitir que os usuários removam um item da lista de compras.
+O programa deve permitir que os usuários visualizem todos os itens da lista de compras.
+O programa deve fornecer um menu de opções para os usuários interagirem com a lista de compras.
+O programa deve continuar a funcionar até que o usuário decida sair do programa.
+
+
+Notas:
+criar índices dinâmicos nos produtos, para o cliente informa-los ao invés do nome para remover um item da lista. O indice de cada produto deve mudar ao cadastrar/remover um item da lista. Só isso msm :>

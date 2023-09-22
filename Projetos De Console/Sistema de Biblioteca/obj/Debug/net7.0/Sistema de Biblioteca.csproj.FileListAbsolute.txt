@@ -1,0 +1,59 @@
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.exe
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.deps.json
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.runtimeconfig.json
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.dll
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.pdb
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.csproj.AssemblyReference.cache
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.AssemblyInfoInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.AssemblyInfo.cs
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.dll
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\refint\Sistema de Biblioteca.dll
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.pdb
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.genruntimeconfig.cache
+C:\Users\fytho\OneDrive\Documentos\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\ref\Sistema de Biblioteca.dll
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.exe
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.deps.json
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.runtimeconfig.json
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.dll
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.pdb
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.csproj.AssemblyReference.cache
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.AssemblyInfoInputs.cache
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.AssemblyInfo.cs
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.dll
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\refint\Sistema de Biblioteca.dll
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.pdb
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.genruntimeconfig.cache
+C:\Users\46633783825\Desktop\Dev\Lógica\Exercícios\Sistema de Biblioteca\obj\Debug\net7.0\ref\Sistema de Biblioteca.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.exe
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.deps.json
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.runtimeconfig.json
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.pdb
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.csproj.AssemblyReference.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.AssemblyInfoInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.AssemblyInfo.cs
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\obj\Debug\net7.0\refint\Sistema de Biblioteca.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.pdb
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.genruntimeconfig.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Sistema de Biblioteca\obj\Debug\net7.0\ref\Sistema de Biblioteca.dll
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.exe
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.deps.json
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.runtimeconfig.json
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.dll
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\bin\Debug\net7.0\Sistema de Biblioteca.pdb
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.AssemblyInfoInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.AssemblyInfo.cs
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.dll
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\obj\Debug\net7.0\refint\Sistema de Biblioteca.dll
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.pdb
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\obj\Debug\net7.0\Sistema de Biblioteca.genruntimeconfig.cache
+C:\Users\fytho\OneDrive\Documentos\Github\Projetos_de_console\Projetos De Console\Sistema de Biblioteca\obj\Debug\net7.0\ref\Sistema de Biblioteca.dll

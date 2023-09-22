@@ -1,0 +1,15 @@
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\bin\Debug\net7.0\Gerenciamento_De_Estoque.exe
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\bin\Debug\net7.0\Gerenciamento_De_Estoque.deps.json
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\bin\Debug\net7.0\Gerenciamento_De_Estoque.runtimeconfig.json
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\bin\Debug\net7.0\Gerenciamento_De_Estoque.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\bin\Debug\net7.0\Gerenciamento_De_Estoque.pdb
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\obj\Debug\net7.0\Gerenciamento_De_Estoque.csproj.AssemblyReference.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\obj\Debug\net7.0\Gerenciamento_De_Estoque.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\obj\Debug\net7.0\Gerenciamento_De_Estoque.AssemblyInfoInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\obj\Debug\net7.0\Gerenciamento_De_Estoque.AssemblyInfo.cs
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\obj\Debug\net7.0\Gerenciamento_De_Estoque.csproj.CoreCompileInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\obj\Debug\net7.0\Gerenciamento_De_Estoque.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\obj\Debug\net7.0\refint\Gerenciamento_De_Estoque.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\obj\Debug\net7.0\Gerenciamento_De_Estoque.pdb
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\obj\Debug\net7.0\Gerenciamento_De_Estoque.genruntimeconfig.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciamento_De_Estoque\obj\Debug\net7.0\ref\Gerenciamento_De_Estoque.dll

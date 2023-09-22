@@ -1,0 +1,18 @@
+Descrição: Você deve criar um sistema de biblioteca que permita aos usuários realizar as seguintes operações:
+
+Cadastrar livros: O usuário poderá cadastrar novos livros informando o título, autor, ano de publicação e número de exemplares disponíveis.
+
+Pesquisar livros: O usuário poderá pesquisar livros por título, autor ou ano de publicação e o sistema deverá exibir os livros que correspondem à pesquisa.
+
+Realizar empréstimo: O usuário poderá realizar o empréstimo de um livro informando o título do livro desejado. O sistema deverá verificar se o livro está disponível e, caso positivo, efetuar o empréstimo diminuindo o número de exemplares disponíveis.
+
+Devolver livro: O usuário poderá devolver um livro que tenha sido emprestado. O sistema deverá aumentar o número de exemplares disponíveis desse livro.
+
+Listar livros: O sistema deverá exibir a lista completa de livros cadastrados, incluindo título, autor, ano de publicação e número de exemplares disponíveis.
+
+Regras adicionais:
+
+Utilize estruturas de dados adequadas para armazenar as informações dos livros e gerenciar os empréstimos.
+Implemente tratamento de erros para evitar falhas durante a execução do programa.
+O programa deve apresentar um menu que permita ao usuário escolher entre as operações disponíveis e sair do sistema quando desejar. ok
+Esse exercício envolve diversas habilidades de lógica de programação, como manipulação de strings, estruturas de dados, iterações, controle de fluxo, funções e tratamento de erros. Lembre-se de dividir o problema em partes menores para facilitar a implementação e garantir que o sistema funcione corretamente.

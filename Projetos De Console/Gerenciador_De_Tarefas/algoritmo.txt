@@ -1,0 +1,1 @@
+Gerenciador de Tarefas: Crie um programa que permita ao usuário adicionar, editar e excluir tarefas em uma lista. Cada tarefa pode ter informações como título, descrição, data de vencimento, etc. Use classes para representar as tarefas e métodos para manipulá-las.

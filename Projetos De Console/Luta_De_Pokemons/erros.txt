@@ -1,0 +1,7 @@
+na hora de dar a primeira cura, a vida zera, fazendo o vilão ganhar
+
+Console.WriteLine(pk.Curar()); = 25
+Console.WriteLine(pk.jogadorVidaMaxima); = 300
+                    Console.WriteLine(pk.jogadorvidaRestante); = -90
+                    Console.WriteLine(pk.jogadorVida); = 0
+                    Console.WriteLine(pk.jogadorVidaTotal); = 25

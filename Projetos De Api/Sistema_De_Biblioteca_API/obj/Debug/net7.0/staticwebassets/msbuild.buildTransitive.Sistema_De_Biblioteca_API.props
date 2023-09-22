@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Sistema_De_Biblioteca_API.props" />
+</Project>

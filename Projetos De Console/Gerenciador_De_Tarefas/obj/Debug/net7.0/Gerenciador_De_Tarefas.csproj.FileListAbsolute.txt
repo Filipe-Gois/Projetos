@@ -1,0 +1,15 @@
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\bin\Debug\net7.0\Gerenciador_De_Tarefas.exe
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\bin\Debug\net7.0\Gerenciador_De_Tarefas.deps.json
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\bin\Debug\net7.0\Gerenciador_De_Tarefas.runtimeconfig.json
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\bin\Debug\net7.0\Gerenciador_De_Tarefas.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\bin\Debug\net7.0\Gerenciador_De_Tarefas.pdb
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\obj\Debug\net7.0\Gerenciador_De_Tarefas.csproj.AssemblyReference.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\obj\Debug\net7.0\Gerenciador_De_Tarefas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\obj\Debug\net7.0\Gerenciador_De_Tarefas.AssemblyInfoInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\obj\Debug\net7.0\Gerenciador_De_Tarefas.AssemblyInfo.cs
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\obj\Debug\net7.0\Gerenciador_De_Tarefas.csproj.CoreCompileInputs.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\obj\Debug\net7.0\Gerenciador_De_Tarefas.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\obj\Debug\net7.0\refint\Gerenciador_De_Tarefas.dll
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\obj\Debug\net7.0\Gerenciador_De_Tarefas.pdb
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\obj\Debug\net7.0\Gerenciador_De_Tarefas.genruntimeconfig.cache
+C:\Users\fytho\OneDrive\Documentos\Projetos_de_console\Gerenciador_De_Tarefas\obj\Debug\net7.0\ref\Gerenciador_De_Tarefas.dll

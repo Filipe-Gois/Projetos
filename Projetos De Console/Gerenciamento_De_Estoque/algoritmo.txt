@@ -1,0 +1,23 @@
+Sistema de gerenciamento de estoque: Crie um sistema que permita o gerenciamento de estoques de produtos em uma loja. O sistema deve permitir a adição, remoção e atualização de produtos, além de fornecer funcionalidades como busca por nome ou categoria, controle de quantidade e preço.
+
+Claro! Aqui está um exemplo de enunciado para um projeto de console sobre gerenciamento de estoque:
+
+Título do Projeto: Sistema de Gerenciamento de Estoque
+
+Descrição: O objetivo deste projeto é desenvolver um sistema de gerenciamento de estoque para uma loja ou empresa. O sistema deve ser executado em um console, permitindo ao usuário realizar operações básicas de gerenciamento de produtos, como cadastrar novos itens, atualizar informações, listar produtos disponíveis, entre outras funcionalidades.
+
+Requisitos Funcionais:
+
+Cadastro de Produtos: O sistema deve permitir ao usuário cadastrar novos produtos, solicitando informações como nome, quantidade, preço, entre outros dados relevantes.
+Atualização de Produtos: O usuário deve ser capaz de atualizar informações de produtos existentes, como quantidade em estoque, preço, entre outros campos.
+Listagem de Produtos: O sistema deve fornecer uma opção para listar todos os produtos cadastrados, exibindo suas informações.
+Consulta de Produtos: Deve ser possível consultar informações detalhadas sobre um produto específico, informando seu nome ou código de identificação.
+Remoção de Produtos: O usuário deve ter a opção de remover um produto do estoque, caso necessário.
+Controle de Estoque: O sistema deve ser capaz de controlar a quantidade de produtos em estoque, atualizando automaticamente a quantidade disponível após cada venda ou adição de unidades.
+Relatórios: O sistema deve fornecer um resumo estatístico do estoque, incluindo informações como quantidade total de produtos, valor total do estoque, entre outros dados relevantes.
+Requisitos Técnicos:
+
+O projeto deve ser desenvolvido utilizando uma linguagem de programação como Python, C#, Java, etc.
+O uso de uma estrutura de dados adequada para armazenar os produtos é recomendado, como uma lista, matriz ou dicionário.
+O sistema deve ser executado em um console, com um menu interativo para facilitar a navegação e interação com o usuário.
+Essa é apenas uma descrição geral para um projeto de gerenciamento de estoque em console. Os requisitos podem ser adaptados e expandidos de acordo com as necessidades específicas do projeto.
