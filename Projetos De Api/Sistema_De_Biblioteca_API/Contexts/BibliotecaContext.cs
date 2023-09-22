@@ -12,14 +12,14 @@ namespace Sistema_De_Biblioteca_API.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("Server = NOTE14-S14; Database = event+_codeFirst_tarde; User Id = sa; Pwd = Senai@134; TrustServerCertificate = true");
+            optionsBuilder.UseSqlServer("Server = NOTE14-S14; Database = sistema_de_biblioteca_codeFirst; User Id = sa; Pwd = Senai@134; TrustServerCertificate = true");
             base.OnConfiguring(optionsBuilder);
 
 
 
             //String de conexão pc de casa
-            optionsBuilder.UseSqlServer("Server = FILIPEGOIS\\SQLEXPRESS; Database = sistema_de_biblioteca_codeFirst; User Id = sa; Pwd = xtringer28700; TrustServerCertificate = true");
-            base.OnConfiguring(optionsBuilder);
+            //optionsBuilder.UseSqlServer("Server = FILIPEGOIS\\SQLEXPRESS; Database = sistema_de_biblioteca_codeFirst; User Id = sa; Pwd = xtringer28700; TrustServerCertificate = true");
+            //base.OnConfiguring(optionsBuilder);
 
 
 

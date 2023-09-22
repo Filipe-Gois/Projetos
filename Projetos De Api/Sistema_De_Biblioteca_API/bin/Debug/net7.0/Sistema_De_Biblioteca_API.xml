@@ -11,6 +11,41 @@
             <param name="usuario"></param>
             <returns></returns>
         </member>
+        <member name="M:Sistema_De_Biblioteca_API.Controllers.TipoUsuarioController.Cadastrar(Sistema_De_Biblioteca_API.Domains.TipoUsuario)">
+            <summary>
+            Método para cadastrar um tipo de usuário
+            </summary>
+            <param name="tipoUsuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sistema_De_Biblioteca_API.Controllers.TipoUsuarioController.Deletar(System.Guid)">
+            <summary>
+            Método para deletar um tipo de usuário
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sistema_De_Biblioteca_API.Controllers.TipoUsuarioController.ListarTodos">
+            <summary>
+            Método para listar todos os tipos de usuário
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sistema_De_Biblioteca_API.Controllers.TipoUsuarioController.BuscarPorId(System.Guid)">
+            <summary>
+            Método para buscar um tipo de usuário pelo seu id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sistema_De_Biblioteca_API.Controllers.TipoUsuarioController.Atualizar(System.Guid,Sistema_De_Biblioteca_API.Domains.TipoUsuario)">
+            <summary>
+            Método para atualizar o nome de um tipo de usuário
+            </summary>
+            <param name="id"></param>
+            <param name="tipoUsuario"></param>
+            <returns></returns>
+        </member>
         <member name="T:Sistema_De_Biblioteca_API.Migrations.BD">
             <inheritdoc />
         </member>
