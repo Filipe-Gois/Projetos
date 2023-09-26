@@ -26,5 +26,15 @@ namespace web_api_health_clinic.Domains
         [Required(ErrorMessage = "Informe o CNPJ!")]
         [Column(TypeName = "CHAR(14)")]
         public string? CNPJ { get; set; }
+
+        [NotMapped]
+        [Required(ErrorMessage = "Informe o horário de abertura!")]
+        [Column(TypeName = "TIME")]
+        public TimeOnly HorarioAbertura { get; set; }
+
+        [NotMapped]
+        [Required(ErrorMessage = "Informe o horário de encerramento de serviços!")]
+        [Column(TypeName = "TIME")]
+        public TimeOnly HorarioEncerramento { get; set; }
     }
 }

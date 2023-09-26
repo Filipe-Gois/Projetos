@@ -8,9 +8,10 @@ namespace web_api_health_clinic.Domains
     {
         [Key]
         public Guid IdComentario { get; set; } = Guid.NewGuid();
-
+        [Required]
         public Guid IdConsulta { get; set; }
 
+        [Required]
         public Guid IdPaciente { get; set; }
 
         [Required(ErrorMessage = "Informe a situação!")]

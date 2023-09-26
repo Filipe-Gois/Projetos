@@ -1,23 +1,44 @@
-﻿using web_api_health_clinic.Domains;
+﻿using web_api_health_clinic.Contexts;
+using web_api_health_clinic.Domains;
 using web_api_health_clinic.Interfaces;
 
 namespace web_api_health_clinic.Repositories
 {
     public class ClinicaRepository : IClinicaRepository
     {
+        private readonly HealthContext ctx;
+        public ClinicaRepository()
+        {
+            ctx = new HealthContext();
+        }
+        public Clinica BuscarPorId(Guid id)
+        {
+            return ctx.Clinica.FirstOrDefault(x => x.IdClinica == id)!;
+        }
+
         public void Cadastrar(Clinica clinica)
         {
-            throw new NotImplementedException();
+            ctx.Clinica.Add(clinica);
+            ctx.SaveChanges();
         }
 
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            ctx.Clinica.Remove(BuscarPorId(id));
+            ctx.SaveChanges();
         }
 
         public List<Clinica> ListarTodas()
         {
-            throw new NotImplementedException();
+            return ctx.Clinica.Select(x => new Clinica
+            {
+                IdClinica = x.IdClinica,
+                NomeFantasia = x.NomeFantasia,
+                RazaoSocial = x.RazaoSocial,
+                Endereco = x.Endereco,
+                HorarioAbertura = x.HorarioAbertura,
+                HorarioEncerramento = x.HorarioEncerramento
+            }).ToList();
         }
     }
 }
