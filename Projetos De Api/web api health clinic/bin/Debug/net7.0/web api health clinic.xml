@@ -4,16 +4,16 @@
         <name>web api health clinic</name>
     </assembly>
     <members>
-        <member name="T:web_api_health_clinic.Migrations.BD">
+        <member name="T:web_api_health_clinic.Migrations.bd">
             <inheritdoc />
         </member>
-        <member name="M:web_api_health_clinic.Migrations.BD.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:web_api_health_clinic.Migrations.bd.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:web_api_health_clinic.Migrations.BD.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:web_api_health_clinic.Migrations.bd.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:web_api_health_clinic.Migrations.BD.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:web_api_health_clinic.Migrations.bd.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="M:web_api_health_clinic.Utils.Criptografia.GerarHash(System.String)">

@@ -6,7 +6,7 @@ namespace web_api_health_clinic.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class LoginController : ControllerBase
+    public class MedicoController : ControllerBase
     {
     }
 }
