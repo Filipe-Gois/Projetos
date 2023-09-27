@@ -30,11 +30,11 @@ namespace web_api_health_clinic.Domains
         [NotMapped]
         [Required(ErrorMessage = "Informe o horário de abertura!")]
         [Column(TypeName = "TIME")]
-        public TimeOnly HorarioAbertura { get; set; }
+        public DateTime HorarioAbertura { get; set; }
 
         [NotMapped]
         [Required(ErrorMessage = "Informe o horário de encerramento de serviços!")]
         [Column(TypeName = "TIME")]
-        public TimeOnly HorarioEncerramento { get; set; }
+        public DateTime HorarioEncerramento { get; set; }
     }
 }

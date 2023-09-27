@@ -70,7 +70,7 @@ namespace web_api_health_clinic.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{idMedico}")]
+        [HttpGet("{idmedico}")]
         public IActionResult ListarMinhasConsultasMedico(Guid id)
         {
             try
@@ -88,7 +88,7 @@ namespace web_api_health_clinic.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{idPaciente}")]
+        [HttpGet("{idpaciente}")]
         public IActionResult ListarMinhasConsultasPaciente(Guid id)
         {
             try
@@ -102,12 +102,26 @@ namespace web_api_health_clinic.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult ListarConsultas()
+        {
+            try
+            {
+                return StatusCode(200, _consultaRepository.ListarConsultas());
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+        }
+
         /// <summary>
         /// Método para buscar uma consulta pelo seu id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{idConsulta}")]
+        [HttpGet("{idconsulta}")]
         public IActionResult BuscarPorId(Guid id)
         {
             try

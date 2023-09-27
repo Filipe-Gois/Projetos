@@ -30,7 +30,29 @@ namespace web_api_health_clinic.Repositories
 
         public List<Medico> ListarTodos()
         {
-            return ctx.Medico.ToList();
+            return ctx.Medico.Select(x => new Medico
+            {
+                IdMedico = x.IdMedico,
+                CRM = x.CRM,
+                Estado = x.Estado,
+
+                Usuario = new Usuario()
+                {
+                    Nome = x.Usuario.Nome
+                },
+
+                MedicoEspecialidade = new MedicoEspecialidade()
+                {
+                    Especialidade = x.MedicoEspecialidade.Especialidade
+                },
+
+                Clinica = new Clinica()
+                {
+                    IdClinica = x.Clinica.IdClinica,
+                    NomeFantasia = x.Clinica.NomeFantasia,
+                    CNPJ = x.Clinica.CNPJ
+                }
+            }).ToList();
         }
     }
 }

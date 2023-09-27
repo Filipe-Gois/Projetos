@@ -23,19 +23,23 @@ namespace web_api_health_clinic.Repositories
             {
                 IdComentario = x.IdComentario,
                 IdConsulta = x.IdConsulta,
-                IdPaciente = x.IdPaciente,
-                Paciente = new Paciente()
-                {
-                    Usuario = new Usuario()
-                    {
-                        Nome = x.Paciente.Usuario.Nome,
-                        Email = x.Paciente.Usuario.Email,
-                        DataNascimento = x.Paciente.Usuario.DataNascimento
-                    }
-                },
+
+
 
                 Consulta = new Consulta()
                 {
+                    Paciente = new Paciente()
+                    {
+                        IdPaciente = x.Consulta.Paciente.IdPaciente,
+
+                        Usuario = new Usuario()
+                        {
+                            Nome = x.Consulta.Paciente.Usuario.Nome,
+                            Email = x.Consulta.Paciente.Usuario.Email,
+                        },
+                    },
+
+
                     Medico = new Medico()
                     {
                         IdMedico = x.Consulta.Medico.IdMedico,
@@ -74,19 +78,23 @@ namespace web_api_health_clinic.Repositories
             {
                 IdComentario = x.IdComentario,
                 IdConsulta = x.IdConsulta,
-                IdPaciente = x.IdPaciente,
-                Paciente = new Paciente()
-                {
-                    Usuario = new Usuario()
-                    {
-                        Nome = x.Paciente.Usuario.Nome,
-                        Email = x.Paciente.Usuario.Email,
-                        DataNascimento = x.Paciente.Usuario.DataNascimento
-                    }
-                },
+
+
 
                 Consulta = new Consulta()
                 {
+                    Paciente = new Paciente()
+                    {
+                        IdPaciente = x.Consulta.Paciente.IdPaciente,
+
+                        Usuario = new Usuario()
+                        {
+                            Nome = x.Consulta.Paciente.Usuario.Nome,
+                            Email = x.Consulta.Paciente.Usuario.Email,
+                        },
+                    },
+
+
                     Medico = new Medico()
                     {
                         IdMedico = x.Consulta.Medico.IdMedico,

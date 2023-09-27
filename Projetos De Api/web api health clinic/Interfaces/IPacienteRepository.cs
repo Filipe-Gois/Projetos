@@ -7,6 +7,7 @@ namespace web_api_health_clinic.Interfaces
         void Cadastrar(Paciente paciente);
         void Deletar(Guid id);
         List<Paciente> ListarTodos();
+        Paciente BuscarPorCPF(string cpf);
         Paciente BuscarPorId(Guid id);
     }
 }

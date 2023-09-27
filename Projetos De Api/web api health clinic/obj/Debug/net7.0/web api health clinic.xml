@@ -4,6 +4,240 @@
         <name>web api health clinic</name>
     </assembly>
     <members>
+        <member name="M:web_api_health_clinic.Controllers.ClinicaController.Cadastrar(web_api_health_clinic.Domains.Clinica)">
+             <summary>
+             Método para cadastrar uma clínica
+             </summary>
+             <param name="clinica"></param>
+             <returns></returns>
+            
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ClinicaController.Deletar(System.Guid)">
+            <summary>
+            Método para deletar uma clínica
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ClinicaController.BuscarPorId(System.Guid)">
+            <summary>
+            Método para buscar uma clínica através de seu id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ClinicaController.ListarTodas">
+            <summary>
+            Método para listar todas as clínicas cadastradas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ComentarioController.Cadastrar(web_api_health_clinic.Domains.Comentario)">
+            <summary>
+            Método para adicionar um comentário
+            </summary>
+            <param name="comentario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ComentarioController.Deletar(System.Guid)">
+            <summary>
+            Método para deletar um comentário
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ComentarioController.ListarTodos">
+            <summary>
+            Método para listar todos os comentários
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ComentarioController.BuscarPorId(System.Guid)">
+            <summary>
+            Método para buscar um comentário pelo seu id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ConsultaController.Agendar(web_api_health_clinic.Domains.Consulta)">
+            <summary>
+            Método para agendar uma consulta
+            </summary>
+            <param name="consulta"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ConsultaController.Cancelar(System.Guid)">
+            <summary>
+            Método para cancelar uma consulta
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ConsultaController.ListarMinhasConsultasMedico(System.Guid)">
+            <summary>
+            Método para listar as consultas de um médico
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ConsultaController.ListarMinhasConsultasPaciente(System.Guid)">
+            <summary>
+            Método para listar as consultas de um paciente
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ConsultaController.BuscarPorId(System.Guid)">
+            <summary>
+            Método para buscar uma consulta pelo seu id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.ConsultaController.IncluirProntuario(System.Guid,web_api_health_clinic.Domains.Consulta)">
+            <summary>
+            Método para se adicionar o prontuário da consulta
+            </summary>
+            <param name="id"></param>
+            <param name="consulta"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.LoginController.Login(web_api_health_clinic.ViewModels.LoginViewModel)">
+            <summary>
+            Método para logar um usuário
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.MedicoController.Cadastrar(web_api_health_clinic.Domains.Medico)">
+            <summary>
+            Método para cadastrar um paciente
+            </summary>
+            <param name="paciente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.MedicoController.Deletar(System.Guid)">
+            <summary>
+            Deleta um paciente pelo seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.MedicoController.ListarTodos">
+            <summary>
+            Método para listar todos os pacientes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.MedicoController.BuscarPorId(System.Guid)">
+            <summary>
+            Método para buscar um paciente pelo seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.MedicoEspecialidadeController.Cadastrar(web_api_health_clinic.Domains.MedicoEspecialidade)">
+            <summary>
+            Método para cadastrar uma especialidade médica
+            </summary>
+            <param name="medicoEspecialidade"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.MedicoEspecialidadeController.Deletar(System.Guid)">
+            <summary>
+            Método para deletar uma especialidade médica pelo seu id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.MedicoEspecialidadeController.ListarTodas">
+            <summary>
+            Método para listar todas as especialidades médicas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.MedicoEspecialidadeController.BuscarPorId(System.Guid)">
+            <summary>
+            Método para buscar uma especialidade médica pelo seu id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.PacienteController.Cadastrar(web_api_health_clinic.Domains.Paciente)">
+            <summary>
+            Método para cadastrar um paciente
+            </summary>
+            <param name="paciente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.PacienteController.Deletar(System.Guid)">
+            <summary>
+            Deleta um paciente pelo seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.PacienteController.ListarTodos">
+            <summary>
+            Método para listar todos os pacientes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.PacienteController.BuscarPorCPF(System.String)">
+            <summary>
+            Método para buscar um paciente pelo seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.TipoUsuarioController.Cadastrar(web_api_health_clinic.Domains.TipoUsuario)">
+            <summary>
+            Método para cadastrar um tipo de usuário
+            </summary>
+            <param name="tipoUsuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.TipoUsuarioController.ListarTodos">
+            <summary>
+            Método para listar todos os tipos de usuário
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.UsuarioController.ListarTodos">
+            <summary>
+            Método para listar todos os usuários
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.UsuarioController.BuscarPorEmailESenha(System.String,System.String)">
+            <summary>
+            Método para buscar um usuário através de seu email e senha
+            </summary>
+            <param name="email"></param>
+            <param name="senha"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.UsuarioController.BuscarPorId(System.Guid)">
+            <summary>
+            Método para buscar um usuário pelo seu id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.UsuarioController.Cadastrar(web_api_health_clinic.Domains.Usuario)">
+            <summary>
+            Método para cadastrar um usuário
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:web_api_health_clinic.Controllers.UsuarioController.Deletar(System.Guid)">
+            <summary>
+            Método para deletar um usuário
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:web_api_health_clinic.Migrations.BD">
             <inheritdoc />
         </member>

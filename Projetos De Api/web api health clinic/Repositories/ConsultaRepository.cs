@@ -38,7 +38,7 @@ namespace web_api_health_clinic.Repositories
             ctx.SaveChanges();
         }
 
-        public List<Consulta> ListarMinhasConsultas()
+        public List<Consulta> ListarConsultas()
         {
             return ctx.Consulta.ToList();
         }

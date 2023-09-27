@@ -143,13 +143,13 @@ namespace web_api_health_clinic.Migrations
                         column: x => x.IdMedico,
                         principalTable: "Medico",
                         principalColumn: "IdMedico",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Consulta_Paciente_IdPaciente",
                         column: x => x.IdPaciente,
                         principalTable: "Paciente",
                         principalColumn: "IdPaciente",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -158,7 +158,6 @@ namespace web_api_health_clinic.Migrations
                 {
                     IdComentario = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdConsulta = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IdPaciente = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Exibe = table.Column<bool>(type: "BIT", nullable: false),
                     Descricao = table.Column<string>(type: "TEXT", nullable: false)
                 },
@@ -171,12 +170,6 @@ namespace web_api_health_clinic.Migrations
                         principalTable: "Consulta",
                         principalColumn: "IdConsulta",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Comentario_Paciente_IdPaciente",
-                        column: x => x.IdPaciente,
-                        principalTable: "Paciente",
-                        principalColumn: "IdPaciente",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -189,11 +182,6 @@ namespace web_api_health_clinic.Migrations
                 name: "IX_Comentario_IdConsulta",
                 table: "Comentario",
                 column: "IdConsulta");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Comentario_IdPaciente",
-                table: "Comentario",
-                column: "IdPaciente");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Consulta_IdMedico",

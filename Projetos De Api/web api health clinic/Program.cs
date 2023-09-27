@@ -42,16 +42,16 @@ builder.Services.AddAuthentication(options =>
         ValidateLifetime = true,
 
         //Forma de criptografia e a validação da chave de autenticação
-        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("event+-chave-autenticacao-webapi-dev_codeFirst")),
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("healthClinic-chave-autenticacao-webapi-dev_codeFirst")),
 
         //Valida o tempo de expiração do token
         ClockSkew = TimeSpan.FromMinutes(5),
 
         //De onde está vindo (qual o issure)
-        ValidIssuer = "senai.event+.webApi_codeFirst",
+        ValidIssuer = "healthClinic.webApi_codeFirst",
 
         //Para onde está indo (qual o audiece)
-        ValidAudience = "senai.event+.webApi_codeFirst"
+        ValidAudience = "healthClinic.webApi_codeFirst"
     };
 
 

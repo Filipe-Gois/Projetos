@@ -11,8 +11,6 @@ namespace web_api_health_clinic.Domains
         [Required]
         public Guid IdConsulta { get; set; }
 
-        [Required]
-        public Guid IdPaciente { get; set; }
 
         [Required(ErrorMessage = "Informe a situação!")]
         [Column(TypeName = "BIT")]
@@ -25,7 +23,6 @@ namespace web_api_health_clinic.Domains
         [ForeignKey(nameof(IdConsulta))]
         public Consulta? Consulta { get; set; }
 
-        [ForeignKey(nameof(IdPaciente))]
-        public Paciente? Paciente { get; set; }
+        
     }
 }

@@ -87,7 +87,7 @@ namespace web_api_health_clinic.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public IActionResult BuscarPorId(int id)
+        public IActionResult BuscarPorId(Guid id)
         {
             try
             {

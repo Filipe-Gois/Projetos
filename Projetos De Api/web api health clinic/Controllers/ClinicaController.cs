@@ -21,7 +21,9 @@ namespace web_api_health_clinic.Controllers
         /// </summary>
         /// <param name="clinica"></param>
         /// <returns></returns>
-        [HttpPost("{clinica}")]
+        ///
+
+        [HttpPost]
         public IActionResult Cadastrar(Clinica clinica)
         {
             try
@@ -35,6 +37,36 @@ namespace web_api_health_clinic.Controllers
                 return BadRequest(e.Message);
             }
         }
+        /// <summary>
+        /// Método para deletar uma clínica
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        public IActionResult Deletar(Guid id)
+        {
+            try
+            {
+                Clinica clinicaBuscada = _clinicRepository.BuscarPorId(id);
+
+                if (clinicaBuscada != null)
+                {
+                    _clinicRepository.Deletar(id);
+                    return StatusCode(200);
+                }
+                else
+                {
+                    return StatusCode(404);
+                }
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+        }
+
+
         /// <summary>
         /// Método para buscar uma clínica através de seu id
         /// </summary>

@@ -12,7 +12,7 @@ using web_api_health_clinic.Contexts;
 namespace web_api_health_clinic.Migrations
 {
     [DbContext(typeof(HealthContext))]
-    [Migration("20230926182708_BD")]
+    [Migration("20230927193014_BD")]
     partial class BD
     {
         /// <inheritdoc />
@@ -71,14 +71,9 @@ namespace web_api_health_clinic.Migrations
                     b.Property<Guid>("IdConsulta")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("IdPaciente")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("IdComentario");
 
                     b.HasIndex("IdConsulta");
-
-                    b.HasIndex("IdPaciente");
 
                     b.ToTable("Comentario");
                 });
@@ -250,15 +245,7 @@ namespace web_api_health_clinic.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("web_api_health_clinic.Domains.Paciente", "Paciente")
-                        .WithMany()
-                        .HasForeignKey("IdPaciente")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Consulta");
-
-                    b.Navigation("Paciente");
                 });
 
             modelBuilder.Entity("web_api_health_clinic.Domains.Consulta", b =>
