@@ -166,3 +166,5 @@ C:\Users\fytho\OneDrive\Documentos\Github\Projetos\Projetos De Api\web api healt
 C:\Users\fytho\OneDrive\Documentos\Github\Projetos\Projetos De Api\web api health clinic\obj\Debug\net7.0\web api health clinic.pdb
 C:\Users\fytho\OneDrive\Documentos\Github\Projetos\Projetos De Api\web api health clinic\obj\Debug\net7.0\web api health clinic.genruntimeconfig.cache
 C:\Users\fytho\OneDrive\Documentos\Github\Projetos\Projetos De Api\web api health clinic\obj\Debug\net7.0\ref\web api health clinic.dll
+C:\Users\46633783825\Desktop\Projetos\Projetos De Api\web api health clinic\bin\Debug\net7.0\EntityFrameworkCore.SqlServer.DateOnlyTimeOnly.dll
+C:\Users\46633783825\Desktop\Projetos\Projetos De Api\web api health clinic\obj\Debug\net7.0\EFCoreSqlServerDateOnlyTimeOnly.cs

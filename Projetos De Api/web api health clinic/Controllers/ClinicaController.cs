@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using web_api_health_clinic.Domains;
 using web_api_health_clinic.Interfaces;
@@ -9,6 +10,7 @@ namespace web_api_health_clinic.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
+    [Authorize(Roles = "Administrador")]
     public class ClinicaController : ControllerBase
     {
         private readonly IClinicaRepository _clinicRepository;
@@ -16,6 +18,32 @@ namespace web_api_health_clinic.Controllers
         {
             _clinicRepository = new ClinicaRepository();
         }
+
+        [HttpPut]
+        public IActionResult Atualizar(Guid id, Clinica clinica)
+        {
+            try
+            {
+                Clinica clinicaBuscada = _clinicRepository.BuscarPorId(id);
+
+                if (clinicaBuscada != null)
+                {
+                    _clinicRepository.Atualizar(id, clinica);
+                    return StatusCode(200);
+                }
+
+                else
+                {
+                    return StatusCode(404);
+                }
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+        }
+
         /// <summary>
         /// Método para cadastrar uma clínica
         /// </summary>

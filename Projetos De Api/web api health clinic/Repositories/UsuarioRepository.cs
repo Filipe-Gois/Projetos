@@ -19,7 +19,8 @@ namespace web_api_health_clinic.Repositories
             {
                 IdUsuario = x.IdUsuario,
                 Nome = x.Nome,
-                Email = x.Senha,
+                Email = x.Email,
+                Senha = x.Senha,
 
                 TipoUsuario = new TipoUsuario()
                 {

@@ -1,4 +1,5 @@
-﻿using web_api_health_clinic.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using web_api_health_clinic.Contexts;
 using web_api_health_clinic.Domains;
 using web_api_health_clinic.Interfaces;
 
@@ -40,17 +41,122 @@ namespace web_api_health_clinic.Repositories
 
         public List<Consulta> ListarConsultas()
         {
-            return ctx.Consulta.ToList();
+            return ctx.Consulta.Select(x => new Consulta
+            {
+                IdConsulta = x.IdConsulta,
+                Medico = new Medico()
+                {
+                    IdMedico = x.IdMedico,
+
+                    Usuario = new Usuario()
+                    {
+                        Nome = x.Medico.Usuario.Nome,
+                        DataNascimento = x.Medico.Usuario.DataNascimento
+                    },
+
+                    CRM = x.Medico.CRM,
+                    Estado = x.Medico.Estado,
+
+                    MedicoEspecialidade = new MedicoEspecialidade()
+                    {
+                        Especialidade = x.Medico.MedicoEspecialidade.Especialidade
+                    }
+                },
+
+                Paciente = new Paciente()
+                {
+                    IdPaciente = x.IdPaciente,
+
+                    Usuario = new Usuario()
+                    {
+                        Nome = x.Paciente.Usuario.Nome,
+                        DataNascimento = x.Paciente.Usuario.DataNascimento,
+                        RG = x.Paciente.Usuario.RG,
+                        CPF = x.Paciente.Usuario.CPF
+                    }
+                },
+                Prontuario = x.Prontuario
+            }).ToList();
         }
 
         public List<Consulta> ListarMinhasConsultasMedico(Guid id)
         {
-            return ctx.Consulta.Where(x => x.IdMedico == id).ToList()!;
+            return ctx.Consulta.Include(x => x.Medico).Select(x => new Consulta
+            {
+                IdConsulta = x.IdConsulta,
+                Medico = new Medico()
+                {
+                    IdMedico = x.IdMedico,
+
+                    Usuario = new Usuario()
+                    {
+                        Nome = x.Medico.Usuario.Nome,
+                        DataNascimento = x.Medico.Usuario.DataNascimento
+                    },
+
+                    CRM = x.Medico.CRM,
+                    Estado = x.Medico.Estado,
+
+                    MedicoEspecialidade = new MedicoEspecialidade()
+                    {
+                        Especialidade = x.Medico.MedicoEspecialidade.Especialidade
+                    }
+                },
+
+                Paciente = new Paciente()
+                {
+                    IdPaciente = x.IdPaciente,
+
+                    Usuario = new Usuario()
+                    {
+                        Nome = x.Paciente.Usuario.Nome,
+                        DataNascimento = x.Paciente.Usuario.DataNascimento,
+                        RG = x.Paciente.Usuario.RG,
+                        CPF = x.Paciente.Usuario.CPF
+                    }
+                },
+                Prontuario = x.Prontuario
+            }).Where(x => x.IdMedico == id).ToList();
         }
 
         public List<Consulta> ListarMinhasConsultasPaciente(Guid id)
         {
-            return ctx.Consulta.Where(x => x.IdPaciente == id).ToList();
+            return ctx.Consulta.Include(p => p.Paciente).Select(x => new Consulta
+            {
+                IdConsulta = x.IdConsulta,
+                Medico = new Medico()
+                {
+                    IdMedico = x.IdMedico,
+
+                    Usuario = new Usuario()
+                    {
+                        Nome = x.Medico.Usuario.Nome,
+                        DataNascimento = x.Medico.Usuario.DataNascimento
+                    },
+
+                    CRM = x.Medico.CRM,
+                    Estado = x.Medico.Estado,
+
+                    MedicoEspecialidade = new MedicoEspecialidade()
+                    {
+                        Especialidade = x.Medico.MedicoEspecialidade.Especialidade
+                    }
+                },
+
+                Paciente = new Paciente()
+                {
+                    IdPaciente = x.IdPaciente,
+
+                    Usuario = new Usuario()
+                    {
+                        Nome = x.Paciente.Usuario.Nome,
+                        DataNascimento = x.Paciente.Usuario.DataNascimento,
+                        RG = x.Paciente.Usuario.RG,
+                        CPF = x.Paciente.Usuario.CPF
+                    }
+                },
+                Prontuario = x.Prontuario
+            }).Where(x => x.Paciente.IdPaciente == id).ToList();
         }
     }
 }

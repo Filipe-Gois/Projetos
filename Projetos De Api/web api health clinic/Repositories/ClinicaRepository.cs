@@ -11,6 +11,17 @@ namespace web_api_health_clinic.Repositories
         {
             ctx = new HealthContext();
         }
+
+        public void Atualizar(Guid id, Clinica clinica)
+        {
+            Clinica clinicaBuscada = BuscarPorId(id);
+
+            clinicaBuscada.HorarioAbertura = clinica.HorarioAbertura;
+            clinicaBuscada.HorarioEncerramento = clinica.HorarioEncerramento;
+            ctx.Update(clinicaBuscada);
+            ctx.SaveChanges();
+        }
+
         public Clinica BuscarPorId(Guid id)
         {
             return ctx.Clinica.FirstOrDefault(x => x.IdClinica == id)!;

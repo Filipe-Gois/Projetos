@@ -73,13 +73,6 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:web_api_health_clinic.Controllers.ConsultaController.ListarMinhasConsultasMedico(System.Guid)">
-            <summary>
-            Método para listar as consultas de um médico
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
         <member name="M:web_api_health_clinic.Controllers.ConsultaController.ListarMinhasConsultasPaciente(System.Guid)">
             <summary>
             Método para listar as consultas de um paciente
@@ -87,11 +80,10 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:web_api_health_clinic.Controllers.ConsultaController.BuscarPorId(System.Guid)">
+        <member name="M:web_api_health_clinic.Controllers.ConsultaController.ListarConsultas">
             <summary>
-            Método para buscar uma consulta pelo seu id
+            Método para listar todas as consultas
             </summary>
-            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:web_api_health_clinic.Controllers.ConsultaController.IncluirProntuario(System.Guid,web_api_health_clinic.Domains.Consulta)">
