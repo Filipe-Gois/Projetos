@@ -36,6 +36,12 @@ namespace web_api_health_clinic.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(200)");
 
+                    b.Property<TimeOnly>("HorarioAbertura")
+                        .HasColumnType("TIME");
+
+                    b.Property<TimeOnly>("HorarioEncerramento")
+                        .HasColumnType("TIME");
+
                     b.Property<string>("NomeFantasia")
                         .IsRequired()
                         .HasColumnType("VARCHAR(100)");

@@ -49,8 +49,6 @@ namespace web_api_health_clinic.Repositories
         public Paciente BuscarPorCPF(string cpf)
         {
             return ctx.Paciente.Include(x => x.Usuario).FirstOrDefault(x => x.Usuario!.CPF == cpf)!;
-
-            //return ctx.Paciente.FirstOrDefault(x => x.Usuario.CPF == cpf)!;
         }
     }
 }

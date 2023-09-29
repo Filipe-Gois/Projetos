@@ -19,30 +19,30 @@ namespace web_api_health_clinic.Controllers
             _clinicRepository = new ClinicaRepository();
         }
 
-        [HttpPut]
-        public IActionResult Atualizar(Guid id, Clinica clinica)
-        {
-            try
-            {
-                Clinica clinicaBuscada = _clinicRepository.BuscarPorId(id);
+        //[HttpPut]
+        //public IActionResult Atualizar(Guid id, Clinica clinica)
+        //{
+        //    try
+        //    {
+        //        Clinica clinicaBuscada = _clinicRepository.BuscarPorId(id);
 
-                if (clinicaBuscada != null)
-                {
-                    _clinicRepository.Atualizar(id, clinica);
-                    return StatusCode(200);
-                }
+        //        if (clinicaBuscada != null)
+        //        {
+        //            _clinicRepository.Atualizar(id, clinica);
+        //            return StatusCode(200);
+        //        }
 
-                else
-                {
-                    return StatusCode(404);
-                }
-            }
-            catch (Exception e)
-            {
+        //        else
+        //        {
+        //            return StatusCode(404);
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
 
-                return BadRequest(e.Message);
-            }
-        }
+        //        return BadRequest(e.Message);
+        //    }
+        //}
 
         /// <summary>
         /// Método para cadastrar uma clínica
@@ -100,28 +100,28 @@ namespace web_api_health_clinic.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id}")]
-        public IActionResult BuscarPorId(Guid id)
-        {
-            try
-            {
-                Clinica clinicaBuscada = _clinicRepository.BuscarPorId(id);
+        //[HttpGet("{id}")]
+        //public IActionResult BuscarPorId(Guid id)
+        //{
+        //    try
+        //    {
+        //        Clinica clinicaBuscada = _clinicRepository.BuscarPorId(id);
 
-                if (clinicaBuscada != null)
-                {
-                    return StatusCode(200, clinicaBuscada);
-                }
-                else
-                {
-                    return StatusCode(404);
-                }
-            }
-            catch (Exception e)
-            {
+        //        if (clinicaBuscada != null)
+        //        {
+        //            return StatusCode(200, clinicaBuscada);
+        //        }
+        //        else
+        //        {
+        //            return StatusCode(404);
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
 
-                return BadRequest(e.Message);
-            }
-        }
+        //        return BadRequest(e.Message);
+        //    }
+        //}
         /// <summary>
         /// Método para listar todas as clínicas cadastradas
         /// </summary>
@@ -131,7 +131,18 @@ namespace web_api_health_clinic.Controllers
         {
             try
             {
-                return StatusCode(200, _clinicRepository.ListarTodas());
+                List<Clinica> clinicasListadas = _clinicRepository.ListarTodas();
+
+                if (clinicasListadas.Count != 0)
+                {
+                    return StatusCode(200, clinicasListadas);
+                }
+                else
+                {
+                    return StatusCode(404);
+                }
+
+
             }
             catch (Exception e)
             {

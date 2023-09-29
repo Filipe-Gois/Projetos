@@ -20,8 +20,8 @@ namespace web_api_health_clinic.Migrations
                     NomeFantasia = table.Column<string>(type: "VARCHAR(100)", nullable: false),
                     RazaoSocial = table.Column<string>(type: "VARCHAR(100)", nullable: false),
                     CNPJ = table.Column<string>(type: "CHAR(14)", nullable: false),
-                    HorarioAbertura = table.Column<TimeSpan>(type: "TIME", nullable: false),
-                    HorarioEncerramento = table.Column<TimeSpan>(type: "TIME", nullable: false)
+                    HorarioAbertura = table.Column<TimeOnly>(type: "time", nullable: false),
+                    HorarioEncerramento = table.Column<TimeOnly>(type: "time", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -61,7 +61,7 @@ namespace web_api_health_clinic.Migrations
                     Nome = table.Column<string>(type: "VARCHAR(100)", nullable: false),
                     Email = table.Column<string>(type: "VARCHAR(100)", nullable: false),
                     Senha = table.Column<string>(type: "VARCHAR(60)", maxLength: 60, nullable: false),
-                    DataNascimento = table.Column<DateTime>(type: "DATE", nullable: false),
+                    DataNascimento = table.Column<DateTime>(type: "date", nullable: false),
                     RG = table.Column<string>(type: "CHAR(9)", nullable: false),
                     CPF = table.Column<string>(type: "CHAR(11)", nullable: false)
                 },

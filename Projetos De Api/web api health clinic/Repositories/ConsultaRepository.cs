@@ -19,6 +19,8 @@ namespace web_api_health_clinic.Repositories
             ctx.SaveChanges();
         }
 
+        
+
         public Consulta BuscarPorId(Guid id)
         {
             return ctx.Consulta.FirstOrDefault(x => x.IdConsulta == id)!;
@@ -116,7 +118,7 @@ namespace web_api_health_clinic.Repositories
                     }
                 },
                 Prontuario = x.Prontuario
-            }).Where(x => x.IdMedico == id).ToList();
+            }).Where(x => x.Medico.IdMedico == id).ToList();
         }
 
         public List<Consulta> ListarMinhasConsultasPaciente(Guid id)

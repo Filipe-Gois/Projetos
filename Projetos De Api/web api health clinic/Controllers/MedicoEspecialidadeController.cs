@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using web_api_health_clinic.Domains;
 using web_api_health_clinic.Interfaces;
 using web_api_health_clinic.Repositories;
@@ -9,6 +11,7 @@ namespace web_api_health_clinic.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
+    [Authorize(Roles = "Administrador")]
     public class MedicoEspecialidadeController : ControllerBase
     {
         private readonly IMedicoEspecialidadeRepository _medicoEspecialidadeRepository;
@@ -74,7 +77,16 @@ namespace web_api_health_clinic.Controllers
         {
             try
             {
-                return StatusCode(200, _medicoEspecialidadeRepository.ListarTodas());
+                List<MedicoEspecialidade> especialidadesBuscadas = _medicoEspecialidadeRepository.ListarTodas();
+                if (especialidadesBuscadas.Count != 0)
+                {
+                    return StatusCode(200, especialidadesBuscadas);
+                }
+                else
+                {
+                    return StatusCode(404);
+                }
+
             }
             catch (Exception e)
             {
@@ -88,29 +100,29 @@ namespace web_api_health_clinic.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id}")]
-        public IActionResult BuscarPorId(Guid id)
-        {
-            try
-            {
-                MedicoEspecialidade medicoEspecialidadeBuscada = _medicoEspecialidadeRepository.BuscarPorId(id);
+        //[HttpGet("{id}")]
+        //public IActionResult BuscarPorId(Guid id)
+        //{
+        //    try
+        //    {
+        //        MedicoEspecialidade medicoEspecialidadeBuscada = _medicoEspecialidadeRepository.BuscarPorId(id);
 
-                if (medicoEspecialidadeBuscada != null)
-                {
+        //        if (medicoEspecialidadeBuscada != null)
+        //        {
 
-                    return StatusCode(200, medicoEspecialidadeBuscada);
-                }
-                else
-                {
-                    return StatusCode(404);
-                }
-            }
-            catch (Exception e)
-            {
+        //            return StatusCode(200, medicoEspecialidadeBuscada);
+        //        }
+        //        else
+        //        {
+        //            return StatusCode(404);
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
 
-                return BadRequest(e.Message);
-            }
-        }
+        //        return BadRequest(e.Message);
+        //    }
+        //}
 
 
     }

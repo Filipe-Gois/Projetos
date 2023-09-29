@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using web_api_health_clinic.Domains;
 using web_api_health_clinic.Interfaces;
 using web_api_health_clinic.Repositories;
@@ -23,6 +25,7 @@ namespace web_api_health_clinic.Controllers
         /// <param name="comentario"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authorize(Roles = "Paciente")]
         public IActionResult Cadastrar(Comentario comentario)
         {
             try
@@ -42,6 +45,7 @@ namespace web_api_health_clinic.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Deletar(Guid id)
         {
             try
@@ -69,11 +73,22 @@ namespace web_api_health_clinic.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Authorize(Roles = "Administrador")]
         public IActionResult ListarTodos()
         {
             try
             {
-                return StatusCode(200, _comentarioRepository.ListarTodos());
+                List<Comentario> comentariosBuscados = _comentarioRepository.ListarTodos();
+
+                if (comentariosBuscados.Count != 0)
+                {
+                    return StatusCode(200, comentariosBuscados);
+                }
+                else
+                {
+                    return StatusCode(404);
+                }
+
             }
             catch (Exception e)
             {
@@ -87,15 +102,15 @@ namespace web_api_health_clinic.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public IActionResult BuscarPorId(Guid id)
+        public IActionResult BuscarPorIdDaConsulta(Guid id)
         {
             try
             {
-                Comentario comentarioBuscado = _comentarioRepository.BuscarPorId(id);
+                Comentario comentariosBuscado = _comentarioRepository.BuscarPorId(id);
 
-                if (comentarioBuscado != null)
+                if (comentariosBuscado != null)
                 {
-                    return StatusCode(200, comentarioBuscado);
+                    return StatusCode(200, comentariosBuscado);
                 }
 
                 else

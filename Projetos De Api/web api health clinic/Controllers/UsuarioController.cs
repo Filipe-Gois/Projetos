@@ -11,6 +11,7 @@ namespace web_api_health_clinic.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
+    [Authorize(Roles = "Administrador")]
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioRepository _usuarioRepository;
@@ -28,7 +29,16 @@ namespace web_api_health_clinic.Controllers
         {
             try
             {
-                return StatusCode(200, _usuarioRepository.ListarTodos());
+                List<Usuario> usuariosBuscados = _usuarioRepository.ListarTodos();
+
+                if (usuariosBuscados.Count != 0)
+                {
+                    return StatusCode(200, usuariosBuscados);
+                }
+                else
+                {
+                    return StatusCode(404);
+                }
             }
             catch (Exception e)
             {
@@ -43,33 +53,13 @@ namespace web_api_health_clinic.Controllers
         /// <param name="email"></param>
         /// <param name="senha"></param>
         /// <returns></returns>
-        [HttpGet("{email}")]
-        //[Authorize(Roles = "Administrador")]
-        public IActionResult BuscarPorEmailESenha(string email, string senha)
-        {
-            try
-            {
-                Usuario usuarioBuscado = _usuarioRepository.BuscarPorEmailESenha(email, senha);
 
-                if (usuarioBuscado == null)
-                {
-                    return StatusCode(404, "Usuário não encontrado");
-                }
-                return StatusCode(200, usuarioBuscado);
-            }
-            catch (Exception e)
-            {
-
-                return BadRequest(e.Message);
-            }
-        }
         /// <summary>
         /// Método para buscar um usuário pelo seu id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        //[Authorize(Roles = "Administrador")]
         public IActionResult BuscarPorId(Guid id)
         {
             try
@@ -98,7 +88,6 @@ namespace web_api_health_clinic.Controllers
         /// <param name="usuario"></param>
         /// <returns></returns>
         [HttpPost]
-        //[Authorize(Roles = "Administrador")]
         public IActionResult Cadastrar(Usuario usuario)
         {
             try
@@ -118,7 +107,6 @@ namespace web_api_health_clinic.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
-        //[Authorize(Roles = "Administrador")]
         public IActionResult Deletar(Guid id)
         {
             try

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using web_api_health_clinic.Domains;
 using web_api_health_clinic.Interfaces;
@@ -24,6 +25,7 @@ namespace web_api_health_clinic.Controllers
         /// <param name="paciente"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Cadastrar(Medico medico)
         {
             try
@@ -44,6 +46,7 @@ namespace web_api_health_clinic.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Deletar(Guid id)
         {
             try
@@ -68,15 +71,26 @@ namespace web_api_health_clinic.Controllers
         }
 
         /// <summary>
-        /// Método para listar todos os pacientes
+        /// Método para listar todos os médicos
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Authorize(Roles = "Administrador")]
         public IActionResult ListarTodos()
         {
             try
             {
-                return StatusCode(200, _medicoRepository.ListarTodos());
+                List<Medico> medicosListados = _medicoRepository.ListarTodos();
+
+                if (medicosListados.Count != 0)
+                {
+                    return StatusCode(200, medicosListados);
+                }
+                else
+                {
+                    return StatusCode(404);
+                }
+
             }
             catch (Exception e)
             {
@@ -85,7 +99,7 @@ namespace web_api_health_clinic.Controllers
             }
         }
         /// <summary>
-        /// Método para buscar um paciente pelo seu ID
+        /// Método para buscar um médico pelo seu ID
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

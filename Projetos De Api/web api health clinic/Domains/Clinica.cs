@@ -27,14 +27,14 @@ namespace web_api_health_clinic.Domains
         [Column(TypeName = "CHAR(14)")]
         public string? CNPJ { get; set; }
 
-        [NotMapped]
+
         [Required(ErrorMessage = "Informe o horário de abertura!")]
         [Column(TypeName = "TIME")]
         //[DataType(DataType.Date)]
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "@hh/:mm")]
         public TimeOnly HorarioAbertura { get; set; }
 
-        [NotMapped]
+
         [Required(ErrorMessage = "Informe o horário de encerramento de serviços!")]
         [Column(TypeName = "TIME")]
         //[DataType(DataType.Date)]

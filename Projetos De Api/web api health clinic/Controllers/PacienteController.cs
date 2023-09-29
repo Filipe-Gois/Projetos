@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using web_api_health_clinic.Domains;
 using web_api_health_clinic.Interfaces;
 using web_api_health_clinic.Repositories;
@@ -9,6 +11,7 @@ namespace web_api_health_clinic.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
+    [Authorize(Roles = "Administrador")]
     public class PacienteController : ControllerBase
     {
         private readonly IPacienteRepository _pacienteRepository;
@@ -76,7 +79,16 @@ namespace web_api_health_clinic.Controllers
         {
             try
             {
-                return StatusCode(200, _pacienteRepository.ListarTodos());
+                List<Paciente> pacientesBuscados = _pacienteRepository.ListarTodos();
+
+                if (pacientesBuscados.Count != 0)
+                {
+                    return StatusCode(200, pacientesBuscados);
+                }
+                else
+                {
+                    return StatusCode(404);
+                }
             }
             catch (Exception e)
             {

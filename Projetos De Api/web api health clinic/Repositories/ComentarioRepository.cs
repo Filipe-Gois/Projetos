@@ -1,4 +1,5 @@
-﻿using web_api_health_clinic.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using web_api_health_clinic.Contexts;
 using web_api_health_clinic.Domains;
 using web_api_health_clinic.Interfaces;
 
@@ -15,6 +16,50 @@ namespace web_api_health_clinic.Repositories
         {
             ctx.Comentario.Add(comentario);
             ctx.SaveChanges();
+        }
+
+        public Comentario BuscarPorConsulta(Guid id)
+        {
+            return ctx.Comentario.Include(x => x.Consulta)
+                .Select(x => new Comentario
+                {
+                    IdComentario = x.IdComentario,
+                    IdConsulta = x.IdConsulta,
+
+
+
+                    Consulta = new Consulta()
+                    {
+                        Paciente = new Paciente()
+                        {
+                            IdPaciente = x.Consulta.Paciente.IdPaciente,
+
+                            Usuario = new Usuario()
+                            {
+                                Nome = x.Consulta.Paciente.Usuario.Nome,
+                                Email = x.Consulta.Paciente.Usuario.Email,
+                            },
+                        },
+
+
+                        Medico = new Medico()
+                        {
+                            IdMedico = x.Consulta.Medico.IdMedico,
+
+                            Usuario = new Usuario()
+                            {
+                                Nome = x.Consulta.Medico.Usuario.Nome
+                            },
+
+                            MedicoEspecialidade = new MedicoEspecialidade()
+                            {
+                                Especialidade = x.Consulta.Medico.MedicoEspecialidade.Especialidade
+                            }
+                        }
+                    },
+
+                    Descricao = x.Descricao
+                }).Where(x => x.Consulta.IdConsulta == id).FirstOrDefault(x => x.Consulta.IdConsulta == id)!;
         }
 
         public Comentario BuscarPorId(Guid id)

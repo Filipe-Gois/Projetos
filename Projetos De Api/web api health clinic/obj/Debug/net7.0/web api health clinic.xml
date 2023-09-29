@@ -19,13 +19,6 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:web_api_health_clinic.Controllers.ClinicaController.BuscarPorId(System.Guid)">
-            <summary>
-            Método para buscar uma clínica através de seu id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
         <member name="M:web_api_health_clinic.Controllers.ClinicaController.ListarTodas">
             <summary>
             Método para listar todas as clínicas cadastradas
@@ -52,7 +45,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:web_api_health_clinic.Controllers.ComentarioController.BuscarPorId(System.Guid)">
+        <member name="M:web_api_health_clinic.Controllers.ComentarioController.BuscarPorIdDaConsulta(System.Guid)">
             <summary>
             Método para buscar um comentário pelo seu id
             </summary>
@@ -73,17 +66,18 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:web_api_health_clinic.Controllers.ConsultaController.ListarMinhasConsultasMedico(System.Guid)">
+            <summary>
+            Método para listar as consultas de um médico
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:web_api_health_clinic.Controllers.ConsultaController.ListarMinhasConsultasPaciente(System.Guid)">
             <summary>
             Método para listar as consultas de um paciente
             </summary>
             <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:web_api_health_clinic.Controllers.ConsultaController.ListarConsultas">
-            <summary>
-            Método para listar todas as consultas
-            </summary>
             <returns></returns>
         </member>
         <member name="M:web_api_health_clinic.Controllers.ConsultaController.IncluirProntuario(System.Guid,web_api_health_clinic.Domains.Consulta)">
@@ -117,13 +111,13 @@
         </member>
         <member name="M:web_api_health_clinic.Controllers.MedicoController.ListarTodos">
             <summary>
-            Método para listar todos os pacientes
+            Método para listar todos os médicos
             </summary>
             <returns></returns>
         </member>
         <member name="M:web_api_health_clinic.Controllers.MedicoController.BuscarPorId(System.Guid)">
             <summary>
-            Método para buscar um paciente pelo seu ID
+            Método para buscar um médico pelo seu ID
             </summary>
             <param name="id"></param>
             <returns></returns>
@@ -146,13 +140,6 @@
             <summary>
             Método para listar todas as especialidades médicas
             </summary>
-            <returns></returns>
-        </member>
-        <member name="M:web_api_health_clinic.Controllers.MedicoEspecialidadeController.BuscarPorId(System.Guid)">
-            <summary>
-            Método para buscar uma especialidade médica pelo seu id
-            </summary>
-            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:web_api_health_clinic.Controllers.PacienteController.Cadastrar(web_api_health_clinic.Domains.Paciente)">
@@ -201,15 +188,13 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:web_api_health_clinic.Controllers.UsuarioController.BuscarPorEmailESenha(System.String,System.String)">
+        <member name="M:web_api_health_clinic.Controllers.UsuarioController.BuscarPorId(System.Guid)">
             <summary>
             Método para buscar um usuário através de seu email e senha
             </summary>
             <param name="email"></param>
             <param name="senha"></param>
             <returns></returns>
-        </member>
-        <member name="M:web_api_health_clinic.Controllers.UsuarioController.BuscarPorId(System.Guid)">
             <summary>
             Método para buscar um usuário pelo seu id
             </summary>

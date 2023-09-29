@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using web_api_health_clinic.Domains;
 using web_api_health_clinic.Interfaces;
 using web_api_health_clinic.Repositories;
@@ -23,6 +25,7 @@ namespace web_api_health_clinic.Controllers
         /// <param name="consulta"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Agendar(Consulta consulta)
         {
             try
@@ -43,6 +46,7 @@ namespace web_api_health_clinic.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
+        [Authorize(Roles = "Administrador")]
         public IActionResult Cancelar(Guid id)
         {
             try
@@ -70,34 +74,36 @@ namespace web_api_health_clinic.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        //[HttpGet("{id}")]
-        //public IActionResult ListarMinhasConsultasMedico(Guid id)
-        //{
-        //    try
-        //    {
-        //        List<Consulta> consultasMedico = _consultaRepository.ListarMinhasConsultasMedico(id);
+        [HttpGet("{id}")]
+        [Authorize(Roles = "Medico")]
+        public IActionResult ListarMinhasConsultasMedico(Guid id)
+        {
+            try
+            {
+                List<Consulta> consultasMedico = _consultaRepository.ListarMinhasConsultasMedico(id);
 
-        //        if (consultasMedico.Count != 0)
-        //        {
-        //            return StatusCode(200, consultasMedico);
-        //        }
-        //        else
-        //        {
-        //            return StatusCode(404);
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
+                if (consultasMedico.Count != 0)
+                {
+                    return StatusCode(200, consultasMedico);
+                }
+                else
+                {
+                    return StatusCode(404);
+                }
+            }
+            catch (Exception e)
+            {
 
-        //        return BadRequest(e.Message);
-        //    }
-        //}
+                return BadRequest(e.Message);
+            }
+        }
         /// <summary>
         /// Método para listar as consultas de um paciente
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Authorize(Roles = "Paciente")]
         public IActionResult ListarMinhasConsultasPaciente(Guid id)
         {
             try
@@ -125,6 +131,7 @@ namespace web_api_health_clinic.Controllers
         /// </summary>
         /// <returns></returns>
         //[HttpGet]
+        //[Authorize(Roles = "Administrador")]
         //public IActionResult ListarConsultas()
         //{
         //    try
@@ -144,6 +151,7 @@ namespace web_api_health_clinic.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         //[HttpGet("{id}")]
+        //[Authorize(Roles = "Administrador")]
         //public IActionResult BuscarPorId(Guid id)
         //{
         //    try
@@ -174,6 +182,7 @@ namespace web_api_health_clinic.Controllers
         /// <param name="consulta"></param>
         /// <returns></returns>
         [HttpPut]
+        [Authorize(Roles = "Medico")]
         public IActionResult IncluirProntuario(Guid id, Consulta consulta)
         {
             try
