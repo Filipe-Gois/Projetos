@@ -20,7 +20,7 @@ function calcular(e) {
         return
     }
     const imc = calcularImc(peso, altura);
-    const txtsituacao = geraSituacao(imc);
+    const situacao = geraSituacao(imc);
 
 
     //object short sintaxe: se o nome da propriedade for o mesmo da variável, dá p resumir assim =>
@@ -31,11 +31,19 @@ function calcular(e) {
         imc,
         //a propriedade e a variavel têm nomes diferentes, ent n dá :(
         //propriedade: valor/variável
-        situacao: txtsituacao
+        //situacao: txtsituacao
+        situacao
     };
 
     listaPessoas.push(pessoa);
     exibirDados();
+    nome.reset();
+    altura.reset();
+    peso.reset();
+    // document.getElementById('nome').value = "";
+    // document.getElementById('peso').value = "";
+    // document.getElementById('altura').value = "";
+
 }//fim da função calcular
 
 
@@ -77,14 +85,14 @@ function exibirDados() {
     let template = '';
 
     listaPessoas.forEach((pessoa, indice) => {
-        console.log(pessoa.nome, pessoa.altura, pessoa.peso, pessoa.imc, pessoa.situacao, pessoa.dataAtual);
+        console.log(pessoa.nome, pessoa.altura, pessoa.peso, pessoa.imc, pessoa.txtsituacao, pessoa.dataAtual);
 
         template += `<tr>
     <td data-cell="nome">${indice + 1}: ${pessoa.nome}</td>
     <td data-cell="altura">${pessoa.altura}M</td>
     <td data-cell="peso">${pessoa.peso}KG</td>
     <td data-cell="valor do IMC">${pessoa.imc}</td>
-    <td data-cell="${pessoa.situacao}">Normal</td>
+    <td data-cell="Situação">${pessoa.situacao}</td>
     <td data-cell="data de cadastro">${pessoa.dataAtual}</td>
 </tr>`;
     });
