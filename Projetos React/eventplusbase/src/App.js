@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import Rotas from './routes';
+import Rotas from './routes'
 
 function App() {
   return (
     <div className="App">
-      <Rotas/>
+      <Rotas />
     </div>
   );
 }

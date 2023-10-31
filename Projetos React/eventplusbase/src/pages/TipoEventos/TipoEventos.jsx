@@ -1,10 +1,12 @@
 import React from 'react';
 import './TipoEventos.css'
+import Header from '../../Components/Header/Header';
 
 const TipoEventos = () => {
     return (
         <div>
-            <h1>Tipos de eventos</h1>
+            <Header/>
+            <h1>Tipo de eventos</h1>
         </div>
     );
 };

@@ -1,10 +1,12 @@
 import React from 'react';
 import './EventosPage.css'
+import Header from '../../Components/Header/Header';
 
 const EventosPage = () => {
     return (
         <div>
-            <h1>Página de Eventos</h1>
+            <Header/>
+            <h1>Página de eventos</h1>
         </div>
     );
 };
