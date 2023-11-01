@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Input.css'
 
-const Input = () => {
+const Input = (props) => {
+
+    const [meuValor, setMeuValor] = useState('Filipe');
+
     return (
         <>
-            <input type="number"
-                id='numero1'
-                name='numero1'
-                placeholder='Primeiro número' />
+            <input type={props.tipo}
+                id={props.id}
+                name={props.nome}
+                value={props.value}
+                placeholder={props.placeholder}
+                onChange={(e) => {
+                    //setMeuValor(e.target.value)//valor atual da constante
+
+                    props.fnAltera(e.target.value)
+                }} />
+                <span>{props.value}</span>
         </>
     );
 };
