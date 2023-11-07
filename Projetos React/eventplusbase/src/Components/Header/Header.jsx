@@ -9,16 +9,16 @@ const Header = () => {
 
     const [exibeNavbar, setExibeNavbar] = useState(false)
 
-    console.log(exibeNavbar);
     return (
         <header className='headerpage'>
             <Container>
                 <div className="header-flex">
                     <img
-                        src={menuBar} alt="Exibe ou esconde o menu no smartphone" 
-                        onClick={() => {setExibeNavbar(true)}}
-                        />
-                    <Nav setExibeNavbar={setExibeNavbar} exibeNavbar={exibeNavbar}/>
+                        className='headerpage__menubar'
+                        src={menuBar} alt="Exibe ou esconde o menu no smartphone"
+                        onClick={() => { setExibeNavbar(true) }}
+                    />
+                    <Nav setExibeNavbar={setExibeNavbar} exibeNavbar={exibeNavbar} />
 
                     <PerfilUsuario />
                 </div>
