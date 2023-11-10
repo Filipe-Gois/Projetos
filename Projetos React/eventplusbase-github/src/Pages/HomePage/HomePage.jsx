@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './HomePage.css'
 import MainContent from "../../Components/MainContent/MainContent";
 import Banner from "../../Components/Banner/Banner";
@@ -7,26 +7,30 @@ import ContactSection from "../../Components/ContactSection/ContactSection";
 import NextEvent from "../../Components/NextEvent/NextEvent";
 import Title from "../../Components/Title/Title";
 import Container from "../../Components/Container/Container";
-import axios from "axios";
+import api from "../../Services/Service";
 
 
 const HomePage = () => {
 
-  //fake mock - api mocada
-  const [nextEvents, setNextEvents] = useState([
-    {
-      id: 1,
-      title: "x",
-      data: "10/11/2023",
-      desc: "Muito legal!!!!!!!!!"
-    },
-    {
-      id: 2,
-      title: "y",
-      data: "11/11/2023",
-      desc: "Muito Phoda????!!!!"
+  useEffect(() => {
+    async function getProximosDados() {
+      try {
+        const promise = await api.get(`  /Evento/ListarProximos`)
+
+        setNextEvents(promise.data)
+
+
+      } catch (error) {
+        alert('F demaize na API')
+      }
     }
-  ])
+
+    getProximosDados()
+
+  }, [])
+
+  //fake mock - api mocada
+  const [nextEvents, setNextEvents] = useState([])
   return (
     <MainContent>
       <Banner />
@@ -42,10 +46,10 @@ const HomePage = () => {
               return (
                 <>
                   <NextEvent
-                    title={"Evento " + e.title}
-                    description={e.desc}
-                    eventDate={e.data}
-                    idEvento={e.id}
+                    title={"Evento " + e.nomeEvento}
+                    description={e.descricao}
+                    eventDate={e.dataEvento}
+                    idEvento={e.idEvento}
                   />
 
                 </>
