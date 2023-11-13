@@ -15,7 +15,7 @@ const HomePage = () => {
   useEffect(() => {
     async function getProximosDados() {
       try {
-        const promise = await api.get(`  /Evento/ListarProximos`)
+        const promise = await api.get(`/Evento/ListarProximos`)
 
         setNextEvents(promise.data)
 
