@@ -10,6 +10,19 @@ import Container from "../../Components/Container/Container";
 import api from "../../Services/Service";
 
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+
+// import required modules
+import { Pagination } from 'swiper/modules';
+
+
 const HomePage = () => {
 
   useEffect(() => {
@@ -41,22 +54,32 @@ const HomePage = () => {
           <Title titleText={"Próximos Eventos"} />
 
           <div className="events-box">
+            <Swiper
+              slidesPerView={2}
+              spaceBetween={30}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              className="mySwiper"
 
-            {nextEvents.map(e => {
-              return (
-                <>
-                  <NextEvent
-                    title={"Evento " + e.nomeEvento}
-                    description={e.descricao}
-                    eventDate={e.dataEvento}
-                    idEvento={e.idEvento}
-                  />
+            >
+              {nextEvents.map(e => {
+                return (
+                  <>
+                    <SwiperSlide>
+                      <NextEvent
+                        title={"Evento " + e.nomeEvento}
+                        description={e.descricao}
+                        eventDate={e.dataEvento}
+                        idEvento={e.idEvento}
+                      />
+                    </SwiperSlide >
 
-                </>
-              )
-            })}
-
-
+                  </>
+                )
+              })}
+            </Swiper >
           </div>
         </Container>
       </section>
