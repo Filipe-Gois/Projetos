@@ -55,8 +55,12 @@ const HomePage = () => {
 
           <div className="events-box">
             <Swiper
-              slidesPerView={2}
+              //fazer validação para o mobile só exibir um slide 
+              // {window.innerWidth >= 992 ? slidesPerView={3} : slidesPerView={1}} 
+              //window.innerWidth >= 992 ? 3 : 1
+              slidesPerView={window.innerWidth >= 992 ? 3 : 1}
               spaceBetween={30}
+              // style={}
               pagination={{
                 clickable: true,
               }}

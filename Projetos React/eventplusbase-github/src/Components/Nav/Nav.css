@@ -13,6 +13,7 @@
     position: fixed;
     top: 0;
     left: -91vw;
+    z-index: 2;
 
     width: 90vw;
     height: 100vh;

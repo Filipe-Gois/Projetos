@@ -4,7 +4,7 @@ import Title from '../../Components/Title/Title';
 const EventosPage = () => {
     return (
         <div>
-             <Title titleText={"Página Eventos"} />
+             <Title titleText={"Página de Eventos"} />
         </div>
     );
 };
