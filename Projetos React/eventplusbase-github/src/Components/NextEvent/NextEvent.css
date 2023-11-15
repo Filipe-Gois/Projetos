@@ -16,6 +16,7 @@
 .tooltip {
   color: #fff !important;
   background-color: #b51d44 !important;
+  word-break: break-all;
 }
 
 .event-card {

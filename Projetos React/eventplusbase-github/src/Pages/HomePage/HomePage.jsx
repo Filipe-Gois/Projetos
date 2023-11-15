@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './HomePage.css'
+import "./HomePage.css";
 import MainContent from "../../Components/MainContent/MainContent";
 import Banner from "../../Components/Banner/Banner";
 import VisionSection from "../../Components/VisionSection/VisionSection";
@@ -9,41 +9,33 @@ import Title from "../../Components/Title/Title";
 import Container from "../../Components/Container/Container";
 import api from "../../Services/Service";
 
-
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-
-
+import "swiper/css";
+import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from 'swiper/modules';
-
+import { Pagination } from "swiper/modules";
 
 const HomePage = () => {
-
   useEffect(() => {
     async function getProximosDados() {
       try {
-        const promise = await api.get(`/Evento/ListarProximos`)
+        const promise = await api.get(`/Evento/ListarProximos`);
 
-        setNextEvents(promise.data)
-
-
+        setNextEvents(promise.data);
       } catch (error) {
-        alert('F demaize na API')
+        alert("F demaize na API");
       }
     }
 
-    getProximosDados()
-
-  }, [])
+    getProximosDados();
+  }, []);
 
   //fake mock - api mocada
-  const [nextEvents, setNextEvents] = useState([])
+  const [nextEvents, setNextEvents] = useState([]);
   return (
     <MainContent>
       <Banner />
@@ -55,8 +47,8 @@ const HomePage = () => {
 
           <div className="events-box">
             <Swiper
-              //fazer validação para o mobile só exibir um slide 
-              // {window.innerWidth >= 992 ? slidesPerView={3} : slidesPerView={1}} 
+              //fazer validação para o mobile só exibir um slide
+              // {window.innerWidth >= 992 ? slidesPerView={3} : slidesPerView={1}}
               //window.innerWidth >= 992 ? 3 : 1
               slidesPerView={window.innerWidth >= 992 ? 3 : 1}
               spaceBetween={30}
@@ -66,24 +58,20 @@ const HomePage = () => {
               }}
               modules={[Pagination]}
               className="mySwiper"
-
             >
-              {nextEvents.map(e => {
+              {nextEvents.map((e) => {
                 return (
-                  <>
-                    <SwiperSlide>
-                      <NextEvent
-                        title={"Evento " + e.nomeEvento}
-                        description={e.descricao}
-                        eventDate={e.dataEvento}
-                        idEvento={e.idEvento}
-                      />
-                    </SwiperSlide >
-
-                  </>
-                )
+                  <SwiperSlide key={e.idEvento}>
+                    <NextEvent
+                      title={"Evento " + e.nomeEvento}
+                      description={e.descricao}
+                      eventDate={e.dataEvento}
+                      idEvento={e.idEvento}
+                    />
+                  </SwiperSlide>
+                );
               })}
-            </Swiper >
+            </Swiper>
           </div>
         </Container>
       </section>
