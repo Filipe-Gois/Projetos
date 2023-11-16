@@ -1,0 +1,9 @@
+cpfcnpj e email devem ser unicos
+
+usuario pode enviar dinheiro p outro usuario ou p lojista
+
+lojista so pode receber dinheiro
+
+validar o saldo do usuario antes de transferir
+
+ao final, enviar 

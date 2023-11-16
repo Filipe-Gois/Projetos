@@ -1039,3 +1039,4 @@ C:\Users\fytho\OneDrive\Documentos\Github\Projetos\Projetos React\webapi.event+\
 C:\Users\fytho\OneDrive\Documentos\Github\Projetos\Projetos React\webapi.event+\obj\Debug\net7.0\webapi.event+.pdb
 C:\Users\fytho\OneDrive\Documentos\Github\Projetos\Projetos React\webapi.event+\obj\Debug\net7.0\webapi.event+.genruntimeconfig.cache
 C:\Users\fytho\OneDrive\Documentos\Github\Projetos\Projetos React\webapi.event+\obj\Debug\net7.0\ref\webapi.event+.dll
+C:\Users\46633783825\Desktop\Github\Projetos\Projetos React\webapi.event+\obj\Debug\net7.0\webapi.event+.sourcelink.json

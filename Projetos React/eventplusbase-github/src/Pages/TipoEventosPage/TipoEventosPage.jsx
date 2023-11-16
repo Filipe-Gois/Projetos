@@ -7,11 +7,28 @@ import eventTypeImage from '../../assets/images/tipo-evento.svg'
 import Container from '../../Components/Container/Container'
 import { Input, Button } from '../../Components/FormComponents/FormComponents'
 import api from '../../Services/Service';
+import TableTp from './TableTp/TableTp';
+import axios from 'axios';
 
 const TipoEventosPage = () => {
 
+    useEffect(() => {
+        async function getTiposEventos() {
+            try {
+                const promise = await api.get(`/TiposEvento`);
+
+                setTipoEventos(promise.data);
+            } catch (error) {
+                alert("F demaize na API");
+            }
+        }
+
+        getTiposEventos();
+    }, []);
+
     const [frmEdit, setFrmEdit] = useState(false)
     const [titulo, setTitulo] = useState()
+    const [tipoEventos, setTipoEventos] = useState([])
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -39,12 +56,35 @@ const TipoEventosPage = () => {
         }
 
     }
+
+
+    //Atualização dos dados
     function handleUpdate() {
+        alert('jsfngjf')
+    }
+    function editActionAbort() {
+        alert('jsfngjf')
+    }
+
+
+    function showUpdateForm() {
+        alert('jsfngjf')
+
+    }
+
+    function handleDelete() {
+        try {
+            const promise = api.delete('')
+        } catch (error) {
+            alert(error)
+        }
 
     }
 
     return (
         <MainContent>
+
+            {/* Cadastro de tipo de evento */}
             <section className='cadastro-evento-section'>
                 <Container>
                     <div className='cadastro-evento__box'>
@@ -96,6 +136,23 @@ const TipoEventosPage = () => {
                     </div>
                 </Container>
             </section>
+
+
+            {/* Listagem de tipo de Eventos */}
+            <section className="lista-eventos-section">
+                <Container>
+                    <Title titleText={'Lista Tipo de Eventos'} color='#fff' />
+
+                    <TableTp
+                        dados={tipoEventos}
+                        fnUpdate={showUpdateForm}
+                        fnDelete={handleDelete} />
+                </Container>
+
+            </section>
+
+
+
         </MainContent>
     );
 };
