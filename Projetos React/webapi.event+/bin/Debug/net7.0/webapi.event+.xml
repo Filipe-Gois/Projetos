@@ -15,16 +15,16 @@
             </summary>
             <param name="optionsBuilder">Objeto com as configurações definidas</param>
         </member>
-        <member name="T:webapi.event_.Migrations.BD">
+        <member name="T:webapi.event_.Migrations.Filipe">
             <inheritdoc />
         </member>
-        <member name="M:webapi.event_.Migrations.BD.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:webapi.event_.Migrations.Filipe.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:webapi.event_.Migrations.BD.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:webapi.event_.Migrations.Filipe.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:webapi.event_.Migrations.BD.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:webapi.event_.Migrations.Filipe.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

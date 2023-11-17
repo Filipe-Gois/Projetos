@@ -8,27 +8,30 @@ import Container from '../../Components/Container/Container'
 import { Input, Button } from '../../Components/FormComponents/FormComponents'
 import api from '../../Services/Service';
 import TableTp from './TableTp/TableTp';
-import axios from 'axios';
+import Notification from '../../Components/Notification/Notification'
 
 const TipoEventosPage = () => {
-
-    useEffect(() => {
-        async function getTiposEventos() {
-            try {
-                const promise = await api.get(`/TiposEvento`);
-
-                setTipoEventos(promise.data);
-            } catch (error) {
-                alert("F demaize na API");
-            }
-        }
-
-        getTiposEventos();
-    }, []);
 
     const [frmEdit, setFrmEdit] = useState(false)
     const [titulo, setTitulo] = useState()
     const [tipoEventos, setTipoEventos] = useState([])
+    const [notifyUser, setNotifyUser] = useState({})
+
+
+    async function getTiposEventos() {
+        try {
+            const promise = await api.get(`/TiposEvento`);
+
+            setTipoEventos(promise.data);
+        } catch (error) {
+            alert("F demaize na API");
+        }
+    }
+
+    useEffect(() => {
+        getTiposEventos();
+    }, []);
+
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -43,13 +46,24 @@ const TipoEventosPage = () => {
             const promise = await api.post('/TiposEvento', {
                 titulo
                 //ou titulo: titulo
-            })
+            });
 
-            console.log('Cadastrado com sucesso!!');
-            console.log(promise.data);
+            setNotifyUser({
+                titleNote: "Sucesso",
+                textNote: `Cadastrado com sucesso!`,
+                imgIcon: "success",
+                imgAlt:
+                    "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
+                showMessage: true,
+            });
+
+            // console.log('Cadastrado com sucesso!!');
+            // console.log(promise.data);
 
             //limpar a variavel titulo
             setTitulo('')
+
+            getTiposEventos()
 
         } catch (error) {
             console.log(error);
@@ -72,17 +86,22 @@ const TipoEventosPage = () => {
 
     }
 
-    function handleDelete() {
+    async function handleDelete(idTipoEvento) {
         try {
-            const promise = api.delete('')
-        } catch (error) {
-            alert(error)
-        }
+            await api.delete(`/TiposEvento/${idTipoEvento}`)
 
+            getTiposEventos()
+        } catch (error) {
+            console.log(error);
+        }
     }
+
 
     return (
         <MainContent>
+
+            < Notification {...notifyUser} setNotifyUser={setNotifyUser} />
+
 
             {/* Cadastro de tipo de evento */}
             <section className='cadastro-evento-section'>
