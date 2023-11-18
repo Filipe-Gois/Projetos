@@ -22,7 +22,22 @@ namespace WebApiPicPay.Domains
         public Guid IdHistoricoDeTransferencias { get; set; }
 
 
+        [Column(TypeName = "DATE")]
+        public DateTime DataTransferencia { get; set; } = DateTime.Now;
+
         [Column(TypeName = "TIME")]
-        public DateTime DataTransferencia { get; set; }
+        public DateTime HoraTransferencia { get; set; } = DateTime.Now;
+
+        [Required(ErrorMessage = "Informe o destinatário!")]
+        public Guid IdDestinatário { get; set; }
+
+
+        [ForeignKey(nameof(IdDestinatário))]
+        public Usuario Usuario { get; set; }
+
+        [Column(TypeName = "DECIMAL")]
+        [Required(ErrorMessage = "Informe o valor a ser transferido!!")]
+        public decimal ValorTransferido { get; set; }
+
     }
 }
