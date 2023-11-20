@@ -4,10 +4,8 @@ namespace WebApiPicPay.Interfaces
 {
     public interface IHistoricoDeTransnferenciasRepository
     {
-        List<Transferencia> ListarTransferencias();
+        List<Transferencia> ListarTransferenciasUsuario(string CPF);
 
-        Transferencia BuscarTransferenciaPorId(Guid id);
-
-        List<Transferencia> BuscarTransferenciaPorData(DateTime data);
+        List<Transferencia> ListarTransferenciasPorData(DateTime data, string CPF);
     }
 }

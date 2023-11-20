@@ -7,13 +7,13 @@ namespace WebApiPicPay.Domains
     public class Transferencia
     {
         [Key]
-        public Guid IdTransferencia{ get; set; } = Guid.NewGuid();
+        public Guid IdTransferencia { get; set; } = Guid.NewGuid();
 
         [Required(ErrorMessage = "Informe o id da carteira!")]
-        public Guid IdCarteira { get; set; }
+        public Guid IdCarteiraRemetente { get; set; }
 
-        [ForeignKey(nameof(IdCarteira))]
-        public Carteira Carteira { get; set; }
+        [ForeignKey(nameof(IdCarteiraRemetente))]
+        public Carteira CarteiraRemetente { get; set; }
 
         [ForeignKey(nameof(IdHistoricoDeTransferencias))]
         public HistoricoDeTransnferencias HistoricoDeTransnferencias { get; set; }
@@ -21,23 +21,27 @@ namespace WebApiPicPay.Domains
         [Required(ErrorMessage = "Informe o id do histórico de transferências!")]
         public Guid IdHistoricoDeTransferencias { get; set; }
 
+        //Não coloquei "required" porque a data/hora serão geradas ao concluir a transação
+        //[Column(TypeName = "DATE")]
+        //public DateOnly DataTransferencia { get; set; }
 
-        [Column(TypeName = "DATE")]
-        public DateTime DataTransferencia { get; set; } = DateTime.Now;
+        ////Não coloquei "required" porque a data/hora serão geradas ao concluir a transação
+        //[Column(TypeName = "TIME")]
+        //public TimeOnly HoraTransferencia { get; set; }
 
-        [Column(TypeName = "TIME")]
-        public DateTime HoraTransferencia { get; set; } = DateTime.Now;
+        [Column(TypeName = "DATETIME")]
+        public DateTime DataHoraTransferencia { get; set; }
 
         [Required(ErrorMessage = "Informe o destinatário!")]
-        public Guid IdDestinatário { get; set; }
+        public Guid IdCarteiraDestinatário { get; set; }
 
 
-        [ForeignKey(nameof(IdDestinatário))]
-        public Usuario Usuario { get; set; }
+        [ForeignKey(nameof(IdCarteiraDestinatário))]
+        public Carteira CarteiraDestinatario { get; set; }
 
         [Column(TypeName = "DECIMAL")]
         [Required(ErrorMessage = "Informe o valor a ser transferido!!")]
-        public decimal ValorTransferido { get; set; }
+        public decimal ValorASerTransferido { get; set; }
 
     }
 }

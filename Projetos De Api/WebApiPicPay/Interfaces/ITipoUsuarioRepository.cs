@@ -6,9 +6,6 @@ namespace WebApiPicPay.Interfaces
     {
         void Cadastrar(TipoUsuario tipoUsuario);
 
-        void ListarTodos();
-        void Deletar(Guid id);
-
-        TipoUsuario BuscarPorId(Guid id);
+        List<TipoUsuario> ListarTodos();
     }
 }
