@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApiPicPay</name>
+    </assembly>
+    <members>
+        <member name="M:WebApiPicPay.Controllers.UsuarioController.Cadastrar(WebApiPicPay.Domains.Carteira)">
+            <summary>
+            Método com dois objetos como parâmetro *estava dando erro*
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebApiPicPay.Migrations.BD">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApiPicPay.Migrations.BD.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApiPicPay.Migrations.BD.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApiPicPay.Migrations.BD.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApiPicPay.Utils.Criptografia.GerarHash(System.String)">
+            <summary>
+            Gera uma Hash a partir de uma senha
+            </summary>
+            <param name="senha">Senha que receberá a Hash</param>
+            <returns>Senha criptografada com a Hash</returns>
+        </member>
+        <member name="M:WebApiPicPay.Utils.Criptografia.CompararHash(System.String,System.String)">
+            <summary>
+            Verifica se a Hash da senha informada é igual à Hash salva no BD
+            </summary>
+            <param name="senhaForm">Senha passada no formulário de login</param>
+            <param name="senhaBanco">Senha cadastrada no banco</param>
+            <returns>True ou False</returns>
+        </member>
+    </members>
+</doc>

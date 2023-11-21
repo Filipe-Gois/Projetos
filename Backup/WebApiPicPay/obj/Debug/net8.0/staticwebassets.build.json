@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "X6/JZnpWdLMTlq0q51oPiRHrHWlijHMzn0JIRokp/JU=",
+  "Source": "WebApiPicPay",
+  "BasePath": "_content/WebApiPicPay",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
