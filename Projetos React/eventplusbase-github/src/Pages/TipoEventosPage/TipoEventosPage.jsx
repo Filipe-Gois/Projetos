@@ -10,27 +10,47 @@ import api from '../../Services/Service';
 import TableTp from './TableTp/TableTp';
 import Notification from '../../Components/Notification/Notification'
 
+import Spinner from '../../Components/Spinner/Spinner'
+
 const TipoEventosPage = () => {
 
     const [frmEdit, setFrmEdit] = useState(false)
     const [titulo, setTitulo] = useState()
     const [tipoEventos, setTipoEventos] = useState([])
     const [notifyUser, setNotifyUser] = useState({})
+    const [idEvento, setIdEvento] = useState(null);
+    const [showSpinner, setShowSpinner] = useState(false)
 
-
-    async function getTiposEventos() {
-        try {
-            const promise = await api.get(`/TiposEvento`);
-
-            setTipoEventos(promise.data);
-        } catch (error) {
-            alert("F demaize na API");
-        }
-    }
 
     useEffect(() => {
-        getTiposEventos();
-    }, []);
+        setShowSpinner(true)
+        async function getTiposEventos() {
+
+            try {
+                const promise = await api.get(`/TiposEvento`);
+
+                setTipoEventos(promise.data);
+            } catch (error) {
+                alert("F demaize na API");
+            }
+            setShowSpinner(false)
+        }
+
+        getTiposEventos()
+
+    }, [])
+
+
+    function esxibirLista() {
+
+        try {
+            const response = api.get(`/TiposEvento`)
+
+            setTipoEventos(response.data)
+        } catch (error) {
+
+        }
+    }
 
 
     async function handleSubmit(e) {
@@ -63,7 +83,7 @@ const TipoEventosPage = () => {
             //limpar a variavel titulo
             setTitulo('')
 
-            getTiposEventos()
+            esxibirLista()
 
         } catch (error) {
             console.log(error);
@@ -73,16 +93,59 @@ const TipoEventosPage = () => {
 
 
     //Atualização dos dados
-    function handleUpdate() {
-        alert('jsfngjf')
+    async function handleUpdate(e) {
+        e.preventDefault();
+
+        try {
+            await api.put(`/TiposEvento/${idEvento}`, {
+                titulo
+
+            })
+
+            editActionAbort();
+            esxibirLista();
+
+            setNotifyUser({
+                titleNote: "Sucesso",
+                textNote: `Atualizado com sucesso!`,
+                imgIcon: "success",
+                imgAlt:
+                    "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
+                showMessage: true,
+            });
+
+        } catch (error) {
+            alert(error)
+        }
+
+
     }
     function editActionAbort() {
-        alert('jsfngjf')
+        setFrmEdit(false);
+        setTitulo("");
+        setIdEvento(null);
     }
 
 
-    function showUpdateForm() {
-        alert('jsfngjf')
+    async function showUpdateForm(idTipoEvento) {
+        setFrmEdit(true)
+
+        try {
+
+            const response = await api.get(`/TiposEvento/${idTipoEvento}`)
+
+            setIdEvento(response.data.idTipoEvento);
+
+            setTitulo(response.data.titulo);
+
+
+
+        } catch (error) {
+            alert(error)
+        }
+
+
+
 
     }
 
@@ -90,7 +153,16 @@ const TipoEventosPage = () => {
         try {
             await api.delete(`/TiposEvento/${idTipoEvento}`)
 
-            getTiposEventos()
+            esxibirLista()
+
+            setNotifyUser({
+                titleNote: "Sucesso",
+                textNote: `Excluído com sucesso!`,
+                imgIcon: "success",
+                imgAlt:
+                    "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
+                showMessage: true,
+            });
         } catch (error) {
             console.log(error);
         }
@@ -101,6 +173,7 @@ const TipoEventosPage = () => {
         <MainContent>
 
             < Notification {...notifyUser} setNotifyUser={setNotifyUser} />
+            {showSpinner ? <Spinner /> : null}
 
 
             {/* Cadastro de tipo de evento */}
@@ -148,7 +221,33 @@ const TipoEventosPage = () => {
                                 (
 
                                     <>
+                                        <Input
+                                            id="titulo"
+                                            placeholder="Título"
+                                            name="titulo"
+                                            type="text"
+                                            required="required"
+                                            value={titulo}
+                                            manipulationFunction={(e) => setTitulo(e.target.value)}
+                                        />
+                                        <div className="buttons-editbox">
+                                            <Button
+                                                textButton="Atualizar"
+                                                type="submit"
+                                                additionalClass='button-component--middle'
+                                                id="atualizar"
+                                                name="atualizar"
+                                            />
 
+                                            <Button
+                                                textButton="Cancelar"
+                                                additionalClass='button-component--middle'
+                                                type='button'
+                                                id='cancelar'
+                                                name='cancelar'
+                                                manipulationFunction={editActionAbort}
+                                            />
+                                        </div>
                                     </>
                                 )}
                         </form>
@@ -164,7 +263,7 @@ const TipoEventosPage = () => {
 
                     <TableTp
                         dados={tipoEventos}
-                        fnUpdate={showUpdateForm}
+                        fnUpdate={idTipoEvento => showUpdateForm(idTipoEvento)}
                         fnDelete={handleDelete} />
                 </Container>
 
