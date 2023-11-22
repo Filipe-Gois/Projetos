@@ -9,7 +9,6 @@ import { Input, Button } from '../../Components/FormComponents/FormComponents'
 import api from '../../Services/Service';
 import TableTp from './TableTp/TableTp';
 import Notification from '../../Components/Notification/Notification'
-
 import Spinner from '../../Components/Spinner/Spinner'
 
 const TipoEventosPage = () => {
@@ -23,15 +22,22 @@ const TipoEventosPage = () => {
 
 
     useEffect(() => {
-        setShowSpinner(true)
-        async function getTiposEventos() {
 
+        async function getTiposEventos() {
+            setShowSpinner(true)
             try {
                 const promise = await api.get(`/TiposEvento`);
 
                 setTipoEventos(promise.data);
             } catch (error) {
-                alert("F demaize na API");
+                setNotifyUser({
+                    titleNote: "Atenção",
+                    textNote: `F demaize na API!`,
+                    imgIcon: "danger",
+                    imgAlt:
+                        "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
+                    showMessage: true,
+                });
             }
             setShowSpinner(false)
         }
@@ -41,10 +47,10 @@ const TipoEventosPage = () => {
     }, [])
 
 
-    function esxibirLista() {
+    async function exibirLista() {
 
         try {
-            const response = api.get(`/TiposEvento`)
+            const response = await api.get(`/TiposEvento`)
 
             setTipoEventos(response.data)
         } catch (error) {
@@ -83,7 +89,7 @@ const TipoEventosPage = () => {
             //limpar a variavel titulo
             setTitulo('')
 
-            esxibirLista()
+            exibirLista()
 
         } catch (error) {
             console.log(error);
@@ -103,7 +109,7 @@ const TipoEventosPage = () => {
             })
 
             editActionAbort();
-            esxibirLista();
+            exibirLista();
 
             setNotifyUser({
                 titleNote: "Sucesso",
@@ -141,7 +147,14 @@ const TipoEventosPage = () => {
 
 
         } catch (error) {
-            alert(error)
+            setNotifyUser({
+                titleNote: "Sucesso",
+                textNote: `Cadastrado com sucesso!`,
+                imgIcon: "success",
+                imgAlt:
+                    "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
+                showMessage: true,
+            });
         }
 
 
@@ -153,7 +166,7 @@ const TipoEventosPage = () => {
         try {
             await api.delete(`/TiposEvento/${idTipoEvento}`)
 
-            esxibirLista()
+            exibirLista()
 
             setNotifyUser({
                 titleNote: "Sucesso",

@@ -62,7 +62,7 @@ namespace webapi.event_.Repositories
             {
                 throw;
             }
-            
+
         }
 
         public void Deletar(Guid id)
@@ -82,14 +82,27 @@ namespace webapi.event_.Repositories
             {
                 throw;
             }
-            
+
         }
 
         public List<Evento> Listar()
         {
             try
             {
-                return _context.Evento.ToList();
+                return _context.Evento.Select(e => new Evento
+                {
+                    IdEvento = e.IdEvento,
+                    DataEvento = e.DataEvento,
+                    NomeEvento = e.NomeEvento,
+                    Descricao = e.Descricao,
+                    IdInstituicao = e.IdInstituicao,
+                    IdTipoEvento = e.IdTipoEvento,
+                    TiposEvento = new TiposEvento
+                    {
+                        IdTipoEvento = e.TiposEvento.IdTipoEvento,
+                        Titulo = e.TiposEvento.Titulo
+                    }
+                }).ToList();
             }
             catch (Exception)
             {
@@ -102,7 +115,7 @@ namespace webapi.event_.Repositories
             try
             {
                 return _context.Evento
-                    .Where(e => e.DataEvento > DateTime.Now).OrderBy( e => e.DataEvento).ToList();
+                    .Where(e => e.DataEvento > DateTime.Now).OrderBy(e => e.DataEvento).ToList();
             }
             catch (Exception)
             {
