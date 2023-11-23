@@ -7,12 +7,14 @@ const TableEvento = ({ dados, fnUpdate, fnDelete }) => {
     return (
         <table className='table-data' key={dados.IdEvento}>
             <thead className="table-data__head">
-                <th className="table-data__head-title table-data__head-title--big">Evento</th>
-                <th className="table-data__head-title table-data__head-title--big">Descrição</th>
-                <th className="table-data__head-title table-data__head-title--big">Tipo Evento</th>
-                <th className="table-data__head-title table-data__head-title--big">Data</th>
-                <th className="table-data__head-title table-data__head-title--little">Editar</th>
-                <th className="table-data__head-title table-data__head-title--little">Deletar</th>
+                <tr className="table-data__head-row">
+                    <th className="table-data__head-title table-data__head-title--big">Evento</th>
+                    <th className="table-data__head-title table-data__head-title--big">Descrição</th>
+                    <th className="table-data__head-title table-data__head-title--big">Tipo Evento</th>
+                    <th className="table-data__head-title table-data__head-title--big">Data</th>
+                    <th className="table-data__head-title table-data__head-title--little">Editar</th>
+                    <th className="table-data__head-title table-data__head-title--little">Deletar</th>
+                </tr>
             </thead>
 
             {dados.map(ev => {
