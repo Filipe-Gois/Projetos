@@ -19,13 +19,14 @@ const EventosPage = () => {
     const [showSpinner, setShowSpinner] = useState(false)
     const [tiposEvento, setTiposEvento] = useState([])
 
-    const [tipoEventoSelecionado, setTipoEventoSelecionado] = useState()
+    const [tipoEventoSelecionado, setTipoEventoSelecionado] = useState("")
 
 
     const [nomeEvento, setNomeEvento] = useState();
     const [descricao, setDescricao] = useState();
     const [dataEvento, setDataEvento] = useState();
     const [idTipoEvento, setIdTipoEvento] = useState();
+    const [idInstituicao, setIdInstituicao] = useState("4a1c417e-caae-44ae-9522-d35b824b0757");
     const [frmEditData, setFrmEditData] = useState(
         {
             nomeEvento: "xpto",
@@ -39,7 +40,8 @@ const EventosPage = () => {
         nomeEvento,
         descricao,
         dataEvento,
-        idTipoEvento
+        idTipoEvento,
+        idInstituicao
     }]) //objeto com todas as propriedades de um evneto
 
 
@@ -75,6 +77,8 @@ const EventosPage = () => {
 
         getEventos()
     }, [])
+
+
 
     async function exibirLista() {
         try {
@@ -120,27 +124,43 @@ const EventosPage = () => {
 
     function editActionAbort() {
         setFrmEdit(false)
-        setEvento({
-            nomeEvento: "",
-            descricao: "",
-            idTipoEvento: "",
-            dataEvento: ""
-        })
+        // setEvento({
+        //     nomeEvento: "",
+        //     descricao: "",
+        //     idTipoEvento: "",
+        //     dataEvento: ""
+        // })
+
+        setNomeEvento('')
+        setDescricao('')
+        setDataEvento('')
+        setIdTipoEvento('')
+        setTipoEventoSelecionado('')
 
     }
 
-    function showUpdateForm(idEvento) {
+    async function showUpdateForm(idEvento) {
         setFrmEdit(true)
 
         try {
-            const response = api.get(`/Evento/${idEvento}`);
-            setEvento({
-                nomeEvento: response.data.nomeEvento,
-                descricao: response.data.descricao,
-                idTipoEvento: response.data.idTipoEvento,
-                dataEvento: response.data.dataEvento
+            const response = await api.get(`/Evento/${idEvento}`);
+            // setEvento({
+            //     nomeEvento: response.data.nomeEvento,
+            //     descricao: response.data.descricao,
+            //     idTipoEvento: response.data.idTipoEvento,
+            //     dataEvento: response.data.dataEvento
+            // })
 
-            })
+            setDataEvento(response.data.dataEvento)
+            setNomeEvento(response.data.nomeEvento)
+            setDescricao(response.data.descricao)
+            setTipoEventoSelecionado(response.data.idTipoEvento)
+            
+
+
+
+
+
         } catch (error) {
             setNotifyUser({
                 titleNote: "Atenção",
@@ -150,6 +170,7 @@ const EventosPage = () => {
                     "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
                 showMessage: true,
             });
+            console.log(error);
         }
 
 
@@ -159,7 +180,16 @@ const EventosPage = () => {
         e.preventDefault()
 
         try {
-            await api.post(`/Evento`, { evento })
+            await api.post(`/Evento`, {
+                dataEvento,
+                nomeEvento,
+                descricao,
+                idTipoEvento: tipoEventoSelecionado,
+                idInstituicao
+            })
+
+            editActionAbort()
+            exibirLista()
 
             setNotifyUser({
                 titleNote: "Sucesso",
@@ -170,8 +200,6 @@ const EventosPage = () => {
                 showMessage: true,
             });
 
-            exibirLista()
-
 
         } catch (error) {
             setNotifyUser({
@@ -182,6 +210,7 @@ const EventosPage = () => {
                     "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
                 showMessage: true,
             });
+            console.log(error);
         }
 
     }
@@ -227,7 +256,7 @@ const EventosPage = () => {
                                             name={''}
                                             placeholder={'Nome'}
                                             manipulationFunction={e => setNomeEvento(e.target.value)}
-                                            value={``}
+                                            value={nomeEvento}
                                         />
 
                                         <Input
@@ -243,17 +272,18 @@ const EventosPage = () => {
                                             //         descricao: e.target.value
                                             //     })
                                             // }}
-                                            value={``}
+                                            manipulationFunction={e => setDescricao(e.target.value)}
+                                            value={descricao}
 
                                         />
                                         <Select
                                             id={''}
                                             name={''}
                                             dados={tiposEvento}
-
-
+                                            value={tipoEventoSelecionado}
+                                            defaultValue={tipoEventoSelecionado}
                                             required={'required'}
-                                            manipulationFunction={e => setTipoEventoSelecionado(e.target.value) }
+                                            manipulationFunction={e => setTipoEventoSelecionado(e.target.value)}
                                         />
 
                                         <Input
@@ -263,17 +293,17 @@ const EventosPage = () => {
                                             additionalClass=''
                                             name={''}
                                             // placeholder={'Nome'}
-                                            manipulationFunction={''}
-                                            value={``}
+                                            manipulationFunction={e => setDataEvento(e.target.value)}
+                                            value={dataEvento}
                                         />
 
                                         <Button
-                                            type={'button'}
+                                            type={'submit'}
                                             name={''}
                                             id=''
                                             additionalClass=''
                                             className={`button-component`}
-                                            manipulationFunction={''}
+                                            //smanipulationFunction={''}
                                             textButton={'Cadastrar'}
                                         />
 
@@ -293,7 +323,7 @@ const EventosPage = () => {
                                             name={''}
                                             placeholder={'Nome'}
                                             manipulationFunction={''}
-                                            value={``}
+                                            value={nomeEvento}
                                         />
 
                                         <Input
@@ -304,7 +334,7 @@ const EventosPage = () => {
                                             name={''}
                                             placeholder={'Descrição'}
                                             manipulationFunction={''}
-                                            value={``}
+                                            value={descricao}
 
                                         />
                                         <Select
@@ -314,7 +344,7 @@ const EventosPage = () => {
 
 
                                             required={'required'}
-                                            manipulationFunction={''}
+                                            manipulationFunction={tipoEventoSelecionado}
                                         />
 
                                         <Input
@@ -325,7 +355,7 @@ const EventosPage = () => {
                                             name={''}
                                             // placeholder={'Nome'}
                                             manipulationFunction={''}
-                                            value={``}
+                                            value={dataEvento}
                                         />
 
                                         <Button

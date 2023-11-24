@@ -148,9 +148,9 @@ const TipoEventosPage = () => {
 
         } catch (error) {
             setNotifyUser({
-                titleNote: "Sucesso",
-                textNote: `Cadastrado com sucesso!`,
-                imgIcon: "success",
+                titleNote: "Atenção",
+                textNote: `F demaize na API!`,
+                imgIcon: "danger",
                 imgAlt:
                     "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
                 showMessage: true,

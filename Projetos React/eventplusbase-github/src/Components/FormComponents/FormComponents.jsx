@@ -51,7 +51,7 @@ export const Select = ({
     required,
     additionalClass = "",
     manipulationFunction,
-    defaultVaue
+    defaultValue
 
 
 
@@ -63,7 +63,7 @@ export const Select = ({
             required={required}
             className={`input-component ${additionalClass}`}
             onChange={manipulationFunction}
-            value={defaultVaue}
+            value={defaultValue}
         >
             <option value="">Selecione:</option>
             {dados.map(opcao => {
