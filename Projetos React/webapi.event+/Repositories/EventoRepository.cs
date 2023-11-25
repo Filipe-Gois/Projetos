@@ -54,10 +54,10 @@ namespace webapi.event_.Repositories
         {
             try
             {
-                if(evento.DataEvento < DateTime.Now)     
-                {
-                    throw new Exception("A data deve ser a partir de hoje!!");
-                }
+                //if(evento.DataEvento < DateTime.Now)     
+                //{
+                //    throw new Exception("A data deve ser a partir de hoje!!");
+                //}
                 _context.Evento.Add(evento);
 
                 _context.SaveChanges();

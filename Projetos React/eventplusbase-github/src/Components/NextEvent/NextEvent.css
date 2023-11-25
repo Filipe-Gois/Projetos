@@ -18,6 +18,10 @@
   background-color: #b51d44 !important;
   word-break: break-all;
 }
+.tooltip--white {
+  color: #000 !important;
+  background-color: #fff !important;
+}
 
 .event-card {
   display: flex;
