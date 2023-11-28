@@ -6,7 +6,7 @@ namespace WebApiPicPay.Interfaces
     public interface IUsuarioRepository
     {
         //void Cadastrar(Usuario usuario, Carteira carteira);
-        void Cadastrar(UsuarioCarteiraViewModel usuarioCarteiraViewModel);
+        void Cadastrar(UsuarioCarteiraViewModel usuario);
 
         List<Usuario> ListarTodos();
         void Deletar(Guid id);
@@ -14,5 +14,6 @@ namespace WebApiPicPay.Interfaces
         Usuario BuscarPorId(Guid id);
 
         Usuario BuscarPorEmailESenha(string email, string senha);
+        void AdicionarCarteiraAoUsuario(UsuarioCarteiraViewModel usuarioCarteiraViewModel);
     }
 }

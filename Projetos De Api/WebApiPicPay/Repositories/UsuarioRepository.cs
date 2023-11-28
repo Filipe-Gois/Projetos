@@ -61,16 +61,33 @@ namespace WebApiPicPay.Repositories
         //    ctx.Carteira.Add(carteira);
         //    ctx.SaveChanges();
         //}
+        public void AdicionarCarteiraAoUsuario(UsuarioCarteiraViewModel usuarioCarteiraViewModel)
+        {
+            usuarioCarteiraViewModel.Carteira.IdUsuario = usuarioCarteiraViewModel.Usuario.IdUsuario;
+            usuarioCarteiraViewModel.Carteira.Titulo = "BRL";
+            ctx.Carteira.Add(usuarioCarteiraViewModel.Carteira);
+            ctx.SaveChanges();
+        }
 
         public void Cadastrar(UsuarioCarteiraViewModel usuarioCarteiraViewModel)
         {
+            //    usuarioCarteiraViewModel.Usuario.Senha = Criptografia.GerarHash(usuarioCarteiraViewModel.Usuario.Senha);
+
+            //    usuarioCarteiraViewModel.Carteira.Titulo = "BRL";
+
+            //    usuarioCarteiraViewModel.Carteira.IdUsuario = usuarioCarteiraViewModel.Usuario.IdUsuario;
+            //    ctx.Usuario.Add(usuarioCarteiraViewModel.Usuario);
+            //    ctx.Carteira.Add(usuarioCarteiraViewModel.Carteira);
+
+
+
             usuarioCarteiraViewModel.Usuario.Senha = Criptografia.GerarHash(usuarioCarteiraViewModel.Usuario.Senha);
+
             ctx.Usuario.Add(usuarioCarteiraViewModel.Usuario);
 
-            usuarioCarteiraViewModel.Carteira.Titulo = "BRL";
 
-            usuarioCarteiraViewModel.Carteira.IdUsuario = usuarioCarteiraViewModel.Usuario.IdUsuario;
-            ctx.Carteira.Add(usuarioCarteiraViewModel.Carteira);
+
+
 
             ctx.SaveChanges();
         }

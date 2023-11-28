@@ -16,7 +16,7 @@ namespace WebApiPicPay.Domains
         public Usuario Usuario { get; set; }
 
 
-        [Required(ErrorMessage = "Informe o id do usuário!")]
+        //[Required(ErrorMessage = "Informe o id do usuário!")]
         public Guid IdUsuario { get; set; }
 
         [Required(ErrorMessage = "Informe o saldo!")]

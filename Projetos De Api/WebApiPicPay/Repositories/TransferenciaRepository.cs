@@ -1,6 +1,7 @@
 ﻿using WebApiPicPay.Contexts;
 using WebApiPicPay.Domains;
 using WebApiPicPay.Interfaces;
+using WebApiPicPay.Utils;
 
 namespace WebApiPicPay.Repositories
 {
@@ -49,6 +50,8 @@ namespace WebApiPicPay.Repositories
                 transferencia.DataHoraTransferencia = DateTime.UtcNow;
 
                 ctx.SaveChanges();
+
+                SendEmail.Send(transferencia.CarteiraRemetente.Usuario.Email); //envia o email sobre a transação
             }
 
 

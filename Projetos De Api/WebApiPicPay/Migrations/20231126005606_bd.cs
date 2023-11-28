@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebApiPicPay.Migrations
 {
     /// <inheritdoc />
-    public partial class BD : Migration
+    public partial class bd : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -96,7 +96,7 @@ namespace WebApiPicPay.Migrations
                         column: x => x.IdCarteiraDestinatário,
                         principalTable: "Carteira",
                         principalColumn: "IdCarteira",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Transferencia_Carteira_IdCarteiraRemetente",
                         column: x => x.IdCarteiraRemetente,

@@ -41,7 +41,8 @@ namespace WebApiPicPay.Controllers
         {
             try
             {
-                _usuarioRepository.Cadastrar(usuarioCarteiraViewModel);
+                _usuarioRepository.Cadastrar(usuarioCarteiraViewModel.Usuario);
+                _usuarioRepository.AdicionarCarteiraAoUsuario(usuarioCarteiraViewModel);
                 return StatusCode(201);
             }
             catch (Exception e)

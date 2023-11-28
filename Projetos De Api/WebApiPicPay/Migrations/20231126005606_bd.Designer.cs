@@ -12,8 +12,8 @@ using WebApiPicPay.Contexts;
 namespace WebApiPicPay.Migrations
 {
     [DbContext(typeof(PicPayContext))]
-    [Migration("20231120171033_BD")]
-    partial class BD
+    [Migration("20231126005606_bd")]
+    partial class bd
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

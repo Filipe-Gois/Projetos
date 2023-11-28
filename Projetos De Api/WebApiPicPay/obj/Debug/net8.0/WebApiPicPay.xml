@@ -10,16 +10,16 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:WebApiPicPay.Migrations.BD">
+        <member name="T:WebApiPicPay.Migrations.bd">
             <inheritdoc />
         </member>
-        <member name="M:WebApiPicPay.Migrations.BD.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:WebApiPicPay.Migrations.bd.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:WebApiPicPay.Migrations.BD.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:WebApiPicPay.Migrations.bd.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:WebApiPicPay.Migrations.BD.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:WebApiPicPay.Migrations.bd.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="M:WebApiPicPay.Utils.Criptografia.GerarHash(System.String)">

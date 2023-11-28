@@ -16,6 +16,7 @@ import api from "../../Services/Service";
 import Notification from "../../Components/Notification/Notification";
 
 const EventosPage = () => {
+  const [idEvento, setIdEvento] = useState(null);
   const [nomeEvento, setNomeEvento] = useState();
   const [descricao, setDescricao] = useState();
   const [dataEvento, setDataEvento] = useState();
@@ -114,7 +115,39 @@ const EventosPage = () => {
     }
   }
 
-  async function handleUpdate(idEvento) {}
+  async function handleUpdate(e) {
+    e.preventDefault();
+    try {
+      await api.put(`/Evento${idEvento}`, {
+        nomeEvento,
+        descricao,
+        dataEvento,
+        idTipoEvento: tipoEventoSelecionado,
+        idInstituicao,
+      });
+
+      editActionAbort();
+      exibirLista();
+
+      setNotifyUser({
+        titleNote: "Sucesso",
+        textNote: `Cadastrado com sucesso!`,
+        imgIcon: "success",
+        imgAlt:
+          "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
+        showMessage: true,
+      });
+    } catch (error) {
+      setNotifyUser({
+        titleNote: "Atenção",
+        textNote: `Não foi possível atualizar.`,
+        imgIcon: "danger",
+        imgAlt:
+          "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
+        showMessage: true,
+      });
+    }
+  }
 
   function editActionAbort() {
     setFrmEdit(false);
@@ -124,7 +157,7 @@ const EventosPage = () => {
     //     idTipoEvento: "",
     //     dataEvento: ""
     // })
-
+    setIdEvento(null);
     setNomeEvento("");
     setDescricao("");
     setDataEvento("");
@@ -143,7 +176,7 @@ const EventosPage = () => {
       //     idTipoEvento: response.data.idTipoEvento,
       //     dataEvento: response.data.dataEvento
       // })
-
+      setIdEvento(response.data.idEvento);
       setDataEvento(response.data.dataEvento);
       setNomeEvento(response.data.nomeEvento);
       setDescricao(response.data.descricao);
