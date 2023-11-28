@@ -14,7 +14,7 @@ namespace WebApiPicPay.Utils
                 smtpClient.EnableSsl = true;
                 smtpClient.Timeout = 60 * 60;
                 smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential("fythoy@hotmail.com", "xtringer2870"); //passar o email e senha do endereço que irá mandar
+                smtpClient.Credentials = new NetworkCredential("fythoy@hotmail.com", ""); //passar o email e senha do endereço que irá mandar
 
 
                 emailMessage.From = new MailAddress("fythoy@gmail.com", "Filipe Góis"); //email e nome de quem está mandando
