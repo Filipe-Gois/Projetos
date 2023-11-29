@@ -16,7 +16,7 @@ namespace webapi.event_.Contexts
 
         public DbSet<Evento> Evento { get; set; }
 
-        public DbSet<ComentariosEvento> ComentariosEvento{ get; set; }
+        public DbSet<ComentariosEvento> ComentariosEvento { get; set; }
 
         public DbSet<Instituicao> Instituicao { get; set; }
 
@@ -29,12 +29,12 @@ namespace webapi.event_.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //pc do Senai
-            //optionsBuilder.UseSqlServer("Server=NOTE14-S14; Database=event_filipeGois; User Id= sa; pwd=Senai@134; TrustServerCertificate=true;");
-            //base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer("Server=NOTE14-S14; Database=event_filipeGois; User Id= sa; pwd=Senai@134; TrustServerCertificate=true;");
+            base.OnConfiguring(optionsBuilder);
 
             //pc de casa
-            optionsBuilder.UseSqlServer("Server=FILIPEGOIS\\SQLEXPRESS; Database=event_filipeGois; User Id= sa; pwd=xtringer28700; TrustServerCertificate=true;");
-            base.OnConfiguring(optionsBuilder);
+            //optionsBuilder.UseSqlServer("Server=FILIPEGOIS\\SQLEXPRESS; Database=event_filipeGois; User Id= sa; pwd=xtringer28700; TrustServerCertificate=true;");
+            //base.OnConfiguring(optionsBuilder);
         }
     }
 }

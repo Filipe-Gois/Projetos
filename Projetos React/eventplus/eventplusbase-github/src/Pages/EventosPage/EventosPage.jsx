@@ -86,7 +86,7 @@ const EventosPage = () => {
     try {
       const response = await api.get(`/Evento`);
       setEventos(response.data);
-    } catch (error) {}
+    } catch (error) { }
   }
 
   async function handleDelete(idEvento) {
@@ -118,7 +118,7 @@ const EventosPage = () => {
   async function handleUpdate(e) {
     e.preventDefault();
     try {
-      await api.put(`/Evento${idEvento}`, {
+      await api.put(`/Evento/${idEvento}`, {
         nomeEvento,
         descricao,
         dataEvento,
@@ -178,7 +178,7 @@ const EventosPage = () => {
       // })
       setIdEvento(response.data.idEvento);
       setDataEvento(response.data.dataEvento);
-      setNomeEvento(response.data.nomeEvento);
+      setNomeEvento(response.data.nomeEvento)
       setDescricao(response.data.descricao);
       setTipoEventoSelecionado(response.data.idTipoEvento);
       setInstituicaoSelecionada(response.data.idInstituicao);
