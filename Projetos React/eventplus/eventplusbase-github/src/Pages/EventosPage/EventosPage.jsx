@@ -14,6 +14,8 @@ import {
 import TableEvento from "./TableEvento/TableEvento";
 import api from "../../Services/Service";
 import Notification from "../../Components/Notification/Notification";
+import { dateFormatDbToView } from '../../Utils/stringFunction'
+
 
 const EventosPage = () => {
   const [idEvento, setIdEvento] = useState(null);
@@ -22,7 +24,7 @@ const EventosPage = () => {
   const [dataEvento, setDataEvento] = useState();
   //const [idTipoEvento, setIdTipoEvento] = useState();
   const [idInstituicao, setIdInstituicao] = useState(
-    "be293a10-da22-41f5-9df2-540408886a6c"
+    "4a1c417e-caae-44ae-9522-d35b824b0757"
   );
 
   const [eventos, setEventos] = useState([]); //array que armazena todos os eventos
@@ -117,35 +119,39 @@ const EventosPage = () => {
 
   async function handleUpdate(e) {
     e.preventDefault();
-    try {
-      await api.put(`/Evento/${idEvento}`, {
-        nomeEvento,
-        descricao,
-        dataEvento,
-        idTipoEvento: tipoEventoSelecionado,
-        idInstituicao,
-      });
 
-      editActionAbort();
-      exibirLista();
+    if (nomeEvento.length > 3) {
 
-      setNotifyUser({
-        titleNote: "Sucesso",
-        textNote: `Cadastrado com sucesso!`,
-        imgIcon: "success",
-        imgAlt:
-          "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
-        showMessage: true,
-      });
-    } catch (error) {
-      setNotifyUser({
-        titleNote: "Atenção",
-        textNote: `Não foi possível atualizar.`,
-        imgIcon: "danger",
-        imgAlt:
-          "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
-        showMessage: true,
-      });
+      try {
+        await api.put(`/Evento/${idEvento}`, {
+          nomeEvento,
+          descricao,
+          dataEvento,
+          idTipoEvento: tipoEventoSelecionado,
+          idInstituicao,
+        });
+
+        editActionAbort();
+        exibirLista();
+
+        setNotifyUser({
+          titleNote: "Sucesso",
+          textNote: `Cadastrado com sucesso!`,
+          imgIcon: "success",
+          imgAlt:
+            "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
+          showMessage: true,
+        });
+      } catch (error) {
+        setNotifyUser({
+          titleNote: "Atenção",
+          textNote: `Não foi possível atualizar.`,
+          imgIcon: "danger",
+          imgAlt:
+            "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
+          showMessage: true,
+        });
+      }
     }
   }
 
@@ -324,7 +330,7 @@ const EventosPage = () => {
                     name={""}
                     placeholder={"Nome"}
                     value={nomeEvento}
-                    manipulationFunction={(e) => setNomeEvento(e.targe.value)}
+                    manipulationFunction={(e) => setNomeEvento(e.target.value)}
                   />
 
                   <Input
@@ -354,9 +360,8 @@ const EventosPage = () => {
                     required={"required"}
                     additionalClass=""
                     name={""}
-                    // placeholder={'Nome'}
                     manipulationFunction={(e) => setDataEvento(e.target.value)}
-                    defaultValue={dataEvento}
+                    value={(dataEvento)}
                   />
 
                   <div className="buttons-editbox">

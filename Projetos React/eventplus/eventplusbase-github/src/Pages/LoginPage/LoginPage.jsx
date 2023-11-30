@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ImageIllustrator from '../../Components/ImageIllustrator/ImageIllustrator'
 import logo from "../../assets/images/logo-pink.svg";
 import { Input, Button } from "../../Components/FormComponents/FormComponents";
@@ -8,8 +8,14 @@ import Notification from "../../Components/Notification/Notification";
 
 import "./LoginPage.css";
 import { UserContext, userDecodeToken } from "../../Context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+
+  const navigate = useNavigate()
+
+
+
 
   //dados que são pegos pelo formulário
   const [user, setUser] = useState({ email: "", senha: "" })
@@ -18,13 +24,17 @@ const LoginPage = () => {
   const { userData, setUserData } = useContext(UserContext)
   const [notifyUser, setNotifyUser] = useState({})
 
+  useEffect(() => {
+    if (userData.name) navigate('/')
+  }, [userData])
+
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log('ijaf');
+
 
     if (user.email.length >= 3) {
-      console.log('ijaf');
+
       try {
 
         const response = await api.post(`/Login`, user)
@@ -37,6 +47,7 @@ const LoginPage = () => {
         console.log(userData);
 
         localStorage.setItem("token", JSON.stringify(userFullToken))
+        navigate("/")//manda o usuário para a página home
 
       } catch (error) {
 

@@ -10,6 +10,6 @@ export const userDecodeToken = token => {
         role: decoded.role,
         name: decoded.name,
         userId: decoded.jti,
-        token: token
+        token
     }
 }
