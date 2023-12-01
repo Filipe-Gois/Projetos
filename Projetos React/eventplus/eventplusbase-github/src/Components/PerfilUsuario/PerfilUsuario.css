@@ -29,6 +29,7 @@
 .perfil-usuario__icon {
     width: 20px;
     margin-top: 5px;
+    cursor: pointer;
 }
 /* 201849 */
 

@@ -14,7 +14,7 @@ import {
 import TableEvento from "./TableEvento/TableEvento";
 import api from "../../Services/Service";
 import Notification from "../../Components/Notification/Notification";
-import { dateFormatDbToView } from '../../Utils/stringFunction'
+import { dateFormatDbToView, dateFormatDbToInput } from '../../Utils/stringFunction'
 
 
 const EventosPage = () => {
@@ -183,11 +183,15 @@ const EventosPage = () => {
       //     dataEvento: response.data.dataEvento
       // })
       setIdEvento(response.data.idEvento);
-      setDataEvento(response.data.dataEvento);
+
+      setDataEvento(dateFormatDbToInput(response.data.dataEvento));
       setNomeEvento(response.data.nomeEvento)
       setDescricao(response.data.descricao);
       setTipoEventoSelecionado(response.data.idTipoEvento);
       setInstituicaoSelecionada(response.data.idInstituicao);
+
+
+      //console.log(dateFormatDbToInput(dataEvento));
     } catch (error) {
       setNotifyUser({
         titleNote: "Atenção",
@@ -307,7 +311,7 @@ const EventosPage = () => {
                     name={""}
                     // placeholder={'Nome'}
                     manipulationFunction={(e) => setDataEvento(e.target.value)}
-                    value={dataEvento}
+                    value={(dataEvento)}
                   />
 
                   <Button
@@ -361,7 +365,7 @@ const EventosPage = () => {
                     additionalClass=""
                     name={""}
                     manipulationFunction={(e) => setDataEvento(e.target.value)}
-                    value={(dataEvento)}
+                    value={dataEvento}
                   />
 
                   <div className="buttons-editbox">
