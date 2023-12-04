@@ -67,6 +67,35 @@ export const Select = ({
         >
             <option value="">Selecione:</option>
             {dados.map(opcao => {
+                return <option key={opcao.value} value={opcao.value}>{opcao.text}</option>
+            })}
+        </select>
+    )
+}
+
+export const SelectTP = ({
+    dados = [],
+    id,
+    name,
+    required,
+    additionalClass = "",
+    manipulationFunction,
+    defaultValue
+
+
+
+}) => {
+    return (
+        <select
+            name={name}
+            id={id}
+            required={required}
+            className={`input-component ${additionalClass}`}
+            onChange={manipulationFunction}
+            value={defaultValue}
+        >
+            <option value="">Selecione:</option>
+            {dados.map(opcao => {
                 return <option key={opcao.idTipoEvento} value={opcao.idTipoEvento}>{opcao.titulo}</option>
             })}
         </select>

@@ -1,0 +1,68 @@
+.form-viagem {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px;
+
+}
+
+.form-viagem__input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid grey;
+}
+
+.form-viagem__input::placeholder {
+  color: grey;
+}
+
+.form-viagem__button {
+  width: 63%;
+  height: 35px;
+  color: white;
+  background-color: grey;
+  text-align: center;
+  border: none;
+}
+
+@media screen and (min-width: 450px) {
+  .form-viagem__button {
+    width: 55%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .form-viagem {
+    background-color: white;
+    width: 70%;
+    height: 55%;
+    align-self: center;
+    gap: 15px;
+    justify-content: space-around;
+  }
+
+  .form-viagem__input {
+    width: 100%;
+  }
+
+  .form-viagem__button {
+    width: 30%;
+    height: 40px !important;
+  }
+}
+@media screen and (min-width: 1366px) {
+
+    .form-viagem {
+        height: 40%;
+        width: 65%;
+
+    }
+
+    .form-viagem__button {
+        width: 20%;
+    }
+}

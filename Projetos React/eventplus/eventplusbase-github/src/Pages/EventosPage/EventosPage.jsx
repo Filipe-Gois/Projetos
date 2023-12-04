@@ -10,6 +10,7 @@ import {
   Button,
   Input,
   Select,
+  SelectTP
 } from "../../Components/FormComponents/FormComponents";
 import TableEvento from "./TableEvento/TableEvento";
 import api from "../../Services/Service";
@@ -291,7 +292,7 @@ const EventosPage = () => {
                     manipulationFunction={(e) => setDescricao(e.target.value)}
                     value={descricao}
                   />
-                  <Select
+                  <SelectTP
                     id={""}
                     name={""}
                     dados={tiposEvento}
@@ -347,7 +348,7 @@ const EventosPage = () => {
                     value={descricao}
                     manipulationFunction={(e) => setDescricao(e.target.value)}
                   />
-                  <Select
+                  <SelectTP
                     id={""}
                     name={""}
                     dados={tiposEvento}

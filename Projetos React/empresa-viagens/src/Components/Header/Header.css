@@ -1,0 +1,44 @@
+.header-flex {
+  /* width: 100%;
+  display: flex;
+  justify-content: space-between; */
+}
+
+.header-content {
+  width: 100%;
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.header-box {
+  width: 200px;
+  display: flex;
+  gap: 15px;
+}
+
+.header-box__link-home {
+  background-color: transparent;
+}
+
+.header-box__text {
+  color: rgb(255, 166, 0);
+  width: 100%;
+}
+
+.header-flex__search-Icon {
+  align-self: center;
+  padding: 15px;
+  display: flex;
+}
+
+img {
+  width: 40px;
+  align-self: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1365px) {
+  .header-content {
+    justify-content: space-around;
+  }
+}
