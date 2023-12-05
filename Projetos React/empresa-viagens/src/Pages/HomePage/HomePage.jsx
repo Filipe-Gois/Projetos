@@ -7,6 +7,8 @@ import {
 } from "../../Components/FormComponents/FormComponents";
 import MainContent from "../../Components/MainContent/MainContent";
 import Nav from "../../Components/Nav/Nav";
+import Container from '../../Components/Container/Container'
+
 
 const HomePage = () => {
   return (
@@ -14,7 +16,7 @@ const HomePage = () => {
       <MainContent>
         <section className="travel__section">
           {/* {window.innerWidth >= 768 ? <Nav /> : null} */}
-          <Nav/>
+          <Nav />
           <Form additionalClass={"form-viagem"}>
             <h1>Travel the worl with us</h1>
             <div className="form-viagem__inputs">
@@ -43,10 +45,64 @@ const HomePage = () => {
               </div>
             </div>
             <Button
-              additionalClass={"form-viagem__button"}
+
               textButton={"Search and find dates"}
             />
           </Form>
+        </section>
+
+        <section className="contact-section">
+          <Container>
+
+            <div className="contact-section__content">
+
+              <div className="contact__info-box">
+                <h2>Contact</h2>
+                <p>Let us book your next trip!</p>
+
+                <div className="info-box__content">
+                  <div className="info-box__line">
+
+                    <img src="" alt="" />
+                    <p>Chicago, US</p>
+                  </div>
+
+                  <div className="info-box__line">
+
+                    <img src="" alt="" />
+                    <p>Phone: +00 151515</p>
+                  </div>
+
+                  <div className="info-box__line">
+
+                    <img src={''} alt="" />
+                    <p>Email: mail@mail.com</p>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* <Form additionalClass={'contact-form'}>
+                <Input
+
+                />
+
+                <Input
+
+                />
+
+                <Input
+
+                />
+
+                <Button
+                  textButton={`SEND MESSAGE`}
+                  additionalClass="button-component--black"
+                />
+
+              </Form> */}
+            </div>
+          </Container>
         </section>
       </MainContent>
     </>

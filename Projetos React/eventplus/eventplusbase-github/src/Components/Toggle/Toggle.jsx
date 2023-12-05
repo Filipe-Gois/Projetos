@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./Toggle.css";
 
 const Toggle = ({ manipulationFunction = null, toggleActive = false }) => {

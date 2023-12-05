@@ -40,6 +40,13 @@ const EventosAlunoPage = () => {
 
         if (tipoEvento === "1") {
           const response = await api.get(`/Evento`)
+          const responseEventos = await api.get(`/PresencaEvento/${userData.userId}`)
+
+          const dadosMarcados = verificaPresenca(response.data, responseEventos.data)
+
+          console.clear()
+          console.log(dadosMarcados);
+
           setEventos(response.data)
         }
         else {
@@ -48,7 +55,7 @@ const EventosAlunoPage = () => {
 
 
           response.data.forEach(element => {
-            arrayModificado.push(element.evento)
+            arrayModificado.push({ ...element.evento, situacao: element.situacao })
           });
           setEventos(arrayModificado)
 
@@ -62,7 +69,27 @@ const EventosAlunoPage = () => {
     }
 
     loadEventsType();
-  }, [tipoEvento]);
+  }, [tipoEvento, userData.userId]);
+
+
+  const verificaPresenca = (arrayAllEvents, eventsUser) => {
+
+
+    for (let i = 0; i < arrayAllEvents.length; i++) {
+
+      for (let x = 0; x < eventsUser.length; x++) {
+
+        if (arrayAllEvents[i].idEvento === eventsUser[x].idEvento) {
+
+          arrayAllEvents[i].situacao = true;
+
+          break;
+        }
+      }
+
+    }
+    return eventsUser
+  }
 
   // toggle meus eventos ou todos os eventos
   function myEvents(tpEvent) {
