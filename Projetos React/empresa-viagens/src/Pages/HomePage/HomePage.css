@@ -1,3 +1,7 @@
+body {
+  background-color: var(--grey);
+}
+
 .travel__section {
   width: 100%;
   height: 300px;
@@ -5,7 +9,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  /* padding: 20px; */
+  background-color: white;
 }
 
 .form-viagem__inputs {
@@ -25,32 +29,121 @@
 
 .contact-section {
   width: 100%;
-  height: 480px;
+  height: 430px;
+  margin-top: 30px;
 }
 
 .contact-section__content {
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
+.contact__info-box {
+  max-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 
+  gap: 20px;
+}
 
 .info-box__content {
   width: 100%;
-  height: 100%;
-
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .info-box__line {
   width: 100%;
   display: flex;
   gap: 15px;
-
 }
 
-@media screen and (min-width: 450px) {}
+.info-box__line > img {
+  width: 20px;
+  height: 20px;
+}
+
+.newsletter-section {
+  width: 100%;
+  height: 280px;
+  margin-top: 30px;
+}
+
+.newsletter-section__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px 15px 5px 15px;
+  background-color: #606060;
+  color: white;
+}
+
+.newsletter-section__title {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-camp-newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.newsletter-section__title > h2 {
+  font-size: 30px;
+}
+
+/* section Explore Nature */
+
+.explore-section {
+  width: 100%;
+  height: 830px;
+  margin-top: 30px;
+}
+
+.explore-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.explore-section__title {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.explore-section__content-box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media screen and (min-width: 450px) {
+  .newsletter-section {
+    height: 250px;
+  }
+
+  .newsletter-section__title {
+    height: 30%;
+  }
+
+  .newsletter-section__content {
+    justify-content: space-evenly;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .travel__section {
@@ -72,6 +165,10 @@
 
   .form-viagem__box {
     width: 100%;
+  }
+
+  .newsletter-section {
+    height: 260px;
   }
 }
 

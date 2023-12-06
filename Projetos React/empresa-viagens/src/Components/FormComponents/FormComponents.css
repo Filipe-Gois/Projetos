@@ -1,3 +1,5 @@
+/* forms de flight, hotel e rental */
+
 .form-viagem {
   width: 100%;
   height: 100%;
@@ -6,9 +8,9 @@
   gap: 5px;
   padding: 15px;
   justify-content: space-around;
-
 }
 
+/* input padrão do layout */
 .input-component {
   width: 100%;
   height: 40px;
@@ -16,12 +18,14 @@
   outline: none;
   background-color: transparent;
   border: 1px solid grey;
+  background-color: rgb(255, 255, 255);
 }
 
 .input-component::placeholder {
   color: grey;
 }
 
+/* button padrão do layout */
 .button-component {
   width: 63%;
   height: 35px;
@@ -32,13 +36,77 @@
   cursor: pointer;
 }
 
+/* button personalizado da section Contact */
 .button-component--black {
   background-color: black;
+  width: 60%;
+  height: 45px;
+}
+
+/* form da section Contact */
+.contact-form {
+  max-height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.input-component--component-form {
+  height: 50px;
+}
+
+/* form da section newsletter */
+.newsletter-section__content {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+}
+
+/* input da section newsletter */
+.input-component--newsletter {
+  border: none;
+  width: 100%;
+}
+
+.input-component--newsletter::placeholder {
+  color: #d1d1d1;
+}
+
+/* button personalizado da section newsletter */
+.button-component--red {
+  background-color: #f38981;
+  width: 35%;
+  align-self: self-start;
+}
+
+/* button personalizado do article da section Explore Nature */
+
+.button-component--buy {
+  background-color: transparent;
+  color: black;
+  border: none;
+  width: 100%;
+  max-width: 100%;
+  height: 15px;
+  text-align: start;
+  font-size: 15px;
+  margin-left: 15px;
 }
 
 @media screen and (min-width: 450px) {
-  .form-viagem__button {
-    width: 55%;
+  .button-component {
+    width: 45%;
+  }
+
+  .button-component--black {
+    width: 40%;
+  }
+
+  .button-component--red {
+    width: 25%;
   }
 }
 
@@ -60,17 +128,27 @@
     width: 30%;
     height: 40px !important;
   }
+
+  .button-component--black {
+    width: 20% !important;
+  }
 }
 
 @media screen and (min-width: 1366px) {
-
   .form-viagem {
     height: 40%;
     width: 65%;
-
   }
 
   .button-component {
     width: 20%;
+  }
+
+  .button-component--black {
+    width: 15% !important;
+  }
+
+  .button-component--red {
+    width: 7%;
   }
 }
