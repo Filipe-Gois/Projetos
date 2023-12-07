@@ -65,7 +65,7 @@ export const Select = ({
             onChange={manipulationFunction}
             value={defaultValue}
         >
-            <option value="">Selecione:</option>
+            {/* <option value="">Selecione:</option> */} 
             {dados.map(opcao => {
                 return <option key={opcao.value} value={opcao.value}>{opcao.text}</option>
             })}

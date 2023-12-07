@@ -2,9 +2,9 @@ import React from "react";
 import "./Article.css";
 import { Button } from "../FormComponents/FormComponents";
 
-const Article = ({ imageRender, alt, title, price, description }) => {
+const Article = ({ imageRender, alt, title, price, additionalClass }) => {
   return (
-    <article className="article">
+    <article className={`article ${additionalClass}`}>
       <div className="article-img">
         <img src={imageRender} alt={alt} />
       </div>

@@ -1,7 +1,7 @@
 .article {
   background-color: white;
   width: 100%;
-  height: 350px;
+  height: 100%;
 }
 
 .article-img {
@@ -36,4 +36,11 @@
 .article-content p:nth-of-type(3) {
   font-weight: 100;
   font-size: 15px;
+}
+
+
+
+
+.article-viagem {
+  height: 100%;
 }

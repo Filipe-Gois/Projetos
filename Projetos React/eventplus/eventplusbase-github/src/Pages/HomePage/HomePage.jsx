@@ -20,6 +20,11 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
 const HomePage = () => {
+
+
+  const [notifyUser, setNotifyUser] = useState({}); //state que possui as notificações
+
+
   useEffect(() => {
     async function getProximosDados() {
       try {
@@ -27,7 +32,14 @@ const HomePage = () => {
 
         setNextEvents(promise.data);
       } catch (error) {
-        alert("F demaize na API");
+        setNotifyUser({
+          titleNote: "Atenção",
+          textNote: `F demaize na API!`,
+          imgIcon: "danger",
+          imgAlt:
+            "Imagem de ilustração de sucesso. Moça segurando um balão com símbolo de confirmação ok.",
+          showMessage: true,
+        });
       }
     }
 

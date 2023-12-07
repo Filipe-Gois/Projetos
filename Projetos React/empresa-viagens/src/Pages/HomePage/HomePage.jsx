@@ -65,12 +65,14 @@ const HomePage = () => {
                   imageRender={Ocean}
                   title={"West Coast, Norway"}
                   price={"Roundtrip from $79"}
+                  additionalClass={"article-viagem"}
                 />
 
                 <Article
                   imageRender={Mountains}
                   title={"Mountains, Austria"}
                   price={"One-way from $39"}
+                  additionalClass={"article-viagem"}
                 />
               </div>
             </div>
