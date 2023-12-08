@@ -33,8 +33,12 @@ namespace webapi.event_.Contexts
             //base.OnConfiguring(optionsBuilder);
 
             //pc de casa
-            optionsBuilder.UseSqlServer("Server=FILIPEGOIS\\SQLEXPRESS; Database=event_filipeGois; User Id= sa; pwd=xtringer28700; TrustServerCertificate=true;");
-            base.OnConfiguring(optionsBuilder);
+            //optionsBuilder.UseSqlServer("Server=FILIPEGOIS\\SQLEXPRESS; Database=event_filipeGois; User Id= sa; pwd=xtringer28700; TrustServerCertificate=true;");
+            //base.OnConfiguring(optionsBuilder);
+
+
+            //string de conexão SQL DataBase - Azure
+            optionsBuilder.UseSqlServer("Server=tcp:eventfilipe-server.database.windows.net,1433;Initial Catalog=event_FilipeDataBase;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;User Id = eventfilipe-server; Pwd= Xtringer28700;");
         }
     }
 }

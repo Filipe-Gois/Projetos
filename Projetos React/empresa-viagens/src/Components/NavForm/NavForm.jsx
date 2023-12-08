@@ -14,11 +14,10 @@ const Nav = ({
   manipulationFunction2,
   manipulationFunction3,
   selectClass = "navbar__item--select",
-  clicked1,
-  clicked2,
-  clicked3
+  clicked1 = false,
+  clicked2 = false,
+  clicked3 = false
 }) => {
-  
 
   return (
     <div className={`navbar__itens-box ${additionalClass}`}>
@@ -31,7 +30,7 @@ const Nav = ({
         image={true}
         imageRender={Flight}
         manipulationFunction={manipulationFunction1}
-        manipulationFunction2={clicked1}
+
       />
 
       <Button
@@ -43,6 +42,7 @@ const Nav = ({
         image={true}
         imageRender={Hotel}
         manipulationFunction={manipulationFunction2}
+
       />
 
       <Button
@@ -53,6 +53,7 @@ const Nav = ({
         image={true}
         imageRender={Rental}
         manipulationFunction={manipulationFunction3}
+
       />
     </div>
   );

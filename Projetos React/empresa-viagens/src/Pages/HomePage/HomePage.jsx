@@ -25,28 +25,46 @@ const HomePage = () => {
   const [editForm, setEditForm] = useState("Flight");
   const [clicked1, setClicked1] = useState(false);
 
-  const showFlightForm = () => {
-    setEditForm("Flight");
-  };
+  // const showFlightForm = () => {
+  //   setEditForm("Flight");
+  // };
 
-  const showHotelForm = () => {
-    setEditForm("Hotel");
-  };
+  // const showHotelForm = () => {
+  //   setEditForm("Hotel");
+  // };
 
-  const showRentalForm = (e) => {
-    setEditForm("Rental");
-  };
+  // const showRentalForm = (e) => {
+  //   setEditForm("Rental");
+  // };
 
-  const configNavForm = () => {
+  // const configNavForm = () => {
 
-  }
+  // }
 
   return (
     <>
       <MainContent>
         <section className="travel-section">
           {window.innerWidth < 768 ? (
-            <NavForm additionalClass="navForm" />
+            <NavForm
+              additionalClass="navForm"
+              clicked1={true}
+
+              manipulationFunction1={() => {
+
+                setEditForm("Flight")
+
+
+              }}
+
+              manipulationFunction2={() => {
+                setEditForm("Hotel")
+              }}
+
+              manipulationFunction3={() => {
+                setEditForm("Rental")
+              }}
+            />
           ) : null}
 
           <Container>
@@ -54,13 +72,16 @@ const HomePage = () => {
               {window.innerWidth >= 768 ? (
                 <NavForm
                   additionalClass="navForm"
+
                 clicked1={true}
 
+
                   manipulationFunction1={() => {
-                    
+
                     setEditForm("Flight")
 
-                    
+
+
                   }}
 
                   manipulationFunction2={() => {
