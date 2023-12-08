@@ -1,6 +1,25 @@
 .figure {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
 
+.figure > img {
+  width: 100%;
+  height: 100%;
 }
 
 .figure__image {
+}
+
+.image-description {
+  background-color: transparent;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
 }

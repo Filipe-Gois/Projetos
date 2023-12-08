@@ -7,6 +7,7 @@ const Image = ({
   additionalClass = "",
   width = "",
   height = "",
+  figcaption = ""
 }) => {
   return (
     <figure className="figure">
@@ -17,6 +18,7 @@ const Image = ({
         width={width}
         height={height}
       />
+      <figcaption className="image-description">{figcaption}</figcaption>
     </figure>
   );
 };

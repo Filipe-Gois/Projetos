@@ -34,6 +34,8 @@ export const Button = ({
   additionalClass = "",
   className,
   manipulationFunction,
+  imageRender,
+  image = false,
 }) => {
   return (
     <button
@@ -44,6 +46,7 @@ export const Button = ({
       className={`button-component ${additionalClass}`}
       onClick={manipulationFunction}
     >
+      {image ? <img src={imageRender} alt="" /> : null}
       {textButton}
     </button>
   );

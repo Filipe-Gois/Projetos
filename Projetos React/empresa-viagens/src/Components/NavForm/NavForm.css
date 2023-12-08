@@ -1,0 +1,62 @@
+.navbar__itens-box {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.navbar__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 15px;
+  gap: 15px;
+  background-color: black;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+}
+
+.navbar__item--select {
+  background-color: red;
+}
+
+
+
+@media screen and (min-width: 450px) {
+  .navbar__item,
+  a {
+    width: 100%;
+  }
+
+  .navbar__item--rental {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar__itens-box {
+    width: 75%;
+  }
+
+  .navbar__item--rental {
+    width: 33%;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .navbar__itens-box {
+    width: 65%;
+    z-index: 1;
+  }
+}

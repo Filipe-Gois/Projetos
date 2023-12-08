@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./HomePage.css";
 import {
   Input,
@@ -6,7 +6,6 @@ import {
   Button,
 } from "../../Components/FormComponents/FormComponents";
 import MainContent from "../../Components/MainContent/MainContent";
-import Nav from "../../Components/Nav/Nav";
 import Container from "../../Components/Container/Container";
 import Location from "../../assets/Icons/location.svg";
 import Phone from "../../assets/Icons/phone.svg";
@@ -14,43 +13,107 @@ import Email from "../../assets/Icons/email.svg";
 import Article from "../../Components/Article/Article";
 import Ocean from "../../assets/images/ocean.jpg";
 import Mountains from "../../assets/images/mountains.jpg";
+import Image from "../../Components/Image/Image";
+import CinqueTerre from "../../assets/images/cinqueterre.jpg";
+import NewYork from "../../assets/images/newyork.jpg";
+import SanFrancisco from "../../assets/images/sanfran.jpg";
+import Pisa from "../../assets/images/pisa.jpg";
+import Paris from "../../assets/images/paris.jpg";
+import NavForm from "../../Components/NavForm/NavForm";
 
 const HomePage = () => {
+
+
+
   return (
     <>
       <MainContent>
-        <section className="travel__section">
-          {/* {window.innerWidth >= 768 ? <Nav /> : null} */}
-          <Nav />
-          <Form additionalClass={"form-viagem"}>
-            <h1>Travel the worl with us</h1>
-            <div className="form-viagem__inputs">
-              <div className="form-viagem__box">
-                <label htmlFor="form-viagem__from">From</label>
-                <Input
-                  type={`text`}
-                  name={"form-viagem__input form-viagem__from"}
-                  placeholder={"Departing"}
-                  additionalClass="form-viagem__input form-viagem--from"
-                  //manipulationFunction={""}
-                  required={"required"}
-                />
+        <section className="travel-section">
+        {window.innerWidth < 768 ? <NavForm additionalClass="navForm"/> : null}
+
+          <Container>
+            <div className="travel-section__content">
+            {window.innerWidth >= 768 ? <NavForm additionalClass="navForm"/> : null}
+              <Form additionalClass={"form-viagem"}>
+                <h1>Travel the worl with us</h1>
+                <div className="form-viagem__inputs">
+                  <div className="form-viagem__box">
+                    <label htmlFor="form-viagem__from">From</label>
+                    <Input
+                      type={`text`}
+                      name={"form-viagem__input form-viagem__from"}
+                      placeholder={"Departing"}
+                      additionalClass="form-viagem__input form-viagem--from"
+                      //manipulationFunction={""}
+                      required={"required"}
+                    />
+                  </div>
+
+                  <div className="form-viagem__box">
+                    <label htmlFor="form-viagem__arriving">To</label>
+                    <Input
+                      type={`text`}
+                      name={"form-viagem__input form-viagem--arriving"}
+                      placeholder={"Arriving at"}
+                      additionalClass="form-viagem__input form-viagem__arriving"
+                      //manipulationFunction={""}
+                      required={"required"}
+                    />
+                  </div>
+                </div>
+                <Button textButton={"Search and find dates"} />
+              </Form>
+            </div>
+          </Container>
+        </section>
+
+        <section className="offers-section">
+          <Container>
+            <div className="offers-section__content">
+              <div className="offers-section__title">
+                <h2>Good Offers Right Now</h2>
+                <p>
+                  Up to <strong>50%</strong> discount.
+                </p>
               </div>
 
-              <div className="form-viagem__box">
-                <label htmlFor="form-viagem__arriving">To</label>
-                <Input
-                  type={`text`}
-                  name={"form-viagem__input form-viagem--arriving"}
-                  placeholder={"Arriving at"}
-                  additionalClass="form-viagem__input form-viagem__arriving"
-                  //manipulationFunction={""}
-                  required={"required"}
+              <div className="offers-section__images-5">
+                <Image
+                  imageRender={CinqueTerre}
+                  figcaption="Cinque Terre"
+                  additionalClass="offers-section__image-location"
                 />
+
+                <div className="offers-section__images--4">
+                  <div className="offers-section__images--2">
+                    <Image
+                      imageRender={NewYork}
+                      figcaption="New York"
+                      additionalClass="offers-section__image-location"
+                    />
+                    <Image
+                      imageRender={SanFrancisco}
+                      figcaption="San Francisco"
+                      additionalClass="offers-section__image-location"
+                    />
+                  </div>
+
+                  <div className="offers-section__images--2">
+                    <Image
+                      imageRender={Pisa}
+                      figcaption="Pisa"
+                      additionalClass="offers-section__image-location"
+                    />
+                    <Image
+                      imageRender={Paris}
+                      figcaption="Paris"
+                      additionalClass="offers-section__image-location"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            <Button textButton={"Search and find dates"} />
-          </Form>
+          </Container>
         </section>
 
         <section className="explore-section">
@@ -65,14 +128,12 @@ const HomePage = () => {
                   imageRender={Ocean}
                   title={"West Coast, Norway"}
                   price={"Roundtrip from $79"}
-                  additionalClass={"article-viagem"}
                 />
 
                 <Article
                   imageRender={Mountains}
                   title={"Mountains, Austria"}
                   price={"One-way from $39"}
-                  additionalClass={"article-viagem"}
                 />
               </div>
             </div>

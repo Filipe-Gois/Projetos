@@ -24,9 +24,9 @@ const EventosPage = () => {
   const [descricao, setDescricao] = useState();
   const [dataEvento, setDataEvento] = useState();
   //const [idTipoEvento, setIdTipoEvento] = useState();
-  const [idInstituicao, setIdInstituicao] = useState(
-    "4a1c417e-caae-44ae-9522-d35b824b0757"
-  );
+  // const [idInstituicao, setIdInstituicao] = useState("4a1c417e-caae-44ae-9522-d35b824b0757"); //senai
+  const [idInstituicao, setIdInstituicao] = useState("BE293A10-DA22-41F5-9DF2-540408886A6C"); //casa
+
 
   const [eventos, setEventos] = useState([]); //array que armazena todos os eventos
 
