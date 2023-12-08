@@ -22,46 +22,136 @@ import Paris from "../../assets/images/paris.jpg";
 import NavForm from "../../Components/NavForm/NavForm";
 
 const HomePage = () => {
+  const [editForm, setEditForm] = useState("Flight");
+  const [clicked1, setClicked1] = useState(false);
 
+  const showFlightForm = () => {
+    setEditForm("Flight");
+  };
 
+  const showHotelForm = () => {
+    setEditForm("Hotel");
+  };
+
+  const showRentalForm = (e) => {
+    setEditForm("Rental");
+  };
+
+  const configNavForm = () => {
+
+  }
 
   return (
     <>
       <MainContent>
         <section className="travel-section">
-        {window.innerWidth < 768 ? <NavForm additionalClass="navForm"/> : null}
+          {window.innerWidth < 768 ? (
+            <NavForm additionalClass="navForm" />
+          ) : null}
 
           <Container>
             <div className="travel-section__content">
-            {window.innerWidth >= 768 ? <NavForm additionalClass="navForm"/> : null}
-              <Form additionalClass={"form-viagem"}>
-                <h1>Travel the worl with us</h1>
-                <div className="form-viagem__inputs">
-                  <div className="form-viagem__box">
-                    <label htmlFor="form-viagem__from">From</label>
-                    <Input
-                      type={`text`}
-                      name={"form-viagem__input form-viagem__from"}
-                      placeholder={"Departing"}
-                      additionalClass="form-viagem__input form-viagem--from"
-                      //manipulationFunction={""}
-                      required={"required"}
-                    />
-                  </div>
+              {window.innerWidth >= 768 ? (
+                <NavForm
+                  additionalClass="navForm"
+                clicked1={true}
 
-                  <div className="form-viagem__box">
-                    <label htmlFor="form-viagem__arriving">To</label>
-                    <Input
-                      type={`text`}
-                      name={"form-viagem__input form-viagem--arriving"}
-                      placeholder={"Arriving at"}
-                      additionalClass="form-viagem__input form-viagem__arriving"
-                      //manipulationFunction={""}
-                      required={"required"}
-                    />
-                  </div>
-                </div>
-                <Button textButton={"Search and find dates"} />
+                  manipulationFunction1={() => {
+                    
+                    setEditForm("Flight")
+
+                    
+                  }}
+
+                  manipulationFunction2={() => {
+                    setEditForm("Hotel")
+                  }}
+
+                  manipulationFunction3={() => {
+                    setEditForm("Rental")
+                  }}
+                />
+              ) : null}
+
+              <Form additionalClass={"form-viagem"}>
+                {editForm === "Flight" ? (
+                  <>
+                    <h1>Travel the worl with us</h1>
+                    <div className="form-viagem__inputs">
+                      <div className="form-viagem__box">
+                        <label htmlFor="form-viagem__from">From</label>
+                        <Input
+                          type={`text`}
+                          name={"form-viagem__input form-viagem__from"}
+                          placeholder={"Departing"}
+                          additionalClass="form-viagem__input form-viagem--from"
+                          //manipulationFunction={""}
+                          required={"required"}
+                        />
+                      </div>
+
+                      <div className="form-viagem__box">
+                        <label htmlFor="form-viagem__arriving">To</label>
+                        <Input
+                          type={`text`}
+                          name={"form-viagem__input form-viagem--arriving"}
+                          placeholder={"Arriving at"}
+                          additionalClass="form-viagem__input form-viagem__arriving"
+                          //manipulationFunction={""}
+                          required={"required"}
+                        />
+                      </div>
+                    </div>
+                    <Button textButton={"Search and find dates"} />
+                  </>
+                ) : editForm === "Hotel" ? (
+                  <>
+                    <h1>Find the best hotels in the world with us</h1>
+                    <div className="form-viagem__inputs">
+                      <div className="form-viagem__box">
+                        <label htmlFor="form-viagem__from">Find a Hotel:</label>
+                        <Input
+                          type={`text`}
+                          name={"form-viagem__input form-viagem__from"}
+                          placeholder={"Choose a hotel for you"}
+                          additionalClass="form-viagem__input form-viagem--from"
+                          //manipulationFunction={""}
+                          required={"required"}
+                        />
+                      </div>
+                      <div className="form-viagem__box">
+                        <label htmlFor="form-viagem__from">Find a Hotel:</label>
+                        <Input
+                          type={`text`}
+                          name={"form-viagem__input form-viagem__from"}
+                          placeholder={"Choose a hotel for you"}
+                          additionalClass="form-viagem__input form-viagem--from"
+                          //manipulationFunction={""}
+                          required={"required"}
+                        />
+                      </div>
+                    </div>
+                    <Button textButton={"Search and find hotels"} />
+                  </>
+                ) : (
+                  <>
+                    <h1>Rent a car for the lowest price with us</h1>
+                    <div className="form-viagem__inputs">
+                      <div className="form-viagem__box">
+                        <label htmlFor="form-viagem__from">Rent a car:</label>
+                        <Input
+                          type={`text`}
+                          name={"form-viagem__input form-viagem__from"}
+                          placeholder={"Choose a hotel for you"}
+                          additionalClass="form-viagem__input form-viagem--from"
+                          //manipulationFunction={""}
+                          required={"required"}
+                        />
+                      </div>
+                    </div>
+                    <Button textButton={"Search and find cars"} />
+                  </>
+                )}
               </Form>
             </div>
           </Container>

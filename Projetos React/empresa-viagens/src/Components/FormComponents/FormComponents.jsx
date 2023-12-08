@@ -34,8 +34,10 @@ export const Button = ({
   additionalClass = "",
   className,
   manipulationFunction,
+  manipulationFunction2,
   imageRender,
   image = false,
+
 }) => {
   return (
     <button
@@ -45,6 +47,7 @@ export const Button = ({
       //additionalClass={additionalClass}
       className={`button-component ${additionalClass}`}
       onClick={manipulationFunction}
+      onkeyup={manipulationFunction2}
     >
       {image ? <img src={imageRender} alt="" /> : null}
       {textButton}
@@ -82,6 +85,6 @@ export const Select = ({
   );
 };
 
-export const Form = ({ children, additionalClass }) => {
-  return <form className={`form ${additionalClass}`}>{children}</form>;
+export const Form = ({ children, additionalClass, onSubmit }) => {
+  return <form onSubmit={onsubmit} className={`form ${additionalClass}`}>{children}</form>;
 };
