@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.Azure.CognitiveServices.ContentModerator;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using System.Reflection;
@@ -117,6 +118,15 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod();
         });
 });
+
+
+//habilita o serviço de moderador de conteudo do azure
+builder.Services.AddSingleton(provider => new ContentModeratorClient(
+    new ApiKeyServiceClientCredentials("7b39d420b32c4b48b48039c3286e2242"))
+{
+    Endpoint = "https://eventcontentmoderatorfilipe.cognitiveservices.azure.com/"
+}
+    );
 
 var app = builder.Build();
 //Alterar dados do Swagger para a seguinte configuração
