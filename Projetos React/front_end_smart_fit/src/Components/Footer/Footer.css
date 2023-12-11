@@ -1,0 +1,41 @@
+.footer-flex {
+  width: 100%;
+  height: 200px;
+  background-color: var(--dark-grey);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: Gotham-Light;
+}
+
+.footer-flex > img {
+  max-width: 100%;
+  height: 20%;
+}
+
+/*. */
+.footer-flex p {
+  white-space: pre-line;
+  line-height: 1.5;
+}
+
+.footer-flex p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-flex p span {
+  align-self: center;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-flex p {
+    display: inline;
+  }
+
+
+}

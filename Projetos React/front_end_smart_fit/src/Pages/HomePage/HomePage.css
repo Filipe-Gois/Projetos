@@ -1,0 +1,25 @@
+.legend-section {
+  background-color: #f5f5f5;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.legend-section__img-content {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.legend-section__img-content > p {
+    font-family: Gotham-Bold;
+}
+
+.legend-section__img-box {
+    display: flex;
+    gap: 50px;
+}
+
+.legend-section__img-content > p {
+    text-align: center;
+}
