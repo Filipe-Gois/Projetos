@@ -259,3 +259,7 @@ C:\Users\46633783825\Desktop\Github\Projetos\Projetos React\eventplus\webapi.eve
 C:\Users\46633783825\Desktop\Github\Projetos\Projetos React\eventplus\webapi.event+\obj\Release\net7.0\webapi.event+.pdb
 C:\Users\46633783825\Desktop\Github\Projetos\Projetos React\eventplus\webapi.event+\obj\Release\net7.0\webapi.event+.genruntimeconfig.cache
 C:\Users\46633783825\Desktop\Github\Projetos\Projetos React\eventplus\webapi.event+\obj\Release\net7.0\ref\webapi.event+.dll
+C:\Users\46633783825\Desktop\Github\Projetos\Projetos React\eventplus\webapi.event+\bin\Release\net7.0\Microsoft.Azure.CognitiveServices.ContentModerator.dll
+C:\Users\46633783825\Desktop\Github\Projetos\Projetos React\eventplus\webapi.event+\bin\Release\net7.0\Microsoft.Rest.ClientRuntime.dll
+C:\Users\46633783825\Desktop\Github\Projetos\Projetos React\eventplus\webapi.event+\bin\Release\net7.0\Microsoft.Rest.ClientRuntime.Azure.dll
+C:\Users\46633783825\Desktop\Github\Projetos\Projetos React\eventplus\webapi.event+\obj\Release\net7.0\webapi.event+.sourcelink.json

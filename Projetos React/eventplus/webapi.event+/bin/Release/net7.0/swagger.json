@@ -10,6 +10,45 @@
     "version": "v1"
   },
   "paths": {
+    "/api/ComentarioEvento/CadastroIa": {
+      "post": {
+        "tags": [
+          "ComentarioEvento"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ComentariosEvento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ComentarioEvento/ListarSomenteExibe": {
+      "get": {
+        "tags": [
+          "ComentarioEvento"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/ComentarioEvento": {
       "get": {
         "tags": [
