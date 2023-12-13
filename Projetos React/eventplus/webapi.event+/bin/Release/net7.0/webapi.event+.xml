@@ -21,6 +21,12 @@
             </summary>
             <param name="contentModeratorClient">objeto do tipo contentModerator</param>
         </member>
+        <member name="M:webapi.event_.Controllers.EventoController.GetOldEvents">
+            <summary>
+            Método responsável por listar eventos passados
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:webapi.event_.Controllers.PresencaEventoController.Get">
             <summary>
             

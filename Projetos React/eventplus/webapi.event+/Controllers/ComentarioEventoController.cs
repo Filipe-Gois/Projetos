@@ -74,11 +74,11 @@ namespace webapi.event_.Controllers
 
 
         [HttpGet("ListarSomenteExibe")]
-        public IActionResult GetIa()
+        public IActionResult GetIa(Guid id)
         {
             try
             {
-                return StatusCode(200, _comentariosEventoRepository.ListarSomenteExibe());
+                return StatusCode(200, _comentariosEventoRepository.ListarSomenteExibe(id));
             }
             catch (Exception e)
             {
@@ -92,11 +92,11 @@ namespace webapi.event_.Controllers
 
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(Guid id)
         {
             try
             {
-                return StatusCode(200, _comentariosEventoRepository.Listar());
+                return StatusCode(200, _comentariosEventoRepository.Listar(id));
             }
             catch (Exception e)
             {

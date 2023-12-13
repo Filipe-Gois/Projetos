@@ -30,6 +30,23 @@ namespace webapi.event_.Controllers
                 return BadRequest(e.Message);
             }
         }
+        /// <summary>
+        /// Método responsável por listar eventos passados
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("ListarAntigos")]
+        public IActionResult GetOldEvents()
+        {
+            try
+            {
+                return StatusCode(200, _eventoRepository.ListarAntigos());
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+        }
 
         [HttpGet("ListarProximos")]
         public IActionResult GetNextEvents()
@@ -64,7 +81,7 @@ namespace webapi.event_.Controllers
             {
                 _eventoRepository.Cadastrar(evento);
 
-                return StatusCode(201,evento);
+                return StatusCode(201, evento);
             }
             catch (Exception e)
             {
