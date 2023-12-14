@@ -72,7 +72,11 @@ namespace webapi.event_.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Lista somente os comentários com "TRUE"
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("ListarSomenteExibe")]
         public IActionResult GetIa(Guid id)
         {
@@ -90,7 +94,11 @@ namespace webapi.event_.Controllers
 
 
 
-
+        /// <summary>
+        /// Lista todos os comentários de um evento
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get(Guid id)
         {
@@ -106,6 +114,12 @@ namespace webapi.event_.Controllers
         }
 
 
+        /// <summary>
+        /// Lista UM comentario de UM usuário
+        /// </summary>
+        /// <param name="idUsuario"></param>
+        /// <param name="idEvento"></param>
+        /// <returns></returns>
         [HttpGet("BuscarPorIdUsuario/{id}")]
         public IActionResult GetByIdUser(Guid idUsuario, Guid idEvento)
         {

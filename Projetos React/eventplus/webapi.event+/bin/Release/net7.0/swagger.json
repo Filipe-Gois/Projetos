@@ -42,10 +42,12 @@
         "tags": [
           "ComentarioEvento"
         ],
+        "summary": "Lista somente os comentários com \"TRUE\"",
         "parameters": [
           {
             "in": "query",
             "name": "id",
+            "description": "",
             "type": "string",
             "format": "uuid",
             "collectionFormat": "multi"
@@ -63,10 +65,12 @@
         "tags": [
           "ComentarioEvento"
         ],
+        "summary": "Lista todos os comentários de um evento",
         "parameters": [
           {
             "in": "query",
             "name": "id",
+            "description": "",
             "type": "string",
             "format": "uuid",
             "collectionFormat": "multi"
@@ -128,10 +132,12 @@
         "tags": [
           "ComentarioEvento"
         ],
+        "summary": "Lista UM comentario de UM usuário",
         "parameters": [
           {
             "in": "query",
             "name": "idUsuario",
+            "description": "",
             "type": "string",
             "format": "uuid",
             "collectionFormat": "multi"
@@ -139,6 +145,7 @@
           {
             "in": "query",
             "name": "idEvento",
+            "description": "",
             "type": "string",
             "format": "uuid",
             "collectionFormat": "multi"
