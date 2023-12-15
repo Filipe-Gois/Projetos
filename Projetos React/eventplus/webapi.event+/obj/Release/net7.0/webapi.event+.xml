@@ -15,6 +15,40 @@
             </summary>
             <param name="optionsBuilder">Objeto com as configurações definidas</param>
         </member>
+        <member name="M:webapi.event_.Controllers.ComentarioEventoController.#ctor(Microsoft.Azure.CognitiveServices.ContentModerator.ContentModeratorClient)">
+            <summary>
+            Construtor que recebe os dados necessarios para o acesso ao serviço externo
+            </summary>
+            <param name="contentModeratorClient">objeto do tipo contentModerator</param>
+        </member>
+        <member name="M:webapi.event_.Controllers.ComentarioEventoController.GetIa(System.Guid)">
+            <summary>
+            Lista somente os comentários com "TRUE"
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.Controllers.ComentarioEventoController.Get(System.Guid)">
+            <summary>
+            Lista todos os comentários de um evento
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.Controllers.ComentarioEventoController.GetByIdUser(System.Guid,System.Guid)">
+            <summary>
+            Lista UM comentario de UM usuário
+            </summary>
+            <param name="idUsuario"></param>
+            <param name="idEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.Controllers.EventoController.GetOldEvents">
+            <summary>
+            Método responsável por listar eventos passados
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:webapi.event_.Controllers.PresencaEventoController.Get">
             <summary>
             

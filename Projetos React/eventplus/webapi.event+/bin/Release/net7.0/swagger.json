@@ -10,10 +10,71 @@
     "version": "v1"
   },
   "paths": {
+    "/api/ComentarioEvento/CadastroIa": {
+      "post": {
+        "tags": [
+          "ComentarioEvento"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ComentariosEvento"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/ComentarioEvento/ListarSomenteExibe": {
+      "get": {
+        "tags": [
+          "ComentarioEvento"
+        ],
+        "summary": "Lista somente os comentários com \"TRUE\"",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "",
+            "type": "string",
+            "format": "uuid",
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/ComentarioEvento": {
       "get": {
         "tags": [
           "ComentarioEvento"
+        ],
+        "summary": "Lista todos os comentários de um evento",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "",
+            "type": "string",
+            "format": "uuid",
+            "collectionFormat": "multi"
+          }
         ],
         "responses": {
           "200": {
@@ -71,10 +132,12 @@
         "tags": [
           "ComentarioEvento"
         ],
+        "summary": "Lista UM comentario de UM usuário",
         "parameters": [
           {
             "in": "query",
             "name": "idUsuario",
+            "description": "",
             "type": "string",
             "format": "uuid",
             "collectionFormat": "multi"
@@ -82,6 +145,7 @@
           {
             "in": "query",
             "name": "idEvento",
+            "description": "",
             "type": "string",
             "format": "uuid",
             "collectionFormat": "multi"
@@ -130,6 +194,19 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Evento/ListarAntigos": {
+      "get": {
+        "tags": [
+          "Evento"
+        ],
+        "summary": "Método responsável por listar eventos passados",
         "responses": {
           "200": {
             "description": "Success"
