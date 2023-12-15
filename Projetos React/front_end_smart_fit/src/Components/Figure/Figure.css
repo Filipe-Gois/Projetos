@@ -1,17 +1,28 @@
 .figure {
-    display: flex;
-    flex-direction: column;
-    width: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  align-items: center;
 }
 
 .figure > img {
-    width: 100%;
-    height: 100%;
+  max-width: 70px;
+  max-height: 70px;
 }
 
 .image-description {
-    text-align: center;
-    font-family: Gotham-Book;
-    color: black;
-    
+  text-align: center;
+  font-family: Gotham-Book;
+  color: black;
+}
+
+@media screen and (min-width: 768px) {
+    .figure {
+        max-width: 100%;
+    }
+
+
+
+
 }

@@ -44,9 +44,9 @@ const HomePage = () => {
         </section> */}
 
         <section className="legend-section">
-          <div className="legend-section__img-content legend-section__img-content--mascaras">
+          <div className="legend-section__img-content">
             <p>Máscara</p>
-            <div className="legend-section__img-box">
+            <div className="legend-section__img-box legend-section__img-content--mascaras">
               <Figure
                 imageRender={MascaraObrigatoria}
                 figCaption={obrigatorioText}
@@ -57,10 +57,10 @@ const HomePage = () => {
               />
             </div>
           </div>
-          <div className="legend-section__img-content legend-section__img-content--toalhas">
+          <div className="legend-section__img-content">
             <p>Toalha</p>
 
-            <div className="legend-section__img-box">
+            <div className="legend-section__img-box legend-section__img-content--toalhas">
               <Figure
                 imageRender={ToalhaObrigatoria}
                 figCaption={obrigatorioText}
@@ -71,10 +71,10 @@ const HomePage = () => {
               />
             </div>
           </div>
-          <div className="legend-section__img-content legend-section__img-content--bebedouros">
+          <div className="legend-section__img-content">
             <p>Bebedouro</p>
 
-            <div className="legend-section__img-box">
+            <div className="legend-section__img-box legend-section__img-content--bebedouros">
               <Figure imageRender={BebedouroParcial} figCaption={ParcialText} />
               <Figure
                 imageRender={BebedouroProibido}
@@ -83,10 +83,10 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="legend-section__img-content legend-section__img-content--vestiarios">
+          <div className="legend-section__img-content">
             <p>Vestiários</p>
 
-            <div className="legend-section__img-box">
+            <div className="legend-section__img-box legend-section__img-content--vestiarios">
               <Figure
                 imageRender={VestiarioLiberado}
                 figCaption={LiberadoText}

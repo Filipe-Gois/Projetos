@@ -4,22 +4,54 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
+  padding: 15px;
+  width: 100%;
+  height: 700px;
 }
 .legend-section__img-content {
-    display: flex;
-    flex-direction: column;
-    
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
 }
 
 .legend-section__img-content > p {
-    font-family: Gotham-Bold;
+  font-family: Gotham-Bold;
+  text-align: center;
 }
 
 .legend-section__img-box {
-    display: flex;
-    gap: 50px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
-.legend-section__img-content > p {
-    text-align: center;
+.legend-section__img-content--mascaras,
+.legend-section__img-content--toalhas,
+.legend-section__img-content--bebedouros,
+.legend-section__img-content--vestiarios {
+  display: flex;
+  gap: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .legend-section {
+    height: 200px;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .legend-section__img-content {
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .legend-section {
+    height: 200px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
