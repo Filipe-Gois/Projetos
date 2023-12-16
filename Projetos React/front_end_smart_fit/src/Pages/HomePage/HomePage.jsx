@@ -27,19 +27,19 @@ const HomePage = () => {
 
   const LiberadoText = "Liberado";
   const FechadoText = "Fechado";
-  const [unidadeSmartFit, setUnidadeSmartFit] = useState([]);
+  const [unidadesSmartFit, setUnidadesSmartFit] = useState([]);
 
-  const getUnidadeSmartFit = async () => {
+  const getUnidadesSmartFit = async () => {
     const response = await api.get(url);
 
-    setUnidadeSmartFit(response.data);
+    setUnidadesSmartFit(response.data);
   };
 
   useEffect(() => {
-    getUnidadeSmartFit();
+    getUnidadesSmartFit();
   }, []);
 
-  console.log(unidadeSmartFit);
+  console.log(unidadesSmartFit);
 
   return (
     <MainContent>

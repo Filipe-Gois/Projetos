@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.figure > img {
+.figure>img {
   max-width: 70px;
   max-height: 70px;
 }
@@ -18,11 +18,14 @@
 }
 
 @media screen and (min-width: 768px) {
-    .figure {
-        max-width: 100%;
-    }
+  .figure {
+    max-width: 100%;
+  }
 
-
+  .figure>img {
+    max-width: 70px;
+    max-height: 70px;
+  }
 
 
 }
