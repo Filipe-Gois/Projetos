@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./HomePage.css";
 import Relogio from "../../Assets/images/icon-hour.png";
 import Container from "../../Components/Container/Container";
@@ -15,6 +15,8 @@ import VestiarioLiberado from "../../Assets/images/required-lockerroom.png";
 import VestiarioParcial from "../../Assets/images/partial-lockerroom.png";
 import VestiarioFechado from "../../Assets/images/forbidden-lockerroom.png";
 import Figure from "../../Components/Figure/Figure";
+import api, { url } from "../../Services/Apis";
+import CardUnidade from "../../Components/CardUnidade/CardUnidade";
 
 const HomePage = () => {
   const obrigatorioText = "Obrigatório";
@@ -25,6 +27,19 @@ const HomePage = () => {
 
   const LiberadoText = "Liberado";
   const FechadoText = "Fechado";
+  const [unidadeSmartFit, setUnidadeSmartFit] = useState([]);
+
+  const getUnidadeSmartFit = async () => {
+    const response = await api.get(url);
+
+    setUnidadeSmartFit(response.data);
+  };
+
+  useEffect(() => {
+    getUnidadeSmartFit();
+  }, []);
+
+  console.log(unidadeSmartFit);
 
   return (
     <MainContent>
