@@ -14,26 +14,23 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%;
+  max-width: 100%;
 }
 
-.legend-section__img-content>p {
+.legend-section__img-content > p {
   font-family: Gotham-Bold;
   text-align: center;
 }
 
 .legend-section__img-box {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
+  width: 100%;
 }
 
-.legend-section__img-content--mascaras,
-.legend-section__img-content--toalhas,
-.legend-section__img-content--bebedouros,
-.legend-section__img-content--vestiarios {
-  display: flex;
-  gap: 15px;
+.unidades-fechadas:checked {
+  background-color: yellow;
 }
 
 @media screen and (min-width: 768px) {
@@ -42,12 +39,21 @@
     flex-direction: row;
     justify-content: space-around;
     gap: 15px;
-
   }
 
-  .legend-section__img-content {}
+  .legend-section__img-content {
+    width: 100%;
+  }
+
+  .legend-section__img-box {
+    display: flex;
+
+    justify-content: flex-start;
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 1366px) {
-  .legend-section {}
+  .legend-section {
+  }
 }

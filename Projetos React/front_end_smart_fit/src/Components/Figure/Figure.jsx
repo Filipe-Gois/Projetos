@@ -1,5 +1,5 @@
 import React from "react";
-import "./Figure.css"
+import "./Figure.css";
 
 const Figure = ({
   imageRender,
@@ -9,12 +9,10 @@ const Figure = ({
 }) => {
   return (
     <figure className="figure">
-
-      <img 
-      src={imageRender} 
-      alt={altText} 
-      className={`image ${additionalClass}`} 
-      
+      <img
+        src={imageRender}
+        alt={altText}
+        className={`image ${additionalClass}`}
       />
 
       <figcaption className="image-description">{figCaption}</figcaption>

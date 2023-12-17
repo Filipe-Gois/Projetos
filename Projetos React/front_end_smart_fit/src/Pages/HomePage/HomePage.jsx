@@ -4,7 +4,12 @@ import Relogio from "../../Assets/images/icon-hour.png";
 import Container from "../../Components/Container/Container";
 import MainContent from "../../Components/MainContent/MainContent";
 import Table from "../../Components/Table/Table";
-import { Input } from "../../Components/FormComponents/FormComponents";
+import {
+  Button,
+  Form,
+  Input,
+  Label,
+} from "../../Components/FormComponents/FormComponents";
 import MascaraObrigatoria from "../../Assets/images/required-mask.png";
 import MascaraRecomendada from "../../Assets/images/recommended-mask.png";
 import ToalhaObrigatoria from "../../Assets/images/required-towel.png";
@@ -19,15 +24,25 @@ import api, { url } from "../../Services/Apis";
 import CardUnidade from "../../Components/CardUnidade/CardUnidade";
 
 const HomePage = () => {
-  const obrigatorioText = "Obrigatório";
-  const recomendadoText = "Recomendado";
+  //objeto que representa a legenda das imagens de máscara, toalha, bebedouro e vestiário
+  const [statusLegenda] = useState({
+    obrigatorioText: "Obrigatório",
+    recomendadoText: "Recomendado",
+    parcialText: "Parcial",
+    proibidoText: "Proibido",
+    liberadoText: "Liberado",
+    fechadoText: "Fechado",
+  });
 
-  const ParcialText = "Parcial";
-  const ProibidoText = "Proibido";
-
-  const LiberadoText = "Liberado";
-  const FechadoText = "Fechado";
+  //armazena os dados de todas as unidades presentes na API
   const [unidadesSmartFit, setUnidadesSmartFit] = useState([]);
+
+  const [tabelThead] = useState([
+    {
+      titulo: "Qual período quer treinar?",
+    },
+  ]);
+  // const [tabelTbody] = useState([{titulo:}])
 
   const getUnidadesSmartFit = async () => {
     const response = await api.get(url);
@@ -44,8 +59,8 @@ const HomePage = () => {
   return (
     <MainContent>
       <Container>
-        {/* <section className="horario-section">
-          <form action="" onSubmit={""}>
+        <section className="horario-section">
+          <Form action="" onSubmit={""}>
             <div className="relogio">
               <img
                 src={Relogio}
@@ -54,21 +69,47 @@ const HomePage = () => {
               <p>Horário</p>
             </div>
 
-            <Table />
-          </form>
-        </section> */}
+            <Table th={tabelThead} />
+
+            <div className="">
+              <Input
+                type={"checkbox"}
+                name={"unidades-fechadas"}
+                // manipulationFunction={""}
+                additionalClass="unidades-fechadas"
+              />
+              <Label
+                htmlFor={"unidades-fechadas"}
+                labelText={"Exibir unidades fechadas"}
+              />
+
+              <p>
+                Resultados encontrado:{" "}
+                {unidadesSmartFit.locations
+                  ? unidadesSmartFit.locations.length
+                  : 0}
+              </p>
+            </div>
+
+            <div className="horario__botoes">
+              <Button textButton={"Encontrar Unidade"} />
+              <Button textButton={"Limpar"} />
+            </div>
+          </Form>
+        </section>
 
         <section className="legend-section">
+          <div></div>
           <div className="legend-section__img-content">
             <p>Máscara</p>
             <div className="legend-section__img-box legend-section__img-content--mascaras">
               <Figure
                 imageRender={MascaraObrigatoria}
-                figCaption={obrigatorioText}
+                figCaption={statusLegenda.obrigatorioText}
               />
               <Figure
                 imageRender={MascaraRecomendada}
-                figCaption={recomendadoText}
+                figCaption={statusLegenda.recomendadoText}
               />
             </div>
           </div>
@@ -78,11 +119,11 @@ const HomePage = () => {
             <div className="legend-section__img-box legend-section__img-content--toalhas">
               <Figure
                 imageRender={ToalhaObrigatoria}
-                figCaption={obrigatorioText}
+                figCaption={statusLegenda.obrigatorioText}
               />
               <Figure
                 imageRender={ToalhaRecomendada}
-                figCaption={recomendadoText}
+                figCaption={statusLegenda.recomendadoText}
               />
             </div>
           </div>
@@ -90,10 +131,13 @@ const HomePage = () => {
             <p>Bebedouro</p>
 
             <div className="legend-section__img-box legend-section__img-content--bebedouros">
-              <Figure imageRender={BebedouroParcial} figCaption={ParcialText} />
+              <Figure
+                imageRender={BebedouroParcial}
+                figCaption={statusLegenda.parcialText}
+              />
               <Figure
                 imageRender={BebedouroProibido}
-                figCaption={ProibidoText}
+                figCaption={statusLegenda.ProibidoText}
               />
             </div>
           </div>
@@ -104,10 +148,16 @@ const HomePage = () => {
             <div className="legend-section__img-box legend-section__img-content--vestiarios">
               <Figure
                 imageRender={VestiarioLiberado}
-                figCaption={LiberadoText}
+                figCaption={statusLegenda.LiberadoText}
               />
-              <Figure imageRender={VestiarioParcial} figCaption={ParcialText} />
-              <Figure imageRender={VestiarioFechado} figCaption={FechadoText} />
+              <Figure
+                imageRender={VestiarioParcial}
+                figCaption={statusLegenda.parcialText}
+              />
+              <Figure
+                imageRender={VestiarioFechado}
+                figCaption={statusLegenda.fechadoText}
+              />
             </div>
           </div>
         </section>
