@@ -180,13 +180,19 @@ const HomePage = () => {
             </div>
           </div>
         </section>
+      </Container>
+
+      <Container addtionalClass={"container-banner"}>
 
         <section className="unidades-section">
-          <Container>
-            <CardUnidade2 />
-          </Container>
+          <CardUnidade2 />
+          <CardUnidade2 />
+          <CardUnidade2 />
+          {/* <CardUnidade2 /> */}
         </section>
+
       </Container>
+
     </MainContent>
   );
 };
