@@ -64,6 +64,6 @@ export const Button = ({
   );
 };
 
-export const Label = ({ htmlFor, labelText }) => {
-  return <label htmlFor={htmlFor}>{labelText}</label>;
+export const Label = ({ htmlFor, labelText, additionalClass = "" }) => {
+  return <label className={`label-component ${additionalClass}`} htmlFor={htmlFor}>{labelText}</label>;
 };

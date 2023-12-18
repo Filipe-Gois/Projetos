@@ -1,24 +1,40 @@
 import React from "react";
 import "./Table.css";
+import { Input } from "../FormComponents/FormComponents";
 
-const Table = ({ th = [], td = [], tr = [] }) => {
+//[0]: representa o th da Thead; [1]: array representa o TR e o objeto representa o TD; [2]: representa os dados do tfoot
+const Table = ({ dados = [[], [{}], []] }) => {
   return (
-    <table>
-      <thead>
-        <tr>
-          {th.map((elementoHead) => {
-            return <th>{elementoHead.titulo}</th>;
+    <table className="table">
+      <thead className="thead">
+        <tr className="linha-thead">
+          {dados[0].map((elementoHead, indice) => {
+            return <th key={indice}>{elementoHead}</th>;
           })}
         </tr>
       </thead>
 
-      <tbody>
-        {tr.map((elementoTr) => {
+      <tbody className="tbody">
+        {dados[1].map((elementoTr, indice) => {
           return (
-            <tr>
-              {th.map((elementoBody) => {
-                return <td>{elementoBody.titulo}</td>;
-              })}
+            <tr key={indice} className="linha-tbody">
+              <td >
+                <Input
+                  type={"checkbox"}
+                  name={"unidades-fechadas"}
+                  // manipulationFunction={""}
+                  additionalClass="unidades-fechadas"
+                />
+              </td>
+              {/* <div className="horarios-dia"> */}
+                {Object.keys(elementoTr).map((chave, indice) => {
+                  return (
+                    <td className="dado-tbody" key={indice}>
+                      {elementoTr[chave]}
+                    </td>
+                  );
+                })}
+              {/* </div> */}
             </tr>
           );
         })}

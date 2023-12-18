@@ -22,6 +22,7 @@ import VestiarioFechado from "../../Assets/images/forbidden-lockerroom.png";
 import Figure from "../../Components/Figure/Figure";
 import api, { url } from "../../Services/Apis";
 import CardUnidade from "../../Components/CardUnidade/CardUnidade";
+import CardUnidade2 from "../../Components/CardUnidade copy/CardUnidade";
 
 const HomePage = () => {
   //objeto que representa a legenda das imagens de máscara, toalha, bebedouro e vestiário
@@ -37,17 +38,21 @@ const HomePage = () => {
   //armazena os dados de todas as unidades presentes na API
   const [unidadesSmartFit, setUnidadesSmartFit] = useState([]);
 
-  const [tabelThead] = useState([
-    {
-      titulo: "Qual período quer treinar?",
-    },
+  //array responsavel pelas informações da tabela do formulário
+  const [tabela] = useState([
+    ["Qual período quer treinar?"],
+    [
+      { periodo: "Manhã", horario: "06:00 às 12:00" },
+      { periodo: "Tarde", horario: "12:01 às 18:00" },
+      { periodo: "Noite", horario: "18:01 às 23:00" },
+    ],
   ]);
-  // const [tabelTbody] = useState([{titulo:}])
 
   const getUnidadesSmartFit = async () => {
     const response = await api.get(url);
-
     setUnidadesSmartFit(response.data);
+
+    // setUnidadesSmartFit(response.data);
   };
 
   useEffect(() => {
@@ -60,7 +65,8 @@ const HomePage = () => {
     <MainContent>
       <Container>
         <section className="horario-section">
-          <Form action="" onSubmit={""}>
+          <Form action="" onSubmit={"horario-section__content"}>
+            {/* <div className=""> */}
             <div className="relogio">
               <img
                 src={Relogio}
@@ -69,32 +75,45 @@ const HomePage = () => {
               <p>Horário</p>
             </div>
 
-            <Table th={tabelThead} />
+            <Table dados={tabela} />
 
-            <div className="">
-              <Input
-                type={"checkbox"}
-                name={"unidades-fechadas"}
-                // manipulationFunction={""}
-                additionalClass="unidades-fechadas"
-              />
-              <Label
-                htmlFor={"unidades-fechadas"}
-                labelText={"Exibir unidades fechadas"}
-              />
-
+            <div className="horario-section__resultados">
+              <div className="resultados__unidades-fechadas">
+                <Input
+                  type={"checkbox"}
+                  name={"unidades-fechadas"}
+                  // manipulationFunction={""}
+                  additionalClass="exibir-unidades-fechadas"
+                />
+                <Label
+                  additionalClass="label-unidades"
+                  htmlFor={"exibir-unidades-fechadas"}
+                  labelText={"Exibir unidades fechadas"}
+                />
+              </div>
               <p>
-                Resultados encontrado:{" "}
-                {unidadesSmartFit.locations
-                  ? unidadesSmartFit.locations.length
-                  : 0}
+                Resultados encontrados:
+                <span>
+                  {` ${
+                    unidadesSmartFit.locations
+                      ? unidadesSmartFit.locations.length
+                      : 0
+                  }`}
+                </span>
               </p>
             </div>
 
             <div className="horario__botoes">
-              <Button textButton={"Encontrar Unidade"} />
-              <Button textButton={"Limpar"} />
+              <Button
+                textButton={`Encontrar Unidade`}
+                additionalClass={"button-component--yellow"}
+              />
+              <Button
+                textButton={"Limpar"}
+                additionalClass={"button-component--white"}
+              />
             </div>
+            {/* </div> */}
           </Form>
         </section>
 
@@ -137,7 +156,7 @@ const HomePage = () => {
               />
               <Figure
                 imageRender={BebedouroProibido}
-                figCaption={statusLegenda.ProibidoText}
+                figCaption={statusLegenda.proibidoText}
               />
             </div>
           </div>
@@ -148,7 +167,7 @@ const HomePage = () => {
             <div className="legend-section__img-box legend-section__img-content--vestiarios">
               <Figure
                 imageRender={VestiarioLiberado}
-                figCaption={statusLegenda.LiberadoText}
+                figCaption={statusLegenda.liberadoText}
               />
               <Figure
                 imageRender={VestiarioParcial}
@@ -160,6 +179,12 @@ const HomePage = () => {
               />
             </div>
           </div>
+        </section>
+
+        <section className="unidades-section">
+          <Container>
+            <CardUnidade2 />
+          </Container>
         </section>
       </Container>
     </MainContent>

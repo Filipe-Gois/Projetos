@@ -9,6 +9,7 @@
   align-items: center;
   gap: 20px;
   font-family: Gotham-Light;
+  margin-top: 40px;
 }
 
 .footer-flex > img {
