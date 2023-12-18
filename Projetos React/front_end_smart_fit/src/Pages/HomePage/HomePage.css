@@ -17,7 +17,7 @@
   max-width: 100%;
 }
 
-.legend-section__img-content > p {
+.legend-section__img-content>p {
   font-family: Gotham-Bold;
   text-align: center;
 }
@@ -50,7 +50,7 @@
   font-family: Gotham-Light;
 }
 
-.relogio > img {
+.relogio>img {
   width: 30px;
   height: 30px;
 }
@@ -64,11 +64,11 @@
   margin-top: 30px;
 }
 
-.horario-section__resultados > p {
+.horario-section__resultados>p {
   font-size: 15px;
 }
 
-.horario-section__resultados > p > span {
+.horario-section__resultados>p>span {
   font-family: Gotham-Black;
 }
 
@@ -83,7 +83,7 @@
   cursor: pointer;
 }
 
-.resultados__unidades-fechadas > label {
+.resultados__unidades-fechadas>label {
   display: flex;
   align-self: flex-end;
 }
@@ -111,19 +111,16 @@
     height: 200px;
     flex-direction: row;
     justify-content: space-around;
-    gap: 15px;
+    gap: 10px;
   }
 
   .legend-section__img-content {
     width: 100%;
   }
 
-  .legend-section__img-box {
-    display: flex;
+  /* .legend-section__img-box {
 
-    justify-content: flex-start;
-    width: 100%;
-  }
+  } */
   .resultados__unidades-fechadas {
     width: 50%;
     gap: 10px;
@@ -135,7 +132,7 @@
     justify-content: space-between;
   }
 
-  .horario-section__resultados > p {
+  .horario-section__resultados>p {
     display: flex;
     align-items: flex-end;
   }
@@ -152,5 +149,4 @@
   }
 }
 
-@media screen and (min-width: 1366px) {
-}
+@media screen and (min-width: 1366px) {}

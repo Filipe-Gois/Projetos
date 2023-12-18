@@ -19,15 +19,16 @@
 .status-unidade--aberto {
   color: var(--green);
 }
+
 .status-unidade--fechado {
   color: var(--red);
 }
 
-.banner-info > h2 {
+.banner-info>h2 {
   color: var(--dark-grey);
 }
 
-.banner-info > p:last-of-type {
+.banner-info>p:last-of-type {
   font-family: Gotham-Book;
   color: var(--light-grey);
 }
@@ -36,14 +37,13 @@
   width: 100%;
   max-height: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   border-top: solid 1px var(--light-grey);
   margin-top: 20px;
   padding-top: 20px;
 }
 
-.banner__imgs > img {
+.banner__imgs>img {
   width: 20%;
   height: 100%;
 }
@@ -57,6 +57,7 @@
   margin-top: 30px;
 }
 
+
 .banner__funcionamento--horario {
   display: flex;
   flex-direction: column;
@@ -64,12 +65,15 @@
   max-height: 100%;
 }
 
-.banner__funcionamento--horario > h3 {
+
+
+.banner__funcionamento--horario>h3 {
   font-family: Gotham-Bold;
   color: var(--dark-grey);
   font-size: 22px;
 }
-.banner__funcionamento--horario > p {
+
+.banner__funcionamento--horario>p {
   font-family: Gotham-Book;
   color: var(--dark-grey);
 }
@@ -78,7 +82,8 @@
   .banner {
     width: 100%;
   }
-  .banner__imgs > img {
+
+  .banner__imgs>img {
     width: 90px;
     height: 90px;
   }
@@ -88,11 +93,11 @@
   .banner {
     width: 100%;
   }
-  .banner__imgs > img {
+
+  .banner__imgs>img {
     width: 70px;
     height: 70px;
   }
 }
 
-@media screen and (min-width: 1366px) {
-}
+@media screen and (min-width: 1366px) {}

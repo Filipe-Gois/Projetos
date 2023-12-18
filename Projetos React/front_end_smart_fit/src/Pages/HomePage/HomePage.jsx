@@ -118,7 +118,7 @@ const HomePage = () => {
         </section>
 
         <section className="legend-section">
-          <div></div>
+
           <div className="legend-section__img-content">
             <p>Máscara</p>
             <div className="legend-section__img-box legend-section__img-content--mascaras">
