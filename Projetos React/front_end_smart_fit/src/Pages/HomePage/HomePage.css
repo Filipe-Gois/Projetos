@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 15px;
   width: 100%;
   height: 700px;
@@ -17,7 +17,7 @@
   max-width: 100%;
 }
 
-.legend-section__img-content>p {
+.legend-section__img-content > p {
   font-family: Gotham-Bold;
   text-align: center;
 }
@@ -50,7 +50,7 @@
   font-family: Gotham-Light;
 }
 
-.relogio>img {
+.relogio > img {
   width: 30px;
   height: 30px;
 }
@@ -64,11 +64,11 @@
   margin-top: 30px;
 }
 
-.horario-section__resultados>p {
+.horario-section__resultados > p {
   font-size: 15px;
 }
 
-.horario-section__resultados>p>span {
+.horario-section__resultados > p > span {
   font-family: Gotham-Black;
 }
 
@@ -83,7 +83,7 @@
   cursor: pointer;
 }
 
-.resultados__unidades-fechadas>label {
+.resultados__unidades-fechadas > label {
   display: flex;
   align-self: flex-end;
 }
@@ -97,12 +97,14 @@
 
 .unidades-section {
   height: 100%;
-  width: 100%;
+  flex-wrap: wrap;
   margin-top: 40px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 20px;
+
   /* box-shadow: 0 20px 0 20px rgba(rgb(27, 26, 26), rgb(84, 92, 84), rgb(31, 31, 34), alpha); */
 }
 
@@ -110,7 +112,6 @@
   .legend-section {
     height: 200px;
     flex-direction: row;
-    justify-content: space-around;
     gap: 10px;
   }
 
@@ -118,9 +119,6 @@
     width: 100%;
   }
 
-  /* .legend-section__img-box {
-
-  } */
   .resultados__unidades-fechadas {
     width: 50%;
     gap: 10px;
@@ -132,7 +130,7 @@
     justify-content: space-between;
   }
 
-  .horario-section__resultados>p {
+  .horario-section__resultados > p {
     display: flex;
     align-items: flex-end;
   }
@@ -145,8 +143,22 @@
 
   .unidades-section {
     flex-direction: row;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
+    /* width: 100%; */
+    justify-content: space-around;
   }
 }
 
-@media screen and (min-width: 1366px) {}
+@media screen and (min-width: 1366px) {
+  .legend-section__img-box {
+    gap: 0px;
+  }
+
+  .unidades-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* width: 100%; */
+    justify-content: space-between;
+    gap: 40px;
+  }
+}

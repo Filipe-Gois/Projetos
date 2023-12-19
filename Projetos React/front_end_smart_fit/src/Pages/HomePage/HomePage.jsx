@@ -118,7 +118,6 @@ const HomePage = () => {
         </section>
 
         <section className="legend-section">
-
           <div className="legend-section__img-content">
             <p>Máscara</p>
             <div className="legend-section__img-box legend-section__img-content--mascaras">
@@ -182,17 +181,16 @@ const HomePage = () => {
         </section>
       </Container>
 
-      <Container addtionalClass={"container-banner"}>
-
+      <Container>
         <section className="unidades-section">
           <CardUnidade2 />
           <CardUnidade2 />
           <CardUnidade2 />
+          <CardUnidade2 />
+
           {/* <CardUnidade2 /> */}
         </section>
-
       </Container>
-
     </MainContent>
   );
 };

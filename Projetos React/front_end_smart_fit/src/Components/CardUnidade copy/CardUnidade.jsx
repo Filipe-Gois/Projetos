@@ -26,8 +26,9 @@ const CardUnidade2 = ({
     <article className="banner" key={idUnidade}>
       <div className="banner-info">
         <p
-          className={`status-unidade ${opened ? "status-unidade--aberto" : "status-unidade--fechado"
-            }`}
+          className={`status-unidade ${
+            opened ? "status-unidade--aberto" : "status-unidade--fechado"
+          }`}
         >
           {opened ? "Aberto" : "Fechado"}
         </p>
@@ -63,8 +64,8 @@ const CardUnidade2 = ({
                 locker_room === "allowed"
                   ? VestiarioLiberado
                   : locker_room === "partial"
-                    ? VestiarioParcial
-                    : VestiarioFechado
+                  ? VestiarioParcial
+                  : VestiarioFechado
               }
               alt=""
             />
@@ -77,7 +78,10 @@ const CardUnidade2 = ({
 
             {schedules.map(() => {
               return (
-                <div className="banner__funcionamento--horario" key={Math.random()}>
+                <div
+                  className="banner__funcionamento--horario"
+                  key={Math.random()}
+                >
                   <h3>Seg. à Sex.</h3>
                   <p>06:00 às 22:00</p>
                 </div>
