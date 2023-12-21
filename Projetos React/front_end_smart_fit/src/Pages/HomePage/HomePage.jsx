@@ -477,25 +477,22 @@ const HomePage = () => {
 
       <Container>
         <section className="unidades-section">
-          {/* {unidadesSmartFit.map((unidade) => {
+          {unidadesFiltradas.map((unidade) => {
             return (
               <CardUnidade
-                idUnidade={unidade.locations.id}
-                title={unidade.locations.title}
-                content={
-                  "content"
-                    ? unidade.locations.content
-                    : unidade.street
-                }
-                opened={unidade.locations.opened}
-                mask={unidade.locations.mask}
-                towel={unidade.locations.towel}
-                fountain={unidade.locations.fountain}
-                locker_room={unidade.locations.locker_room}
-                schedules={unidade.locations.schedules}
+
+                idUnidade={unidade.id}
+                title={unidade.title}
+                content={"content" ? unidade.content : unidade.street}
+                opened={unidade.opened}
+                mask={unidade.mask}
+                towel={unidade.towel}
+                fountain={unidade.fountain}
+                locker_room={unidade.locker_room}
+                schedules={unidade.schedules}
               />
             );
-          })} */}
+          })}
         </section>
       </Container>
     </MainContent>
