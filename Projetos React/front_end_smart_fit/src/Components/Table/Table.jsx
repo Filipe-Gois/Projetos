@@ -19,11 +19,14 @@ const Table = ({ dados = [[], [{}], []] }) => {
           return (
             <tr key={indice} className="linha-tbody">
               <td >
+
+                <label htmlFor=""></label>
                 <Input
+                // value={""}
                   type={"checkbox"}
-                  name={"unidades-fechadas"}
+                  name={"periodo-horario"}
                   // manipulationFunction={""}
-                  additionalClass="unidades-fechadas"
+                  additionalClass="periodo-treino"
                 />
               </td>
               {/* <div className="horarios-dia"> */}

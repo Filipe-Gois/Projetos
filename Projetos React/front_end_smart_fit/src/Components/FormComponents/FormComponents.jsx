@@ -27,6 +27,7 @@ export const Input = ({
   placeholder,
   manipulationFunction,
   additionalClass = "",
+  checked,
 }) => {
   return (
     <input
@@ -39,6 +40,7 @@ export const Input = ({
       placeholder={placeholder}
       onChange={manipulationFunction}
       autoComplete="off"
+      checked={checked}
     />
   );
 };
@@ -64,6 +66,14 @@ export const Button = ({
   );
 };
 
-export const Label = ({ htmlFor, labelText, additionalClass = "" }) => {
-  return <label className={`label-component ${additionalClass}`} htmlFor={htmlFor}>{labelText}</label>;
+export const Label = ({ htmlFor, children, additionalClass = "", id }) => {
+  return (
+    <label
+      id={id}
+      className={`label-component ${additionalClass}`}
+      htmlFor={htmlFor}
+    >
+      {children}
+    </label>
+  );
 };

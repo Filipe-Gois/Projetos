@@ -18,6 +18,58 @@
   border: 2px solid #ededed;
 }
 
+.label-component {
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.periodo-treino {
+  appearance: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--light-grey);
+  transition: 0.3s all linear;
+  cursor: pointer;
+}
+
+.periodo-treino:checked {
+  background-color: var(--yellow);
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="checkbox"] {
+  appearance: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--light-grey);
+  transition: 0.3s all linear;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--yellow);
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exibir-unidades-fechadas {
+  border-radius: 0px !important;
+}
+.exibir-unidades-fechadas:checked {
+  border-radius: 0px !important;
+  background-image: url(../../Assets/icons/check.svg);
+}
+
 .label-unidades {
   display: flex;
   justify-content: flex-end;
@@ -39,5 +91,4 @@
   }
 }
 @media screen and (min-width: 1366px) {
-
 }

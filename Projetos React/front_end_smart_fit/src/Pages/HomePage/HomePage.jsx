@@ -22,7 +22,7 @@ import VestiarioFechado from "../../Assets/images/forbidden-lockerroom.png";
 import Figure from "../../Components/Figure/Figure";
 import api, { url } from "../../Services/Apis";
 import CardUnidade from "../../Components/CardUnidade/CardUnidade";
-import CardUnidade2 from "../../Components/CardUnidade copy/CardUnidade";
+import { useForm } from "react-hook-form";
 
 const HomePage = () => {
   //objeto que representa a legenda das imagens de máscara, toalha, bebedouro e vestiário
@@ -37,6 +37,18 @@ const HomePage = () => {
 
   //armazena os dados de todas as unidades presentes na API
   const [unidadesSmartFit, setUnidadesSmartFit] = useState([]);
+  const [sche, setSche] = useState([]);
+
+  const [unidadesFiltradas, setUnidadesFiltradas] = useState([]);
+
+  // const { register, handleSubmit, reset } = useForm();
+
+  const [checkbox, setCheckbox] = useState({
+    manha: false,
+    tarde: false,
+    noite: false,
+    exibirUnidadesFechadas: false,
+  });
 
   //array responsavel pelas informações da tabela do formulário
   const [tabela] = useState([
@@ -48,24 +60,216 @@ const HomePage = () => {
     ],
   ]);
 
-  const getUnidadesSmartFit = async () => {
-    const response = await api.get(url);
-    setUnidadesSmartFit(response.data);
+  const [horario, setHorario] = useState([
+    // { inicio: 6, fim: 12 },
+    // { inicio: 12, fim: 18 },
+    // { inicio: 18, fim: 23 },
+  ]);
 
-    // setUnidadesSmartFit(response.data);
+  const exibirFechadas = () => {
+    if (checkbox.exibirUnidadesFechadas === true)
+      setUnidadesFiltradas(unidadesSmartFit);
+    else {
+      setUnidadesFiltradas(
+        unidadesSmartFit.filter(
+          (location) => location.opened || !location.schedules
+        )
+      );
+    }
+  };
+
+  const getUnidadesSmartFit = async () => {
+    try {
+      const response = await api.get(url);
+      setUnidadesSmartFit(response.data.locations);
+
+      setSche(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const exibirPeloPeriodo = () => {
+    //caso queira treinar na manhã
+
+    if (checkbox.manha) {
+      exibirFechadas();
+      setUnidadesFiltradas(
+        unidadesSmartFit.filter((location, index) => {
+          // console.log("Indice" + index);
+
+          if (location.schedules && location.schedules.length > index)
+            return (
+              location.schedules ||
+              location.schedules[index]?.hour === "06h às 12h"
+            );
+        })
+      );
+
+      // unidadesSmartFit.forEach(e, (index) => {
+      //   if (e.schedules[index].hour === horario.manha) {
+      //     setUnidadesFiltradas(e);
+      //   }
+      //   return;
+      // });
+
+      // for (let index = 0; index < unidadesSmartFit.schedules.length; index++) {
+      //   setUnidadesFiltradas();
+      // }
+
+      // setUnidadesFiltradas(
+      //   unidadesSmartFit.filter((location, indice) => {
+      //     return location.schedules[indice].hour === horario.manha;
+      //   })
+      // );
+    }
+
+    // //caso queira treinar na manhã e exibir as fechadas
+    // else if (checkbox.manha && checkbox.exibirUnidadesFechadas) {
+    //   setUnidadesFiltradas(
+    //     unidadesSmartFit.filter((location, indice) => {
+    //       return (
+    //         location.schedules[indice].hour === horario.manha &&
+    //         location.opened === false
+    //       );
+    //     })
+    //   );
+
+    //   //caso queira treinar à tarde
+    // } else if (checkbox.tarde) {
+    //   setUnidadesFiltradas(
+    //     unidadesSmartFit.filter((location, indice) => {
+    //       return location.schedules[indice].hour === horario.tarde;
+    //     })
+    //   );
+    // }
+
+    // //caso queira treinar à tarde e exibir as fechadas
+    // else if (checkbox.tarde && checkbox.exibirUnidadesFechadas) {
+    //   setUnidadesFiltradas(
+    //     unidadesSmartFit.filter((location, indice) => {
+    //       return (
+    //         location.schedules[indice].hour === horario.tarde &&
+    //         location.opened === false
+    //       );
+    //     })
+    //   );
+    // }
+
+    // //caso queira treinar à noite
+    // else if (checkbox.noite) {
+    //   setUnidadesFiltradas(
+    //     unidadesSmartFit.filter((location, indice) => {
+    //       return location.schedules[indice].hour === horario.noite;
+    //     })
+    //   );
+    // } else {
+    //   //caso queira treinar à noite e exibir as fechadas
+    //   setUnidadesFiltradas(
+    //     unidadesSmartFit.filter((location, indice) => {
+    //       return (
+    //         location.schedules[indice].hour === horario.noite &&
+    //         location.opened === false
+    //       );
+    //     })
+    //   );
+    // }
+  };
+
+  const handleListar = (e) => {
+    e.preventDefault();
+
+    try {
+      exibirPeloPeriodo();
+      if (!checkbox.manha && !checkbox.tarde && !checkbox.noite)
+        exibirFechadas();
+
+      console.log(unidadesFiltradas);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleActionAbort = (e) => {
+    e.preventDefault();
+    setCheckbox({
+      manha: false,
+      tarde: false,
+      noite: false,
+      exibirUnidadesFechadas: false,
+    });
+    //ver se dá p implementar essa lógica para simplificar
+    // setCheckbox(false)
+    setUnidadesFiltradas([]);
+    // console.clear()
   };
 
   useEffect(() => {
     getUnidadesSmartFit();
+    console.log(unidadesFiltradas);
+    // let u = {
+    //   current_country_id: 1,
+    //   locations: [
+    //     {
+    //       id: 10998878976097,
+    //       title: "Dom Severino",
+    //       content:
+    //         "\n<p>Av. Dom Severino, 1733 &#8211; Fátima<br>Teresina, PI</p>\n",
+    //       opened: true,
+    //       mask: "required",
+    //       towel: "required",
+    //       fountain: "partial",
+    //       locker_room: "allowed",
+    //       schedules: [
+    //         {
+    //           weekdays: "Seg. à Sex.",
+    //           hour: "06h às 22h",
+    //         },
+    //         {
+    //           weekdays: "Sáb.",
+    //           hour: "Fechada",
+    //         },
+    //         {
+    //           weekdays: "Dom.",
+    //           hour: "Fechada",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       id: 10998878976096,
+    //       title: "Teresina Shopping",
+    //       content:
+    //         "\n<p>Av. Raul Lopes, 1000 &#8211; Noivos<br>Teresina, PI</p>\n",
+    //       opened: true,
+    //       mask: "required",
+    //       towel: "required",
+    //       fountain: "partial",
+    //       locker_room: "allowed",
+    //       schedules: [
+    //         {
+    //           weekdays: "Seg. à Sex.",
+    //           hour: "06h às 22h",
+    //         },
+    //         {
+    //           weekdays: "Sáb.",
+    //           hour: "Fechada",
+    //         },
+    //         {
+    //           weekdays: "Dom.",
+    //           hour: "Fechada",
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // };
+    // console.log((Object.entries(u)));
   }, []);
-
-  console.log(unidadesSmartFit);
 
   return (
     <MainContent>
       <Container>
         <section className="horario-section">
-          <Form action="" onSubmit={"horario-section__content"}>
+          <Form action="" onSubmit={handleListar}>
             {/* <div className=""> */}
             <div className="relogio">
               <img
@@ -75,30 +279,117 @@ const HomePage = () => {
               <p>Horário</p>
             </div>
 
-            <Table dados={tabela} />
+            {/* css da table está no componente Table */}
+            <table className="table">
+              <thead className="thead">
+                <tr className="linha-thead">
+                  <th>Qual período quer treinar?</th>
+                </tr>
+              </thead>
+              <tbody className="tbody">
+                <tr className="linha-tbody">
+                  <td>
+                    <Label htmlFor={"periodo-horario1"}>
+                      <Input
+                        type={"radio"}
+                        name={"periodo-horario"}
+                        id={"periodo-horario1"}
+                        // manipulationFunction={""}
+                        additionalClass="periodo-treino"
+                        value={checkbox.manha}
+                        manipulationFunction={(e) => {
+                          setCheckbox({
+                            ...checkbox,
+                            manha: e.target.checked,
+                            tarde: false,
+                            noite: false,
+                          });
+                        }}
+                        checked={checkbox.manha}
+                      />
+                      <span>{tabela[1][0].periodo}</span>
+                    </Label>
+                  </td>
+                  <td>{tabela[1][0].horario}</td>
+                </tr>
+
+                <tr className="linha-tbody">
+                  <td>
+                    <Label htmlFor={"periodo-horario2"}>
+                      <Input
+                        value={checkbox.tarde}
+                        additionalClass="periodo-treino"
+                        type={"radio"}
+                        name={"periodo-horario"}
+                        id={"periodo-horario2"}
+                        manipulationFunction={(e) =>
+                          setCheckbox({
+                            ...checkbox,
+                            tarde: e.target.checked,
+                            manha: false,
+                            noite: false,
+                          })
+                        }
+                        checked={checkbox.tarde}
+                      />
+                      <span>{tabela[1][1].periodo}</span>
+                    </Label>
+                  </td>
+                  <td>{tabela[1][1].horario}</td>
+                </tr>
+
+                <tr className="linha-tbody">
+                  <td>
+                    <Label htmlFor={"periodo-horario3"}>
+                      <Input
+                        value={checkbox.noite}
+                        additionalClass="periodo-treino"
+                        type={"radio"}
+                        name={"periodo-horario"}
+                        id={"periodo-horario3"}
+                        manipulationFunction={(e) =>
+                          setCheckbox({
+                            ...checkbox,
+                            noite: e.target.checked,
+                            manha: false,
+                            tarde: false,
+                          })
+                        }
+                        checked={checkbox.noite}
+                      />
+                      <span>{tabela[1][2].periodo}</span>
+                    </Label>
+                  </td>
+                  <td>{tabela[1][2].horario}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            {/* <Table dados={tabela} /> */}
 
             <div className="horario-section__resultados">
-              <div className="resultados__unidades-fechadas">
+              <Label htmlFor={"unidades-fechadas"}>
                 <Input
                   type={"checkbox"}
                   name={"unidades-fechadas"}
-                  // manipulationFunction={""}
+                  id={"unidades-fechadas"}
+                  value={checkbox.exibirUnidadesFechadas}
+                  manipulationFunction={(e) =>
+                    setCheckbox({
+                      ...checkbox,
+                      exibirUnidadesFechadas: e.target.checked,
+                    })
+                  }
+                  checked={checkbox.exibirUnidadesFechadas}
                   additionalClass="exibir-unidades-fechadas"
                 />
-                <Label
-                  additionalClass="label-unidades"
-                  htmlFor={"exibir-unidades-fechadas"}
-                  labelText={"Exibir unidades fechadas"}
-                />
-              </div>
+                <span>Exibir unidades fechadas</span>
+              </Label>
+
               <p>
                 Resultados encontrados:
                 <span>
-                  {` ${
-                    unidadesSmartFit.locations
-                      ? unidadesSmartFit.locations.length
-                      : 0
-                  }`}
+                  {` ${unidadesFiltradas ? unidadesFiltradas.length : 0}`}
                 </span>
               </p>
             </div>
@@ -107,10 +398,13 @@ const HomePage = () => {
               <Button
                 textButton={`Encontrar Unidade`}
                 additionalClass={"button-component--yellow"}
+                // manipulationFunction={handleListar}
               />
               <Button
                 textButton={"Limpar"}
                 additionalClass={"button-component--white"}
+                manipulationFunction={handleActionAbort}
+                type={"reset"}
               />
             </div>
             {/* </div> */}
@@ -183,12 +477,25 @@ const HomePage = () => {
 
       <Container>
         <section className="unidades-section">
-          <CardUnidade2 />
-          <CardUnidade2 />
-          <CardUnidade2 />
-          <CardUnidade2 />
-
-          {/* <CardUnidade2 /> */}
+          {/* {unidadesSmartFit.map((unidade) => {
+            return (
+              <CardUnidade
+                idUnidade={unidade.locations.id}
+                title={unidade.locations.title}
+                content={
+                  "content"
+                    ? unidade.locations.content
+                    : unidade.street
+                }
+                opened={unidade.locations.opened}
+                mask={unidade.locations.mask}
+                towel={unidade.locations.towel}
+                fountain={unidade.locations.fountain}
+                locker_room={unidade.locations.locker_room}
+                schedules={unidade.locations.schedules}
+              />
+            );
+          })} */}
         </section>
       </Container>
     </MainContent>

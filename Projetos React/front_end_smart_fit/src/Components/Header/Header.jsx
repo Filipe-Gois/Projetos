@@ -8,9 +8,9 @@ const Header = () => {
   return (
     <header className="header-flex">
       <div className="header-logo">
-        {/* <Link to={`/`}> */}
+        <Link className="header-logo__link" to={"/"}>
           <img src={Logo} alt="Logo da empresa Smart-Fit" />
-        {/* </Link> */}
+        </Link>
       </div>
       <Container>
         <div className="header-content">
