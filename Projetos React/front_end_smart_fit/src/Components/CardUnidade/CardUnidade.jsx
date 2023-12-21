@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "./CardUnidade.css";
 
 import MascaraObrigatoria from "../../Assets/images/required-mask.png";
@@ -11,7 +11,7 @@ import VestiarioLiberado from "../../Assets/images/required-lockerroom.png";
 import VestiarioParcial from "../../Assets/images/partial-lockerroom.png";
 import VestiarioFechado from "../../Assets/images/forbidden-lockerroom.png";
 
-const CardUnidade2 = ({
+const CardUnidade = ({
   idUnidade,
   title,
   content, //ou street
@@ -23,14 +23,17 @@ const CardUnidade2 = ({
   schedules = [{}],
   addtionalClass,
 }) => {
-
   //arrumar o tamanho dos cards q nao possuem as demais propriedades
   return (
     <article
-      className={`banner ${!opened || typeof(schedules) === Object ? "banner--altura-modificada" : ""}`}
+      className={`banner ${
+        !opened || typeof schedules === Object
+          ? "banner--altura-modificada"
+          : ""
+      }`}
       key={idUnidade}
     >
-      {console.log(typeof(schedules))}
+      {/* {console.log(typeof(schedules))} */}
       <div className="banner-info">
         <p
           className={`status-unidade ${
@@ -100,4 +103,4 @@ const CardUnidade2 = ({
   );
 };
 
-export default CardUnidade2;
+export default CardUnidade;

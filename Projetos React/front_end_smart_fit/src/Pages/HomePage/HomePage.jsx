@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import "./HomePage.css";
 import Relogio from "../../Assets/images/icon-hour.png";
 import Container from "../../Components/Container/Container";
@@ -23,6 +23,8 @@ import Figure from "../../Components/Figure/Figure";
 import api, { url } from "../../Services/Apis";
 import CardUnidade from "../../Components/CardUnidade/CardUnidade";
 import { useForm } from "react-hook-form";
+import InfiniteScroll from 'react-infinite-scroll-component';
+import InfiniteScrollComponent from "../../Components/InfiniteScrollComponent/InfiniteScrollComponent";
 
 const HomePage = () => {
   //objeto que representa a legenda das imagens de máscara, toalha, bebedouro e vestiário
@@ -34,10 +36,10 @@ const HomePage = () => {
     liberadoText: "Liberado",
     fechadoText: "Fechado",
   });
+  let arrayModificado = [];
 
   //armazena os dados de todas as unidades presentes na API
   const [unidadesSmartFit, setUnidadesSmartFit] = useState([]);
-  const [sche, setSche] = useState([]);
 
   const [unidadesFiltradas, setUnidadesFiltradas] = useState([]);
 
@@ -61,10 +63,35 @@ const HomePage = () => {
   ]);
 
   const [horario, setHorario] = useState([
-    // { inicio: 6, fim: 12 },
-    // { inicio: 12, fim: 18 },
-    // { inicio: 18, fim: 23 },
+    { inicio: 6, fim: 12 },
+    { inicio: 12, fim: 18 },
+    { inicio: 18, fim: 23 },
   ]);
+
+  const getUnidadesSmartFit = async () => {
+    try {
+      const response = await api.get(url);
+      setUnidadesSmartFit(response.data.locations);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const filtraUnidades = () => {
+    try {
+      if (checkbox.exibirUnidadesFechadas === true)
+        setUnidadesFiltradas(unidadesSmartFit);
+      else {
+        setUnidadesFiltradas(
+          unidadesSmartFit.filter(
+            (location) => location.opened || !location.schedules
+          )
+        );
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const exibirFechadas = () => {
     if (checkbox.exibirUnidadesFechadas === true)
@@ -78,31 +105,17 @@ const HomePage = () => {
     }
   };
 
-  const getUnidadesSmartFit = async () => {
-    try {
-      const response = await api.get(url);
-      setUnidadesSmartFit(response.data.locations);
-
-      setSche(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const exibirPeloPeriodo = () => {
     //caso queira treinar na manhã
 
+    // exibirFechadas();
     if (checkbox.manha) {
-      exibirFechadas();
       setUnidadesFiltradas(
         unidadesSmartFit.filter((location, index) => {
           // console.log("Indice" + index);
 
           if (location.schedules && location.schedules.length > index)
-            return (
-              location.schedules ||
-              location.schedules[index]?.hour === "06h às 12h"
-            );
+            return location.schedules[index]?.hour === "06h às 12h";
         })
       );
 
@@ -179,12 +192,12 @@ const HomePage = () => {
   const handleListar = (e) => {
     e.preventDefault();
 
+    console.log(unidadesFiltradas);
+
     try {
       exibirPeloPeriodo();
-      if (!checkbox.manha && !checkbox.tarde && !checkbox.noite)
-        exibirFechadas();
-
-      console.log(unidadesFiltradas);
+      // if (!checkbox.manha && !checkbox.tarde && !checkbox.noite)
+      exibirFechadas();
     } catch (error) {
       console.log(error);
     }
@@ -206,63 +219,6 @@ const HomePage = () => {
 
   useEffect(() => {
     getUnidadesSmartFit();
-    console.log(unidadesFiltradas);
-    // let u = {
-    //   current_country_id: 1,
-    //   locations: [
-    //     {
-    //       id: 10998878976097,
-    //       title: "Dom Severino",
-    //       content:
-    //         "\n<p>Av. Dom Severino, 1733 &#8211; Fátima<br>Teresina, PI</p>\n",
-    //       opened: true,
-    //       mask: "required",
-    //       towel: "required",
-    //       fountain: "partial",
-    //       locker_room: "allowed",
-    //       schedules: [
-    //         {
-    //           weekdays: "Seg. à Sex.",
-    //           hour: "06h às 22h",
-    //         },
-    //         {
-    //           weekdays: "Sáb.",
-    //           hour: "Fechada",
-    //         },
-    //         {
-    //           weekdays: "Dom.",
-    //           hour: "Fechada",
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       id: 10998878976096,
-    //       title: "Teresina Shopping",
-    //       content:
-    //         "\n<p>Av. Raul Lopes, 1000 &#8211; Noivos<br>Teresina, PI</p>\n",
-    //       opened: true,
-    //       mask: "required",
-    //       towel: "required",
-    //       fountain: "partial",
-    //       locker_room: "allowed",
-    //       schedules: [
-    //         {
-    //           weekdays: "Seg. à Sex.",
-    //           hour: "06h às 22h",
-    //         },
-    //         {
-    //           weekdays: "Sáb.",
-    //           hour: "Fechada",
-    //         },
-    //         {
-    //           weekdays: "Dom.",
-    //           hour: "Fechada",
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // };
-    // console.log((Object.entries(u)));
   }, []);
 
   return (
@@ -270,7 +226,6 @@ const HomePage = () => {
       <Container>
         <section className="horario-section">
           <Form action="" onSubmit={handleListar}>
-            {/* <div className=""> */}
             <div className="relogio">
               <img
                 src={Relogio}
@@ -365,8 +320,6 @@ const HomePage = () => {
               </tbody>
             </table>
 
-            {/* <Table dados={tabela} /> */}
-
             <div className="horario-section__resultados">
               <Label htmlFor={"unidades-fechadas"}>
                 <Input
@@ -398,7 +351,6 @@ const HomePage = () => {
               <Button
                 textButton={`Encontrar Unidade`}
                 additionalClass={"button-component--yellow"}
-                // manipulationFunction={handleListar}
               />
               <Button
                 textButton={"Limpar"}
@@ -407,7 +359,6 @@ const HomePage = () => {
                 type={"reset"}
               />
             </div>
-            {/* </div> */}
           </Form>
         </section>
 
@@ -477,21 +428,31 @@ const HomePage = () => {
 
       <Container>
         <section className="unidades-section">
-          {unidadesFiltradas.map((unidade) => {
-            return (
-              <CardUnidade
-                idUnidade={unidade.id}
-                title={unidade.title}
-                content={unidade.content ? unidade.content : unidade.street}
-                opened={unidade.opened}
-                mask={unidade.mask}
-                towel={unidade.towel}
-                fountain={unidade.fountain}
-                locker_room={unidade.locker_room}
-                schedules={unidade.schedules}
-              />
-            );
-          })}
+          {unidadesFiltradas
+            .sort((a, b) =>
+              a.opened < b.opened ? -1 : a.opened > b.opened ? 1 : 0
+            ) //ordena a ordem de exibição dos cards, colocando os "fechados" em priemiro lugar no array  ordem: 1) fechadas, 2) abertas e com horario 3) sem horario
+
+            //ou .sort((a, b) => a.opened === b.opened ? 0 : a.opened ? 1 : -1)   ordem: 1) fechadas, 2) sem horario 3) abertas e com horario
+            .map((unidade) => {
+              return (
+                <CardUnidade
+                  key={Math.random()}
+                  idUnidade={unidade.id}
+                  title={unidade.title}
+                  content={unidade.content ? unidade.content : unidade.street}
+                  opened={unidade.opened}
+                  mask={unidade.mask}
+                  towel={unidade.towel}
+                  fountain={unidade.fountain}
+                  locker_room={unidade.locker_room}
+                  schedules={unidade.schedules}
+                />
+              );
+            })}
+            {/* <InfiniteScrollComponent
+            unidadesSmartFull={unidadesSmartFit}
+            /> */}
         </section>
       </Container>
     </MainContent>
