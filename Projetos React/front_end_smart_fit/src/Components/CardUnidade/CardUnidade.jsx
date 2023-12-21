@@ -21,9 +21,14 @@ const CardUnidade2 = ({
   fountain,
   locker_room,
   schedules = [{}],
+  addtionalClass,
 }) => {
   return (
-    <article className="banner" key={idUnidade}>
+    <article
+      className={`banner ${!opened || typeof(schedules) === Object ? "banner--altura-modificada" : ""}`}
+      key={idUnidade}
+    >
+      {console.log(typeof(schedules))}
       <div className="banner-info">
         <p
           className={`status-unidade ${
@@ -70,11 +75,15 @@ const CardUnidade2 = ({
             />
           </div>
 
-          <div className="banner__funcionamento">
+          <div
+            className={`banner__funcionamento ${
+              schedules.length > 3 ? "banner__funcionamento--4oumaisinfos" : ""
+            }`}
+          >
             {schedules.map((horario) => {
               return (
                 <div
-                  className="banner__funcionamento--horario"
+                  className={`banner__funcionamento--horario`}
                   key={Math.random()}
                 >
                   <h3>{horario.weekdays}</h3>

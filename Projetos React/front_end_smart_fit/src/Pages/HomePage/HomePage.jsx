@@ -480,10 +480,9 @@ const HomePage = () => {
           {unidadesFiltradas.map((unidade) => {
             return (
               <CardUnidade
-
                 idUnidade={unidade.id}
                 title={unidade.title}
-                content={"content" ? unidade.content : unidade.street}
+                content={unidade.content ? unidade.content : unidade.street}
                 opened={unidade.opened}
                 mask={unidade.mask}
                 towel={unidade.towel}
