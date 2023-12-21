@@ -23,6 +23,8 @@ const CardUnidade2 = ({
   schedules = [{}],
   addtionalClass,
 }) => {
+
+  //arrumar o tamanho dos cards q nao possuem as demais propriedades
   return (
     <article
       className={`banner ${!opened || typeof(schedules) === Object ? "banner--altura-modificada" : ""}`}
