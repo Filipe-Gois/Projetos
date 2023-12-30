@@ -110,6 +110,13 @@
   /* box-shadow: 0 20px 0 20px rgba(rgb(27, 26, 26), rgb(84, 92, 84), rgb(31, 31, 34), alpha); */
 }
 
+
+#sentinela {
+  width: 100%;
+
+  background-color: red;
+}
+
 @media screen and (min-width: 768px) {
   .legend-section {
     height: 200px;

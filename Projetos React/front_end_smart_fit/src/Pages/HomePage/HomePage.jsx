@@ -23,7 +23,7 @@ import Figure from "../../Components/Figure/Figure";
 import api, { url } from "../../Services/Apis";
 import CardUnidade from "../../Components/CardUnidade/CardUnidade";
 import { useForm } from "react-hook-form";
-import InfiniteScroll from 'react-infinite-scroll-component';
+import InfiniteScroll from "react-infinite-scroll-component";
 import InfiniteScrollComponent from "../../Components/InfiniteScrollComponent/InfiniteScrollComponent";
 
 const HomePage = () => {
@@ -36,12 +36,25 @@ const HomePage = () => {
     liberadoText: "Liberado",
     fechadoText: "Fechado",
   });
-  let arrayModificado = [];
+
+  const [currentPage, setCurrentPage] = useState(1);
 
   //armazena os dados de todas as unidades presentes na API
   const [unidadesSmartFit, setUnidadesSmartFit] = useState([]);
 
   const [unidadesFiltradas, setUnidadesFiltradas] = useState([]);
+
+  const [unidadesRenderizadas, setUnidadesRenderizadas] = useState(
+    unidadesFiltradas.slice(0, 10)
+  );
+
+  const loadMoreUnits = () => {
+    const nextUnits = unidadesFiltradas.slice(
+      unidadesRenderizadas.length,
+      unidadesRenderizadas.length + 10
+    );
+    setUnidadesRenderizadas(unidadesRenderizadas.concat(nextUnits));
+  };
 
   // const { register, handleSubmit, reset } = useForm();
 
@@ -94,15 +107,17 @@ const HomePage = () => {
   };
 
   const exibirFechadas = () => {
-    if (checkbox.exibirUnidadesFechadas === true)
+    if (checkbox.exibirUnidadesFechadas === true) {
       setUnidadesFiltradas(unidadesSmartFit);
-    else {
+      // loadMoreUnits();
+    } else {
       setUnidadesFiltradas(
         unidadesSmartFit.filter(
           (location) => location.opened || !location.schedules
         )
       );
     }
+    // loadMoreUnits();
   };
 
   const exibirPeloPeriodo = () => {
@@ -192,12 +207,13 @@ const HomePage = () => {
   const handleListar = (e) => {
     e.preventDefault();
 
-    console.log(unidadesFiltradas);
-
     try {
-      exibirPeloPeriodo();
-      // if (!checkbox.manha && !checkbox.tarde && !checkbox.noite)
+      console.log(unidadesRenderizadas);
       exibirFechadas();
+
+      // loadMoreUnits();
+      // exibirPeloPeriodo();
+      // if (!checkbox.manha && !checkbox.tarde && !checkbox.noite)
     } catch (error) {
       console.log(error);
     }
@@ -214,11 +230,26 @@ const HomePage = () => {
     //ver se dá p implementar essa lógica para simplificar
     // setCheckbox(false)
     setUnidadesFiltradas([]);
+    setUnidadesRenderizadas([]);
     // console.clear()
   };
 
   useEffect(() => {
     getUnidadesSmartFit();
+
+    // const intersectionObserver = new IntersectionObserver((entries) => {
+    //   if (entries.some((entry) => entry.isIntersecting)) {
+    //     setCurrentPage((c) => c + 1);
+    //     loadMoreUnits();
+    //     // console.log("Filtradas");
+    //     // console.log(unidadesFiltradas);
+    //     // console.log("Renderizadas");
+    //     // console.log(unidadesRenderizadas);
+    //   }
+    // });
+
+    // intersectionObserver.observe(document.querySelector("#sentinela"));
+    // return () => intersectionObserver.disconnect();
   }, []);
 
   return (
@@ -342,7 +373,8 @@ const HomePage = () => {
               <p>
                 Resultados encontrados:
                 <span>
-                  {` ${unidadesFiltradas ? unidadesFiltradas.length : 0}`}
+                  {` ${unidadesFiltradas ? unidadesFiltradas.length : 0}`} 
+                  {/* unidadesRenderizadas */}
                 </span>
               </p>
             </div>
@@ -450,9 +482,12 @@ const HomePage = () => {
                 />
               );
             })}
-            {/* <InfiniteScrollComponent
-            unidadesSmartFull={unidadesSmartFit}
-            /> */}
+          {/* <div id="sentinela"></div> */}
+          {unidadesRenderizadas && (
+            <InfiniteScrollComponent
+              fnLoadMore={() => console.log("Apareceu")}
+            />
+          )}
         </section>
       </Container>
     </MainContent>
