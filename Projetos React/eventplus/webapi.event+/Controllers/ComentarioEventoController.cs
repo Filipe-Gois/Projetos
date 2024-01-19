@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.CognitiveServices.ContentModerator;
 using System.Text;
+using webapi.event_.Contexts;
 using webapi.event_.Domains;
 using webapi.event_.Interfaces;
 using webapi.event_.Repositories;
@@ -19,6 +20,7 @@ namespace webapi.event_.Controllers
         //armazena os dados da API externa (AI)
         private readonly ContentModeratorClient _contentModeratorClient;
 
+
         /// <summary>
         /// Construtor que recebe os dados necessarios para o acesso ao serviço externo
         /// </summary>
@@ -28,7 +30,11 @@ namespace webapi.event_.Controllers
             _contentModeratorClient = contentModeratorClient;
         }
 
-
+        /// <summary>
+        /// Cadastro de comentario gerenciado pela IA (ela analise se a descrição possui um termo ofensivo ou não)
+        /// </summary>
+        /// <param name="comentarioEvento"></param>
+        /// <returns></returns>
         [HttpPost("CadastroIa")]
         public async Task<IActionResult> PostIa(ComentariosEvento comentarioEvento)
         {
@@ -46,8 +52,11 @@ namespace webapi.event_.Controllers
                 var moderationResult = await _contentModeratorClient.TextModeration
                     .ScreenTextAsync("text/plain", stream, "por", false, false, null, true);
 
+
+                //Evento eventoBuscado = _context.Evento.FirstOrDefault(e => e.IdEvento == comentarioEvento.IdEvento)!;
+
                 //se existir termos ofensivos
-                if (moderationResult.Terms != null)
+                if (moderationResult.Terms != null /*&& eventoBuscado.DataEvento < DateTime.Now*/)
                 {
                     //atribuir false para exibe
                     comentarioEvento.Exibe = false;
@@ -115,7 +124,7 @@ namespace webapi.event_.Controllers
 
 
         /// <summary>
-        /// Lista UM comentario de UM usuário
+        /// Lista um comentário pelo id do usuario e o id do evento
         /// </summary>
         /// <param name="idUsuario"></param>
         /// <param name="idEvento"></param>
@@ -150,6 +159,11 @@ namespace webapi.event_.Controllers
             }
         }
 
+        /// <summary>
+        /// Exclui um comentario atraves do id do comentario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         public IActionResult DeleteByIdComentary(Guid id)
         {

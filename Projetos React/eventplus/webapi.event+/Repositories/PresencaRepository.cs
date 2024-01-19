@@ -53,6 +53,7 @@ namespace webapi.event_.Repositories
                             Instituicao = new Instituicao
                             {
                                 NomeFantasia = p.Evento.Instituicao!.NomeFantasia
+
                             }
                         }
 
@@ -132,7 +133,7 @@ namespace webapi.event_.Repositories
                         }
                     }
 
-                }).Where(p => p.IdUsuario == id).ToList();
+                }).Where(p => p.IdUsuario == id).OrderBy(e => e.Evento!.DataEvento).ToList();
         }
     }
 }

@@ -21,10 +21,80 @@
             </summary>
             <param name="contentModeratorClient">objeto do tipo contentModerator</param>
         </member>
+        <member name="M:webapi.event_.Controllers.ComentarioEventoController.PostIa(webapi.event_.Domains.ComentariosEvento)">
+            <summary>
+            Cadastro de comentario gerenciado pela IA (ela analise se a descrição possui um termo ofensivo ou não)
+            </summary>
+            <param name="comentarioEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.Controllers.ComentarioEventoController.GetIa(System.Guid)">
+            <summary>
+            Lista somente os comentários com "TRUE"
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.Controllers.ComentarioEventoController.Get(System.Guid)">
+            <summary>
+            Lista todos os comentários de um evento
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.Controllers.ComentarioEventoController.GetByIdUser(System.Guid,System.Guid)">
+            <summary>
+            Lista um comentário pelo id do usuario e o id do evento
+            </summary>
+            <param name="idUsuario"></param>
+            <param name="idEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.Controllers.ComentarioEventoController.DeleteByIdComentary(System.Guid)">
+            <summary>
+            Exclui um comentario atraves do id do comentario
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.Controllers.EventoController.GetOldEvents">
+            <summary>
+            Método responsável por listar eventos passados
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:webapi.event_.Controllers.PresencaEventoController.Get">
             <summary>
-            
+            Método para listar todas as presenças de todos os eventos
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.Controllers.PresencaEventoController.BuscarPorId(System.Guid)">
+            <summary>
+            Busca uma presença pelo id da presença
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.Controllers.PresencaEventoController.Deletar(System.Guid)">
+            <summary>
+            Método para excluir uma presença através do id da presença
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.Controllers.PresencaEventoController.Post(webapi.event_.Domains.PresencasEvento)">
+            <summary>
+            Método para confirmar a presença em um evento
+            </summary>
+            <param name="presencasEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.Controllers.PresencaEventoController.GetMyList(System.Guid)">
+            <summary>
+            Método para listar todos os eventos em que UM usuário está inscrito através do id usuario
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="T:webapi.event_.Migrations.Filipe">

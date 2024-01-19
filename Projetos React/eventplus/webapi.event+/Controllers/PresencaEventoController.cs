@@ -20,7 +20,7 @@ namespace webapi.event_.Controllers
 
 
         /// <summary>
-        /// 
+        /// Método para listar todas as presenças de todos os eventos
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -37,6 +37,11 @@ namespace webapi.event_.Controllers
             }
         }
 
+        /// <summary>
+        /// Busca uma presença pelo id da presença
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("BuscarPorId{id}")]
         public IActionResult BuscarPorId(Guid id)
         {
@@ -51,6 +56,11 @@ namespace webapi.event_.Controllers
             }
         }
 
+        /// <summary>
+        /// Método para excluir uma presença através do id da presença
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         public IActionResult Deletar(Guid id)
         {
@@ -68,6 +78,11 @@ namespace webapi.event_.Controllers
             }
         }
 
+        /// <summary>
+        /// Método para confirmar a presença em um evento
+        /// </summary>
+        /// <param name="presencasEvento"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(PresencasEvento presencasEvento)
         {
@@ -83,6 +98,11 @@ namespace webapi.event_.Controllers
             }
         }
 
+        /// <summary>
+        /// Método para listar todos os eventos em que UM usuário está inscrito através do id usuario
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult GetMyList(Guid id)
         {

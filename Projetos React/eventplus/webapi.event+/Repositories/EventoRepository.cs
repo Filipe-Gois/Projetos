@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.Design;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.Design;
 using webapi.event_.Contexts;
 using webapi.event_.Domains;
 using webapi.event_.Interfaces;
@@ -42,7 +43,9 @@ namespace webapi.event_.Repositories
         {
             try
             {
-                return _context.Evento.Find(id)!;
+                return _context.Evento.Include(e => e.Instituicao).Include(e => e.TiposEvento).FirstOrDefault(p => p.IdEvento == id)!;
+
+
             }
             catch (Exception)
             {
@@ -100,14 +103,20 @@ namespace webapi.event_.Repositories
                     DataEvento = e.DataEvento,
                     NomeEvento = e.NomeEvento,
                     Descricao = e.Descricao,
-                    IdInstituicao = e.IdInstituicao,
                     IdTipoEvento = e.IdTipoEvento,
+                    IdInstituicao = e.IdInstituicao,
                     TiposEvento = new TiposEvento
                     {
-                        IdTipoEvento = e.TiposEvento.IdTipoEvento,
+                        IdTipoEvento = e.TiposEvento!.IdTipoEvento,
                         Titulo = e.TiposEvento.Titulo
+                    },
+                    Instituicao = new Instituicao
+                    {
+                        IdInstituicao = e.Instituicao!.IdInstituicao,
+                        NomeFantasia = e.Instituicao!.NomeFantasia,
+                        Endereco = e.Instituicao!.Endereco
                     }
-                }).ToList();
+                }).OrderBy(e => e.DataEvento).Reverse().ToList();
             }
             catch (Exception)
             {
@@ -119,8 +128,26 @@ namespace webapi.event_.Repositories
         {
             try
             {
-                return _context.Evento
-                    .Where(e => e.DataEvento < DateTime.Now).OrderBy(e => e.DataEvento).ToList();
+                return _context.Evento.Select(e => new Evento
+                {
+                    IdEvento = e.IdEvento,
+                    DataEvento = e.DataEvento,
+                    NomeEvento = e.NomeEvento,
+                    Descricao = e.Descricao,
+                    IdTipoEvento = e.IdTipoEvento,
+                    IdInstituicao = e.IdInstituicao,
+                    TiposEvento = new TiposEvento
+                    {
+                        IdTipoEvento = e.TiposEvento!.IdTipoEvento,
+                        Titulo = e.TiposEvento.Titulo
+                    },
+                    Instituicao = new Instituicao
+                    {
+                        IdInstituicao = e.Instituicao!.IdInstituicao,
+                        NomeFantasia = e.Instituicao!.NomeFantasia,
+                        Endereco = e.Instituicao!.Endereco
+                    }
+                }).Where(e => e.DataEvento < DateTime.Now).OrderBy(e => e.DataEvento).ToList();
             }
             catch (Exception)
             {
@@ -132,8 +159,26 @@ namespace webapi.event_.Repositories
         {
             try
             {
-                return _context.Evento
-                    .Where(e => e.DataEvento > DateTime.Now).OrderBy(e => e.DataEvento).ToList();
+                return _context.Evento.Select(e => new Evento
+                {
+                    IdEvento = e.IdEvento,
+                    DataEvento = e.DataEvento,
+                    NomeEvento = e.NomeEvento,
+                    Descricao = e.Descricao,
+                    IdTipoEvento = e.IdTipoEvento,
+                    IdInstituicao = e.IdInstituicao,
+                    TiposEvento = new TiposEvento
+                    {
+                        IdTipoEvento = e.TiposEvento!.IdTipoEvento,
+                        Titulo = e.TiposEvento.Titulo
+                    },
+                    Instituicao = new Instituicao
+                    {
+                        IdInstituicao = e.Instituicao!.IdInstituicao,
+                        NomeFantasia = e.Instituicao!.NomeFantasia,
+                        Endereco = e.Instituicao!.Endereco
+                    }
+                }).Where(e => e.DataEvento > DateTime.Now).OrderBy(e => e.DataEvento).ToList();
             }
             catch (Exception)
             {

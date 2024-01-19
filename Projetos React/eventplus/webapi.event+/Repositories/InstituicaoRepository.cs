@@ -85,7 +85,7 @@ namespace webapi.event_.Repositories
         {
             try
             {
-                return _context.Instituicao.ToList();
+                return _context.Instituicao.OrderBy(e => e.NomeFantasia).ToList();
             }
             catch (Exception)
             {
