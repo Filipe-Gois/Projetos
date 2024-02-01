@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const InputText = styled.TextInput`
 border: 2px solid #a1a1a1;
