@@ -6,6 +6,7 @@ import { ContainerApp } from './style';
 import { useFonts, Roboto_700Bold, Roboto_500Medium } from '@expo-google-fonts/roboto';
 import { Header } from './src/components/Header';
 import { Theme } from './theme';
+import HomeScreen from './src/Screens/HomeScreen';
 
 export default function App() {
 
@@ -21,11 +22,12 @@ export default function App() {
 
   return (
     <ContainerApp>
-      <StatusBar backgroundColor={Theme.colors.yellowColor} translucent style={'auto'} />
+      <StatusBar backgroundColor={'transparent'} barStyle={'light-content'} translucent style={'auto'} />
       {/* header */}
       {/* homescreen */}
 
       <Header />
+      <HomeScreen />
 
 
     </ContainerApp>

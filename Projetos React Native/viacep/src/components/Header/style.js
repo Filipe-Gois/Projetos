@@ -7,15 +7,24 @@ background-color: #fecc2b;
 height: 20%;
 justify-content: center;
 align-items: center;
-border-radius: 0 0 20px 20px;
-box-shadow: 0 4px 15px #000;
+border-radius: 0 0 15px 15px;
+box-shadow: 0 0 15px #000;
+font-family: 'Roboto_500Medium';
+font-size: 24px;
+
+
+/* box-shadow para android */
+shadow-color: 'black';
+shadow-opacity: 0.25;
+shadow-offset: 20px 20px;
+shadow-radius: 10px;
 elevation: 25;
 `
 
 
 
 export const HeaderContent = styled.SafeAreaView`
-
+margin-top: 20px;
 
 
     `
