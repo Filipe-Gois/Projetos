@@ -5,26 +5,28 @@ import { Input } from "../Input"
 
 export const BoxInput = ({
     fieldWidth = 100,
-    editTable = false,
+    editable = false,
     textLabel,
     placeholder,
     fieldValue = null,
     onChangeText = null,
+    onEndEditing= null,
     keyType = 'default',
     maxLength,
 }) => {
     return (
-        <FieldContent>
+        <FieldContent fieldWidth={fieldWidth}>
 
             <Label textLabel={textLabel} />
 
             <Input
-                editTable={editTable}
+                editable={editable}
                 placeholder={placeholder}
                 keyType={keyType}
                 maxLength={maxLength}
                 fieldValue={fieldValue}
                 onChangeText={onChangeText}
+                onEndEditing = {onEndEditing}
             />
 
         </FieldContent>

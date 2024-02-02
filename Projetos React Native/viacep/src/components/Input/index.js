@@ -2,12 +2,13 @@ import { InputText } from "./style"
 
 export const Input = ({
 
-    editTable,
+    editable,
     placeholder,
     fieldValue,
     onChangeText,
     keyType,
     maxLength,
+    onEndEditing
 
 
 }) => {
@@ -15,12 +16,13 @@ export const Input = ({
 
         <InputText
 
-            editTable={editTable}
+            editable={editable}
             placeholder={placeholder}
             value={fieldValue}
             onChangeText={onChangeText}
             keyType={keyType}
             maxLength={maxLength}
+            onEndEditing={onEndEditing}
         />
 
 

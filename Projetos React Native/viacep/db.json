@@ -1,0 +1,14 @@
+{
+ "cep" : [
+    {
+        "id": "1",
+        "uf": "RS",
+        "logradouro": "rua lá",
+        "bairro": "centro",
+        "localidade": "Sao paulo"
+        
+    }
+ ]
+
+
+}

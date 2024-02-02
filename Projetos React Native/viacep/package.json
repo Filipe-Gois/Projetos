@@ -18,6 +18,7 @@
     "react-native": "0.73.2",
     "react-native-drop-shadow": "^1.0.0",
     "react-native-shadow-view": "^0.0.1",
+    "remask": "^1.2.2",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
