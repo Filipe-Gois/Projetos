@@ -26,7 +26,7 @@ export const HomeScreen = () => {
             setData(response.data.result)
         } catch (error) {
             console.warn("Não foi possível encontrar esse cep.")
-            console.warn(cep)
+
 
         }
 
@@ -37,11 +37,6 @@ export const HomeScreen = () => {
     }
 
 
-    // useEffect(() => {
-
-    //     getLocation()
-
-    // }, []);
 
     return (
         <ScrollForm>
