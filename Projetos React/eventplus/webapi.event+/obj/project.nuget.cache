@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "elmsWSN4OTor1F865CNBjtICk7Gf1bKuke1f/ccbsYy9k1fvzH0YIMICR1sQrmZwsEuv4Zr9PUYigg7E2vzb4Q==",
+  "dgSpecHash": "FbIuD+wVaReMn+UIHBkcXBfZER8G74MJnU5Eka+B9q9ZrArtsKytnU4XLrNtc6SQJ9atDuyvvjys7CyIPVIImw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fytho\\OneDrive\\Documentos\\Github\\Projetos\\Projetos React\\eventplus\\webapi.event+\\webapi.event+.csproj",
+  "projectFilePath": "C:\\Users\\fytho\\Documents\\Github\\Projetos\\Projetos React\\eventplus\\webapi.event+\\webapi.event+.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fytho\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\fytho\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -240,7 +240,11 @@
     "C:\\Users\\fytho\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\fytho\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\fytho\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\fytho\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\fytho\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\fytho\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\fytho\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\fytho\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\fytho\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.15\\microsoft.netcore.app.host.win-x64.7.0.15.nupkg.sha512"
   ],
   "logs": []
 }
