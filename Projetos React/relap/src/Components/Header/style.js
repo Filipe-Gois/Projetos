@@ -7,6 +7,7 @@ export const HeaderStyle = styled.header`
   display: flex;
   justify-content: center;
 
+  position: fixed;
   background-color: ${Theme.colors.purple};
 
   @media screen and (min-width: 768px) {
