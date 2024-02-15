@@ -6,24 +6,17 @@ export const HeaderStyle = styled.header`
   height: 160px;
   display: flex;
   justify-content: center;
-
   position: fixed;
-  background-color: ${Theme.colors.purple};
-
-  @media screen and (min-width: 768px) {
-    background-image: linear-gradient(
-      to right,
-      ${Theme.colors.violet},
-      ${Theme.colors.purple}
-    );
-  }
+  top: 0;
+  z-index: 20;
+  background-image: ${Theme.linearGradient.violetToPurple};
 `;
 
 export const HeaderContainer = styled.div`
   width: 100%;
   height: 50%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 `;
 export const HeaderInputContainer = styled(HeaderContainer)`
@@ -31,7 +24,7 @@ export const HeaderInputContainer = styled(HeaderContainer)`
 `;
 
 export const HeaderIconsBox = styled.div`
-  width: 100%;
+  width: max-content;
   height: 100%;
   display: flex;
   justify-content: end;

@@ -28,7 +28,25 @@ export const IconBox = styled.div`
 `;
 
 export const MenuHamburguerBox = styled(IconBox)`
-  @media screen and (min-width: 768px) {
+  z-index: 2;
+  @media screen and (min-width: 992px) {
     display: none;
+  }
+`;
+
+export const IconBoxArrow = styled(IconBox)`
+  position: absolute;
+  bottom: calc(700px - 700px);
+  right: 2vw;
+
+  display: none;
+
+  &:first-of-type {
+    left: 2vw;
+    background-color: red;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
   }
 `;

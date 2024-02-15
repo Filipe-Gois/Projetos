@@ -12,6 +12,9 @@ const Theme = {
     darkGray: "#3C3645",
     darkBlue: "#3C2CAA",
   },
+  linearGradient: {
+    violetToPurple: `linear-gradient(to right, #A05DC5, #4d32ae)`,
+  },
 };
 
 export default Theme;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Theme from "../../theme";
 
 export const ButtonStyle = styled.button``;
 
@@ -35,7 +36,7 @@ export const MenuHamburguerStyle = styled.button`
     transform: ${(props) => props.exibeNavBar && "rotate(135deg)"};
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 992px) {
     display: none;
   }
 `;
@@ -44,4 +45,21 @@ export const MenuHamburguerContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+`;
+
+export const Button = styled.button`
+  background-color: ${Theme.colors.yellow};
+  color: ${Theme.colors.white};
+  border-radius: 20px;
+  text-align: center;
+  max-width: 165px;
+  width: 100%;
+  height: 45px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: ${Theme.colors.darkGray};
+    transition: 0.5s ease-out;
+  }
 `;

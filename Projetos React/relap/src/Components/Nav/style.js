@@ -2,11 +2,7 @@ import styled from "styled-components";
 import Theme from "../../theme";
 
 export const NavBarStyle = styled.nav`
-  background-image: linear-gradient(
-    to right,
-    ${Theme.colors.violet},
-    ${Theme.colors.purple}
-  );
+  background-image: ${Theme.linearGradient.violetToPurple};
   width: 70vw;
   height: calc(100vh - 160px);
   top: 160px;
@@ -14,8 +10,15 @@ export const NavBarStyle = styled.nav`
   display: flex;
   justify-content: center;
   position: fixed;
-  opacity: 1;
-  z-index: 2;
-  transition: left 0.5s ease-out, opacity 0.6s;
-  pointer-events: all;
+
+  z-index: 100;
+  transition: right 0.5s ease-in-out, opacity 0.6s;
+
+  @media (min-width: 992px) {
+    width: max-content;
+    height: 100%;
+
+    position: static;
+    background-image: none;
+  }
 `;

@@ -1,17 +1,12 @@
 import React from "react";
-import { Container } from "../Components/Container/style";
 import { MainContent } from "../Components/MainContent/style";
 import Header from "../Components/Header";
-import { Title } from "../Components/Title/style";
+import BannerNotebook from "../Components/BannerNotebook";
 
 const HomePage = () => {
   return (
     <MainContent>
-      <Header />
-
-      {/* <Container> */}
-      {/* <Title>Fefe</Title> */}
-      {/* </Container> */}
+      <BannerNotebook />
     </MainContent>
   );
 };

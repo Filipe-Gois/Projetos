@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { HeaderContainer, HeaderIconsBox, HeaderInputContainer, HeaderStyle } from "./style";
+import {
+  HeaderContainer,
+  HeaderIconsBox,
+  HeaderInputContainer,
+  HeaderStyle,
+} from "./style";
 import { Title } from "../Title/style";
 import Theme from "../../theme";
 import { UlStyle } from "../Ul/style";
@@ -24,6 +29,8 @@ const Header = () => {
         <HeaderContainer>
           <Title color={Theme.colors.white}>RELAP</Title>
 
+          <input />
+
           <NavBar exibeNavBar={exibeNavBar} setExibeNavBar={setExibeNavBar} />
 
           <HeaderIconsBox>
@@ -42,11 +49,8 @@ const Header = () => {
         </HeaderContainer>
 
         <HeaderInputContainer>
-          <InputHeaderStyle placeholder="Search"/>
-
-
+          <InputHeaderStyle placeholder="Search" />
         </HeaderInputContainer>
-
       </Container>
     </HeaderStyle>
   );

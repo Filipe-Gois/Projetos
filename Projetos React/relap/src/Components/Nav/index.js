@@ -7,26 +7,36 @@ import { Icon } from "../Icon/style";
 
 export const NavBar = ({ exibeNavBar, setExibeNavBar }) => {
   return (
-    <NavBarStyle exibeNavBar={exibeNavBar} setExibeNavBar={setExibeNavBar}>
+    <NavBarStyle exibeNavBar={exibeNavBar}>
       <UlStyleHeader>
         <LiStyle>
-          <Link>Store</Link>
+          <Link onClick={() => setExibeNavBar(false)} to={"/"}>
+            Store
+          </Link>
         </LiStyle>
 
         <LiStyle>
-          <Link>Features</Link>
+          <Link onClick={() => setExibeNavBar(false)} to={"/"}>
+            Features
+          </Link>
         </LiStyle>
 
         <LiStyle>
-          <Link>About</Link>
+          <Link onClick={() => setExibeNavBar(false)} to={"/"}>
+            About
+          </Link>
         </LiStyle>
 
         <LiStyle>
-          <Link>Blog</Link>
+          <Link onClick={() => setExibeNavBar(false)} to={"/"}>
+            Blog
+          </Link>
         </LiStyle>
 
         <LiStyle>
-          <Link>News</Link>
+          <Link onClick={() => setExibeNavBar(false)} to={"/"}>
+            News
+          </Link>
         </LiStyle>
       </UlStyleHeader>
       {/* 

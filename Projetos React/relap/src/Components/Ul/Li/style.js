@@ -23,4 +23,16 @@ export const LiStyle = styled.li`
       color: ${Theme.colors.darkGray};
     }
   }
+
+  @media (min-width: 992px) {
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    
+
+    a {
+      width: 100%;
+      height: max-content;
+    }
+  }
 `;
