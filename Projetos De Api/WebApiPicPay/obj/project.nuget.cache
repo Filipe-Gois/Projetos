@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xMEEtrYFIpQ8JqpocfOyQICt5kwK2d2/DEdRZ2IOkAOzCu1Vrml/UR3Es0rj/tm1fE45AqNI3Cn4Asvf1NjVXg==",
+  "dgSpecHash": "BDZxoDOnMs0wmlA2auprjCVtfaLjK/OFA1UpL1reEjpdiojMMj/Mp0xJppG732hX0ynMCSWCe5v1EocR7XmDpg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fytho\\OneDrive\\Documentos\\Github\\Projetos\\Projetos De Api\\WebApiPicPay\\WebApiPicPay.csproj",
+  "projectFilePath": "C:\\Users\\fytho\\Documents\\Github\\Projetos\\Projetos De Api\\WebApiPicPay\\WebApiPicPay.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fytho\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\fytho\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -90,5 +90,26 @@
     "C:\\Users\\fytho\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\fytho\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'System.IdentityModel.Tokens.Jwt' 7.0.3 tem uma moderado vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
+      "libraryId": "System.IdentityModel.Tokens.Jwt",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'System.IdentityModel.Tokens.Jwt' 7.0.3 tem uma moderado vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-8g9c-28fc-mcx2",
+      "libraryId": "System.IdentityModel.Tokens.Jwt",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

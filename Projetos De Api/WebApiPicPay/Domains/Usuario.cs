@@ -33,7 +33,7 @@ namespace WebApiPicPay.Domains
 
         [Required(ErrorMessage = "Informe o Email!")]
         [Column(TypeName = "VARCHAR(100)")]
-        [MinLength(5)]
+        //[MinLength(5)]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Informe a senha!")]
