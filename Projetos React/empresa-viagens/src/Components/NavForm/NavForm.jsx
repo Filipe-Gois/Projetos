@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NavForm.css";
 import Flight from "../../assets/Icons/flight.svg";
 import Hotel from "../../assets/Icons/hotel.svg";
@@ -10,50 +10,50 @@ import { click } from "@testing-library/user-event/dist/click";
 
 const Nav = ({
   additionalClass = "",
-  manipulationFunction1,
-  manipulationFunction2,
-  manipulationFunction3,
   selectClass = "navbar__item--select",
-  clicked1 = false,
-  clicked2 = false,
-  clicked3 = false
+  setEditForm,
 }) => {
-
+  const [statusFilter, setStatusFilter] = useState("Flight");
   return (
     <div className={`navbar__itens-box ${additionalClass}`}>
       <Button
         additionalClass={`navbar__item ${
-          clicked1 ? selectClass : ""
+          statusFilter === "Flight" ? selectClass : ""
         }`}
-
         textButton={"Flight"}
         image={true}
         imageRender={Flight}
-        manipulationFunction={manipulationFunction1}
-
+        manipulationFunction={() => {
+          setStatusFilter("Flight");
+          setEditForm("Flight");
+        }}
       />
 
       <Button
         additionalClass={`navbar__item ${
-          clicked2 ? selectClass : ""
+          statusFilter === "Hotel" ? selectClass : ""
         }`}
-
         textButton={"Hotel"}
         image={true}
         imageRender={Hotel}
-        manipulationFunction={manipulationFunction2}
-
+        manipulationFunction={() => {
+          setStatusFilter("Hotel");
+          setEditForm("Hotel");
+        }}
       />
 
       <Button
         additionalClass={`navbar__item ${
-          clicked3 ? selectClass : ""
+          statusFilter === "Rental" ? selectClass : ""
         }`}
         textButton={"Rental"}
         image={true}
         imageRender={Rental}
-        manipulationFunction={manipulationFunction3}
+        manipulationFunction={() => {
+          setStatusFilter("Rental");
 
+          setEditForm("Rental");
+        }}
       />
     </div>
   );

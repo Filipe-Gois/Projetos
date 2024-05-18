@@ -1,15 +1,15 @@
 import axios from "axios";
 
-const apiPort = '';
+const apiPort = "";
 
 const localApiUrl = ``;
 
-const externallApiUrl = `https://brasilaberto.com/api/v1/zipcode`;
+const externallApiUrl = `https://api.brasilaberto.com/v1/zipcode`;
+
 // const externalApiUrl = null;
 
 const api = axios.create({
-    baseURL: externallApiUrl
+  baseURL: externallApiUrl,
 });
-
 
 export default api;

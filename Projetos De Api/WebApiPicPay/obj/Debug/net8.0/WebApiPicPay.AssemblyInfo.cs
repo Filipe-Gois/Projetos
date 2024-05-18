@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApiPicPay")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10e6dd174ed726458a70c0e7668c18fad981d9ba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f70bc7993948a39cfee9d75467b03c9650e75534")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApiPicPay")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApiPicPay")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -20,7 +20,7 @@ namespace WebApiPicPay.Controllers
             _transferenciaRepository = new TransferenciaRepository();
         }
 
-        [HttpGet("{CPF}")]
+        [HttpGet("ListarTransferenciasPeloCPF")]
         public IActionResult ListarTransferenciasUsuario(string CPF)
         {
             try
@@ -41,7 +41,7 @@ namespace WebApiPicPay.Controllers
             }
         }
 
-        [HttpGet("{data, cpf}")]
+        [HttpGet("ListarTransferenciasPorData")]
         public IActionResult ListarTransferenciasPorData(DateTime data, string CPF)
         {
             try
